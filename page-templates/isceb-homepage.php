@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: ISCEB Homepage
  *
@@ -8,19 +9,56 @@
  */
 
 // Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 get_header();
-$container = get_theme_mod( 'understrap_container_type' );
+$container = get_theme_mod('understrap_container_type');
 
-if ( is_front_page() ) {
-	get_template_part( 'global-templates/hero' );
-}
+
 ?>
 
 <div class="wrapper" id="full-width-page-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content">
+	<div class="<?php echo esc_attr($container); ?>" id="content">
+		<section class="homepage-banners">
+			<div class="container-banners">
+				<div class="item">
+					<div class="bannerCardText">
+						<h2>Welcome! </h2>
+						<p>
+							Hello idth: 1200px;
+							It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. e
+						</p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="bannerCardImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(http://localhost:8080/wpISCEB2/wp-content/uploads/2021/02/67677-7-scaled.jpg);">
+					</div>
+				</div>
+				<div class="item">
+					<div class="bannerCardImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(http://localhost:8080/wpISCEB2/wp-content/uploads/2021/02/67677-7-scaled.jpg);">
+					</div>
+				</div>
+				<div class="item">
+					<div class="bannerCardImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(http://localhost:8080/wpISCEB2/wp-content/uploads/2021/02/67677-7-scaled.jpg);">
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+		<section class="homepage-help-bar">
+			<div class="container-help">
+				<div class="wrapper-help-button">
+					<button class="help-button">
+						<h2 class="help-button-text">
+							Do you need our help? Click here to contact us!
+						</h2>
+					</button>
+				</div>
+			</div>
+		</section>
+
 
 		<div class="row">
 
@@ -29,12 +67,12 @@ if ( is_front_page() ) {
 				<main class="site-main" id="main" role="main">
 
 					<?php
-					while ( have_posts() ) {
+					while (have_posts()) {
 						the_post();
-						get_template_part( 'loop-templates/content', 'page' );
+						get_template_part('loop-templates/content', 'page');
 
 						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) {
+						if (comments_open() || get_comments_number()) {
 							comments_template();
 						}
 					}

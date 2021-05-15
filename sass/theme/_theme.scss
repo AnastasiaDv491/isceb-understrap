@@ -1,5 +1,68 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
 
 .navbar {
-    box-shadow: 5px 5px 20px;
+    // box-shadow: 5px 5px 20px;
+}
+#main-nav{
+    margin-bottom: 0px;
+}
+
+.homepage-banners{
+    background-color: #1F476B;
+    height: 640px;
+}
+.wrapper {
+    padding: 0; }
+.container-fluid{
+    padding: 0;
+}
+.row{
+    margin: 0;
+}
+.container-banners{
+    max-width: 1450px;
+    margin: 0 auto;
+    padding-top: 40px;
+    display: grid;
+    // align-content: center;
+    justify-content: center;
+    height: 100%;
+    grid-gap: 0.45rem;
+}
+
+/* Screen larger than 600px? 2 column */
+@media (min-width: 641px) {
+    .container-banners {
+        grid-template-columns: repeat(2, minmax(240px, 1fr));
+        /* grid-gap: 2rem; */
+    }
+}
+
+/* Screen larger than 900px? 3 columns */
+@media (min-width: 961px) {
+    .container-banners {
+        grid-template-columns: repeat(4, minmax(240px, 1fr));
+    }
+}
+.item{
+    height: 600px;
+    padding: 10px;
+}
+
+.bannerCardImage{
+        height: 100%;
+    }
+.bannerCardText{
+    color: white;
+}
+
+.homepage-help-bar{
+    background-color: #D3EBF8;
+    justify-content: center;
+    align-content: center;
+    
+}
+.wrapper-help-button{
+    display: flex;
+    justify-content: center;
 }

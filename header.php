@@ -32,7 +32,7 @@ $container = get_theme_mod('understrap_container_type');
 
 			<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e('Skip to content', 'understrap'); ?></a>
 
-			<nav id="main-nav" class="navbar navbar-expand-md navbar-light bg-primary shadow p-3 mb-5 bg-white rounded font-weight-bold mr-auto" aria-labelledby="main-nav-label">
+			<nav id="main-nav" class="navbar navbar-expand-md navbar-light bg-primary shadow p-3 bg-white rounded font-weight-bold mr-auto" aria-labelledby="main-nav-label">
 
 
 				<h2 id="main-nav-label" class="sr-only">
