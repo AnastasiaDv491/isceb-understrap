@@ -80,6 +80,7 @@
 .item{
     height: 600px;
     padding: 10px;
+    position: relative;
 }
 
 .bannerCardImage{
@@ -111,4 +112,34 @@
     padding: 0 30px 0 30px;
     border: none;
     box-shadow: 0px 6px 4px rgba(0,0,0,0.25);
+}
+
+.bannerCardContent{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    color: white;
+    text-align: center;
+}
+
+.bannerCardButton{
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.bannerCardTag{
+    position: absolute;
+    top:20px;
+    right:20px;
+    background-color: #D3EBF8;
+    border-radius: 5px;
+}
+
+.banerTagText{
+    margin: 0;
+    padding:4px;
+    font-weight: bold;
+    color: #1F476B;
 }

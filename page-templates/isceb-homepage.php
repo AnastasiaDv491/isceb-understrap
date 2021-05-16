@@ -41,17 +41,49 @@ $container = get_theme_mod('understrap_container_type');
 				<div class="item">
 					<div class="bannerCardImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(http://localhost:8080/wpISCEB2/wp-content/uploads/2021/02/67677-7-scaled.jpg);">
 					</div>
+					<div class="bannerCardTag">
+						<p class="banerTagText">Education</p>
+					</div>
+					<div class="bannerCardContent">
+							<h3 class="bannerCardTitle">Event 1</h3>
+							<p class="bannerCardDescription">It is a long established fact that</p>
+							<button class="bannerCardButton">More Info</button>
+					</div>						
 				</div>
 				<div class="item">
 					<div class="bannerCardImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(http://localhost:8080/wpISCEB2/wp-content/uploads/2021/02/67677-7-scaled.jpg);">
+					</div>
+					<div class="bannerCardTag">
+						<p class="banerTagText">Diversity</p>
+					</div>
+					<div class="bannerCardContent">
+							<h3 class="bannerCardTitle">Event 2</h3>
+							<p class="bannerCardDescription">It is a long established fact that</p>
+							<button class="bannerCardButton">More Info</button>
 					</div>
 				</div>
 				<div class="item">
 					<div class="bannerCardImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(http://localhost:8080/wpISCEB2/wp-content/uploads/2021/02/67677-7-scaled.jpg);">
 					</div>
+					<div class="bannerCardTag">
+						<p class="banerTagText">Development</p>
+					</div>
+					<div class="bannerCardContent">
+							<h3 class="bannerCardTitle">Event 3</h3>
+							<p class="bannerCardDescription">It is a long established fact that</p>
+							<button class="bannerCardButton">More Info</button>
+					</div>
 				</div>
 				<div class="item">
 					<div class="bannerCardImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(http://localhost:8080/wpISCEB2/wp-content/uploads/2021/02/67677-7-scaled.jpg);">
+					</div>
+					<div class="bannerCardTag">
+						<p class="banerTagText">Incoming</p>
+					</div>
+					<div class="bannerCardContent">
+							<h3 class="bannerCardTitle">Event 4</h3>
+							<p class="bannerCardDescription">It is a long established fact that</p>
+							<button class="bannerCardButton">More Info</button>
 					</div>
 				</div>
 			</div>
