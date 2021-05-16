@@ -20,15 +20,26 @@ $container = get_theme_mod('understrap_container_type');
 <div class="wrapper" id="full-width-page-wrapper">
 
 	<div class="<?php echo esc_attr($container); ?>" id="content">
+		<div class="mainMessage">
+			<h1>Welcome to ISCEB </h1>
+			<p>
+				Hello idth: 1200px;
+				It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. e
+			</p>
+		</div>
 		<section class="homepage-banners">
 			<div class="container-banners">
-				<div class="item">
+				<!-- <div class="item">
 					<div class="bannerCardText">
 						<h2>Welcome! </h2>
 						<p>
 							Hello idth: 1200px;
 							It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. e
 						</p>
+					</div>
+				</div> -->
+				<div class="item">
+					<div class="bannerCardImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(http://localhost:8080/wpISCEB2/wp-content/uploads/2021/02/67677-7-scaled.jpg);">
 					</div>
 				</div>
 				<div class="item">
