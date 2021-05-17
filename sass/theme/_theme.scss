@@ -8,7 +8,9 @@
 }
 
 .homepage-banners{
-    background-color: #1F476B;
+    background: linear-gradient(
+        180deg
+        , #1f476b 50%, #D3EBF8 50%);
     height: 640px;
     display: flex;
     overflow:auto;
@@ -40,10 +42,16 @@
     
 }
 
-.mainMessage > *{
+.mainMessage{
+    padding-top: 15px;
     background-color: #1F476B;
+}
+
+.mainMessage > *{
+    
     margin: 0;
     color: white;
+    text-align: center;
 }
 
 /* Screen larger than 600px? 2 column */
@@ -99,7 +107,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 137px;
+    // height: 137px;
 }
 
 .container-help{
