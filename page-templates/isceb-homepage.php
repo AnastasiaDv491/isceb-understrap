@@ -29,17 +29,8 @@ $container = get_theme_mod('understrap_container_type');
 		</div>
 		<section class="homepage-banners">
 			<div class="container-banners">
-				<!-- <div class="item">
-					<div class="bannerCardText">
-						<h2>Welcome! </h2>
-						<p>
-							Hello idth: 1200px;
-							It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. e
-						</p>
-					</div>
-				</div> -->
 				<div class="item">
-					<div class="bannerCardImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(http://localhost:8080/wpISCEB2/wp-content/uploads/2021/02/67677-7-scaled.jpg);">
+					<div class="bannerCardImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(http://localhost/www/wp-content/uploads/2020/09/bantersnaps-5U_28ojjgms-unsplash-scaled.jpg);">
 					</div>
 					<div class="bannerCardTag">
 						<p class="banerTagText">Education</p>
@@ -51,7 +42,7 @@ $container = get_theme_mod('understrap_container_type');
 					</div>						
 				</div>
 				<div class="item">
-					<div class="bannerCardImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(http://localhost:8080/wpISCEB2/wp-content/uploads/2021/02/67677-7-scaled.jpg);">
+					<div class="bannerCardImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(http://localhost/www/wp-content/uploads/2020/09/bannerCampusCropKleiner-scaled.jpg);">
 					</div>
 					<div class="bannerCardTag">
 						<p class="banerTagText">Diversity</p>
@@ -63,7 +54,7 @@ $container = get_theme_mod('understrap_container_type');
 					</div>
 				</div>
 				<div class="item">
-					<div class="bannerCardImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(http://localhost:8080/wpISCEB2/wp-content/uploads/2021/02/67677-7-scaled.jpg);">
+					<div class="bannerCardImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(http://localhost/www/wp-content/uploads/2020/09/xps-dpbXgTh0Lac-unsplash-1.jpg);">
 					</div>
 					<div class="bannerCardTag">
 						<p class="banerTagText">Development</p>
@@ -75,7 +66,7 @@ $container = get_theme_mod('understrap_container_type');
 					</div>
 				</div>
 				<div class="item">
-					<div class="bannerCardImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(http://localhost:8080/wpISCEB2/wp-content/uploads/2021/02/67677-7-scaled.jpg);">
+					<div class="bannerCardImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(http://localhost/www/wp-content/uploads/2020/09/xps-dpbXgTh0Lac-unsplash-1.jpg);">
 					</div>
 					<div class="bannerCardTag">
 						<p class="banerTagText">Incoming</p>
