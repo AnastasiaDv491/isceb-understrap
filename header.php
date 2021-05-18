@@ -39,8 +39,6 @@ $container = get_theme_mod('understrap_container_type');
 					<?php esc_html_e('Main Navigation', 'understrap'); ?>
 				</h2>
 
-				
-
 				<?php if ('container' === $container) : ?>
 					<div class="container">
 					<?php endif; ?>
@@ -85,13 +83,15 @@ $container = get_theme_mod('understrap_container_type');
 					);
 					?>
 					<?php if ('container' === $container) : ?>
-					</div><!-- .container -->
-				<?php endif; ?>
+						<!-- .container -->
+					<?php endif; ?>
+					<form data-toggle="dropdown" role="search" method="get" id="searchform" class="searchform form-inline my-2 my-lg-0 " action="<?php echo home_url('/'); ?>">
+						<input class="form-control mr-sm-2" type="search" name="s" id="s" placeholder="Search" style="width: 80%;" aria-label="Search">
+						<button class="btn  my-2 my-sm-0" id="searchsubmit" value="Search" type="submit">
+							<i class="fa fa-search" aria-hidden="true"></i>
+						</button>
+					</form>
+					</div>
 
-				<form class="form-inline my-2 my-lg-0">
-					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-				</form>
-			</nav><!-- .site-navigation -->
 
 		</div><!-- #wrapper-navbar end -->
