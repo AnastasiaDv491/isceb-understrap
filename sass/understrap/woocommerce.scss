@@ -14,3 +14,58 @@ figure.woocommerce-product-gallery__wrapper {
 		width: 110px !important;
 	}
 }
+
+
+#woocommerce-wrapper{
+	background-color: #D3EBF8;
+}
+
+.product{
+	
+}
+
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{
+	padding: 15px;
+	border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	background: #1F476B;
+}
+
+//Interesting code to disable shop: https://njengah.com/woocommerce-temporarily-disable-checkout/#:~:text=Steps%20to%20Temporarily%20Disable%20Checkout&text=From%20the%20dashboard%20menu%2C%20click,file%20to%20Temporarily%20Disable%20Checkout
+
+.wc_before_shop_load_widget_area{
+	float: right;
+	// margin: 0.1rem;
+}
+.woocommerce-Price-amount {
+	color:#99d0ed;
+}
+
+
+.search-field {
+	border: none;
+}
+
+/* Screen smaller than 641px?  */
+@media (max-width: 641px) {
+    .wc_before_shop_load_widget_area{
+		margin-top: 10px;
+	}
+}
+
+#woocommerce-wrapper{
+	color: #1F476B;
+}
+
+.select2-selection__arrow{
+	margin-top: 0;
+}
+
+.woocommerce .woocommerce-breadcrumb{
+	color: #1F476B;
+}
+
+.woocommerce .woocommerce-result-count{
+	margin-top: 16px;
+	margin-left: 16px;
+}

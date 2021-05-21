@@ -49,3 +49,14 @@ if ( ! function_exists( 'understrap_add_site_info' ) ) {
 		echo apply_filters( 'understrap_site_info_content', $site_info ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
+
+
+//Load Widget before products
+add_action( 'woocommerce_before_shop_loop', 'action_woocommerce_before_shop_loop', 10, 0 ); 
+function action_woocommerce_before_shop_loop(  ) { 
+    // get_template_part( 'sidebar-templates/sidebar', 'right' );
+	
+	return dynamic_sidebar('wc_before_shop_load_widget_area');
+}; 
+
+
