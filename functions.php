@@ -1,4 +1,5 @@
 <?php
+
 /**
  * UnderStrap functions and definitions
  *
@@ -6,7 +7,7 @@
  */
 
 // Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 // UnderStrap's includes directory.
 $understrap_inc_dir = get_template_directory() . '/inc';
@@ -29,16 +30,42 @@ $understrap_includes = array(
 );
 
 // Load WooCommerce functions if WooCommerce is activated.
-if ( class_exists( 'WooCommerce' ) ) {
+if (class_exists('WooCommerce')) {
 	$understrap_includes[] = '/woocommerce.php';
 }
 
 // Load Jetpack compatibility file if Jetpack is activiated.
-if ( class_exists( 'Jetpack' ) ) {
+if (class_exists('Jetpack')) {
 	$understrap_includes[] = '/jetpack.php';
 }
 
 // Include files.
-foreach ( $understrap_includes as $file ) {
+foreach ($understrap_includes as $file) {
 	require_once $understrap_inc_dir . $file;
 }
+
+
+/* Our own code */ 
+remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+
+
+//Update shopping cart amount automatically
+add_filter('woocommerce_add_to_cart_fragments', 'iconic_cart_count_fragments', 10, 1);
+function iconic_cart_count_fragments($fragments)
+{
+	$fragments['span.shoppingCartCount'] = '<span class="shoppingCartCount">' . WC()->cart->get_cart_contents_count() . '</span>';
+	return $fragments;
+}
+
+
+
+//There is probably a better way but i can't find it
+add_action( 'woocommerce_single_product_summary', 'action_woocommerce_single_product_summary', 10,2 ); 
+// define the woocommerce_single_product_summary callback 
+function action_woocommerce_single_product_summary( $array) { 
+	global $product;
+	wc_display_product_attributes($product);
+}; 
+
+
+         

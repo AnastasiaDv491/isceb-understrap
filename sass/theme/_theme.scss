@@ -1,5 +1,9 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
 
+button{
+    color: #1f476b;
+}
+
 .navbar {
     // box-shadow: 5px 5px 20px;
 }
@@ -161,3 +165,44 @@
         transform: translateX(0);
     }
   }
+
+
+  /* Shopping Cart in Header */
+  .shoppingCartHeader{
+    position:relative;
+    color:  #777;
+    text-decoration: none;
+  }
+
+  .shoppingCartHeader:hover{
+    color:  #99d0ed;
+  }
+
+  a.shoppingCartHeaderLink:hover { text-decoration: none; }
+
+  .shoppingCartCount{
+      background-color:#1F476B ;
+      color: #D3EBF8;
+      border-radius: 50%;
+      padding: 4px 8px 4px 8px;
+        position: relative;
+        top: -15px;
+        right: 15px;
+    //   padding-left: 5px;
+    //   padding-right: 5px;
+      font-size: smaller;
+      text-align: center;
+  }
+.shoppingCartHeaderLink {
+    text-decoration: none;
+}
+
+
+ .site-footer{
+     background-color: #1F476B;
+ }
+ 
+
+ #wrapper-footer{
+    background-color: #1F476B;
+ }

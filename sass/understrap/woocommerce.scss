@@ -9,8 +9,77 @@ figure.woocommerce-product-gallery__wrapper {
 }
 
 // Fix coupon code input width
-@media(min-width: 768px) {
+@media (min-width: 768px) {
 	#coupon_code.input-text {
 		width: 110px !important;
 	}
+}
+
+#woocommerce-wrapper {
+	background-color: #d3ebf8;
+}
+
+.product {
+}
+
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+	padding: 15px;
+	border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	background: #1f476b;
+}
+
+//Interesting code to disable shop: https://njengah.com/woocommerce-temporarily-disable-checkout/#:~:text=Steps%20to%20Temporarily%20Disable%20Checkout&text=From%20the%20dashboard%20menu%2C%20click,file%20to%20Temporarily%20Disable%20Checkout
+
+.wc_before_shop_load_widget_area {
+	float: right;
+	// margin: 0.1rem;
+}
+.woocommerce-Price-amount {
+	color: #99d0ed;
+}
+
+.search-field {
+	border: none;
+}
+
+/* Screen smaller than 641px?  */
+@media (max-width: 641px) {
+	.wc_before_shop_load_widget_area {
+		margin-top: 10px;
+	}
+}
+
+#woocommerce-wrapper {
+	color: #1f476b;
+}
+
+.select2-selection__arrow {
+	margin-top: 0;
+}
+
+.woocommerce .woocommerce-breadcrumb {
+	color: #1f476b;
+}
+
+.woocommerce .woocommerce-result-count {
+	margin-top: 16px;
+	margin-left: 16px;
+}
+
+/* Product page */
+.woocommerce div.product form.cart .button {
+	background-color: #1f476b;
+}
+
+.woocommerce #content div.product div.images,
+.woocommerce div.product div.images,
+.woocommerce-page #content div.product div.images,
+.woocommerce-page div.product div.images {
+	width: 35%;
+}
+
+div.summary.entry-summary > p.price > span > bdi {
+	color: #1f476b;
 }

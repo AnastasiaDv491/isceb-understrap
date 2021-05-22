@@ -39,9 +39,9 @@ $container = get_theme_mod('understrap_container_type');
 					<?php esc_html_e('Main Navigation', 'understrap'); ?>
 				</h2>
 
-				<?php if ('container' === $container) : ?>
-					<div class="container">
-					<?php endif; ?>
+
+				<div class="container-fluid">
+
 
 					<!-- Your site title as branding in the menu -->
 					<?php if (!has_custom_logo()) { ?>
@@ -87,11 +87,23 @@ $container = get_theme_mod('understrap_container_type');
 					<?php endif; ?>
 					<form data-toggle="dropdown" role="search" method="get" id="searchform" class="searchform form-inline my-2 my-lg-0 " action="<?php echo home_url('/'); ?>">
 						<input class="form-control mr-sm-2" type="search" name="s" id="s" placeholder="Search" style="width: 80%;" aria-label="Search">
-						<button class="btn  my-2 my-sm-0" id="searchsubmit" value="Search" type="submit">
+						<button class="btn  my-2 my-sm-0" id="searchsubmit" type="button" form="searchform">
 							<i class="fa fa-search" aria-hidden="true"></i>
 						</button>
 					</form>
-					</div>
+					<?php if (is_shop()) : ?>
+						<a href="<?php echo wc_get_cart_url(); ?>" class="shoppingCartHeaderLink">
+							<div class="shoppingCartHeader">
+								<i class="fa fa-shopping-cart fa-2x"></i>
+								<span class="shoppingCartCount">
+									<?php echo (WC()->cart->get_cart_contents_count()); ?>
+								</span>
+							</div>
+						</a>
+					<?php endif; ?>
+				</div>
 
 
 		</div><!-- #wrapper-navbar end -->
+
+		
