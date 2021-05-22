@@ -98,6 +98,7 @@ button{
 
 .bannerCardImage{
     height: 100%;
+    background-size: cover;
 }
 
 .bannerCardText{
@@ -206,3 +207,90 @@ button{
  #wrapper-footer{
     background-color: #1F476B;
  }
+
+ // Homepage About
+ // TODO: add to mobile :container-about -->taxt-align: left and margin-left: 30px
+
+.homepage-about{
+    margin-bottom: 10em;
+}
+.container-about{
+    text-align: center;
+    margin: auto;
+    display: inline-block;
+    margin-top: 30px;
+    color: #1F476B;
+}
+
+.paragraph-about{
+    display: inline-block;
+    width: 50%;
+}
+//TODO: add flex-direction column for mobile
+
+
+.flex-container{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    color: #1F476B;
+}
+
+.flex-container > div{
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0px 6px 4px rgba(0,0,0,0.25);
+    border-top: solid #1F476B;
+    flex-basis: 30%;
+}
+.item-about{
+    padding:10px;
+    transition: transform .2s;
+}
+
+.item-about:hover{
+    background-color: #D3EBF8;
+    transform: scale(1.05);  
+}
+
+// .homepage-about-blue-bar{
+//     background-color: #6690B6;
+//     height: 224px;
+// }
+
+// .image-meet-reps{
+//     height: 50%;
+//     width: 50%;
+//     padding-left: 30px;
+// }
+.homepage-meet-reps{
+    background-color: #6690B6;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.container-image-meet-reps{
+    position: relative;
+}
+.list-meet-reps{
+    list-style-type: none;  
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 56px;
+    color: white;
+}
+
+
+.list-meet-reps-item{
+    background-color: #1F476B;
+    padding: 5px;
+    width: fit-content;
+    margin-bottom: 0.5em;
+}
+
+.image-meet-reps{
+    width: 40%;
+    margin-left: 30px;
+}
