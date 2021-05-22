@@ -91,7 +91,7 @@ $container = get_theme_mod('understrap_container_type');
 							<i class="fa fa-search" aria-hidden="true"></i>
 						</button>
 					</form>
-					<?php if (is_shop()) : ?>
+					<?php if (function_exists("is_shop") && is_shop()) : ?>
 						<a href="<?php echo wc_get_cart_url(); ?>" class="shoppingCartHeaderLink">
 							<div class="shoppingCartHeader">
 								<i class="fa fa-shopping-cart fa-2x"></i>
