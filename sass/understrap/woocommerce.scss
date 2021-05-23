@@ -17,12 +17,7 @@ figure.woocommerce-product-gallery__wrapper {
 
 /* Our code */
 
-body{
-	color: #1f476b;
-}
-a{
-	color: #1f476b;
-}
+
 
 #woocommerce-wrapper {
 	background-color: #d3ebf8;
@@ -197,3 +192,18 @@ div.summary.entry-summary > p.price > span > bdi {
 	color: #1f476b;
 }
 
+
+/* Shop */
+.woocommerce-loop-product__title{
+	color:#99d0ed;
+}
+
+
+.woocommerce a.added_to_cart{
+	color:#99d0ed;
+}
+
+/* Checkout */
+.showlogin, .showcoupon{
+	text-decoration: underline;
+}
