@@ -68,4 +68,29 @@ function action_woocommerce_single_product_summary( $array) {
 }; 
 
 
-         
+
+add_filter( 'woocommerce_get_breadcrumb', 'isceb_wc_remove_uncategorized_from_breadcrumb' );         
+/**
+ * Remove uncategorized from the WooCommerce breadcrumb.
+ * 
+ * @param  Array $crumbs    Breadcrumb crumbs for WooCommerce breadcrumb.
+ * @return Array   WooCommerce Breadcrumb crumbs with default category removed.
+ */
+function isceb_wc_remove_uncategorized_from_breadcrumb( $crumbs ) {
+	$category 	= get_option( 'default_product_cat' );
+	$caregory_link 	= get_category_link( $category );
+
+	foreach ( $crumbs as $key => $crumb ) {
+		if ( in_array( $caregory_link, $crumb ) ) {
+			unset( $crumbs[ $key ] );
+		}
+	}
+
+	return array_values( $crumbs );
+}
+
+//Only show the woocommerce stuff we need on the single product page
+remove_all_actions("woocommerce_after_single_product_summary");
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
+add_theme_support('align-wide');

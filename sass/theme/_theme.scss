@@ -1,35 +1,33 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
 
-button{
+button {
     color: #1f476b;
 }
 
 .navbar {
     // box-shadow: 5px 5px 20px;
 }
-#main-nav{
+#main-nav {
     margin-bottom: 0px;
 }
 
-.homepage-banners{
-    background: linear-gradient(
-        180deg
-        , #1f476b 50%, #D3EBF8 50%);
+.homepage-banners {
+    background: linear-gradient(180deg, #1f476b 50%, #d3ebf8 50%);
     height: 640px;
     display: flex;
 }
 .wrapper {
-    padding: 0; 
-}
-
-.container-fluid{
     padding: 0;
 }
-.row{
+
+.container-fluid {
+    padding: 0;
+}
+.row {
     margin: 0;
 }
 
-.container-banners{
+.container-banners {
     margin: 0 auto;
     padding-top: 20px;
     display: grid;
@@ -37,20 +35,18 @@ button{
     grid-gap: 0.45rem;
     grid-template-columns: repeat(4, minmax(280px, 1fr));
     grid-auto-flow: column;
-    grid-auto-columns: minmax(240px,1fr);
-    overflow:auto;
+    grid-auto-columns: minmax(240px, 1fr);
+    overflow: auto;
 
     scroll-snap-type: x mandatory;
-    
 }
 
-.mainMessage{
+.mainMessage {
     padding-top: 15px;
-    background-color: #1F476B;
+    background-color: #1f476b;
 }
 
-.mainMessage > *{
-    
+.mainMessage > * {
     margin: 0;
     color: white;
     text-align: center;
@@ -73,7 +69,6 @@ button{
 //     }
 // }
 
-
 /* Screen larger than 600px? 2 column */
 // @media (min-width: 641px) {
 //     .container-banners {
@@ -88,7 +83,7 @@ button{
 //         grid-template-columns: repeat(4, minmax(240px, 1fr));
 //     }
 // }
-.item{
+.item {
     height: 600px;
     padding: 10px;
     position: relative;
@@ -96,66 +91,66 @@ button{
     animation: 1.2s ease-out 0s 1 slideInFromLeft;
 }
 
-.bannerCardImage{
+.bannerCardImage {
     height: 100%;
     background-size: cover;
 }
 
-.bannerCardText{
+.bannerCardText {
     color: white;
 }
 
-.homepage-help-bar{
-    background-color: #D3EBF8;
+.homepage-help-bar {
+    background-color: #d3ebf8;
     position: relative;
 }
-.wrapper-help-button{
+.wrapper-help-button {
     display: flex;
     justify-content: center;
     align-items: center;
     // height: 137px;
 }
 
-.container-help{
+.container-help {
     padding: 10px;
 }
-.help-button{
+.help-button {
     border-radius: 30px;
-    background-color: #1F476B;
+    background-color: #1f476b;
     color: white;
     padding: 0 30px 0 30px;
     border: none;
-    box-shadow: 0px 6px 4px rgba(0,0,0,0.25);
+    box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
 }
 
-.bannerCardContent{
+.bannerCardContent {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform:translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     color: white;
     text-align: center;
 }
 
-.bannerCardButton{
+.bannerCardButton {
     border: none;
     padding: 10px;
     font-weight: bold;
 }
 
-.bannerCardTag{
+.bannerCardTag {
     position: absolute;
-    top:20px;
-    right:20px;
-    background-color: #D3EBF8;
+    top: 20px;
+    right: 20px;
+    background-color: #d3ebf8;
     border-radius: 5px;
 }
 
-.banerTagText{
+.banerTagText {
     margin: 0;
-    padding:4px;
+    padding: 4px;
     font-weight: bold;
-    color: #1F476B;
+    color: #1f476b;
 }
 
 @keyframes slideInFromLeft {
@@ -165,92 +160,90 @@ button{
     100% {
         transform: translateX(0);
     }
-  }
+}
 
-
-  /* Shopping Cart in Header */
-  .shoppingCartHeader{
-    position:relative;
-    color:  #777;
+/* Shopping Cart in Header */
+.shoppingCartHeader {
+    position: relative;
+    color: #777;
     text-decoration: none;
-  }
+}
 
-  .shoppingCartHeader:hover{
-    color:  #99d0ed;
-  }
+.shoppingCartHeader:hover {
+    color: #99d0ed;
+}
 
-  a.shoppingCartHeaderLink:hover { text-decoration: none; }
+a.shoppingCartHeaderLink:hover {
+    text-decoration: none;
+}
 
-  .shoppingCartCount{
-      background-color:#1F476B ;
-      color: #D3EBF8;
-      border-radius: 50%;
-      padding: 4px 8px 4px 8px;
-        position: relative;
-        top: -15px;
-        right: 15px;
+.shoppingCartCount {
+    background-color: #1f476b;
+    color: #d3ebf8;
+    border-radius: 50%;
+    padding: 4px 8px 4px 8px;
+    position: relative;
+    top: -15px;
+    right: 15px;
     //   padding-left: 5px;
     //   padding-right: 5px;
-      font-size: smaller;
-      text-align: center;
-  }
+    font-size: smaller;
+    text-align: center;
+}
 .shoppingCartHeaderLink {
     text-decoration: none;
 }
 
+.site-footer {
+    background-color: #1f476b;
+}
 
- .site-footer{
-     background-color: #1F476B;
- }
- 
+#wrapper-footer {
+    background-color: #1f476b;
+}
 
- #wrapper-footer{
-    background-color: #1F476B;
- }
+// Homepage About
+// TODO: add to mobile :container-about -->taxt-align: left and margin-left: 30px
 
- // Homepage About
- // TODO: add to mobile :container-about -->taxt-align: left and margin-left: 30px
-
-.homepage-about{
+.homepage-about {
     margin-bottom: 10em;
 }
-.container-about{
+.container-about {
     text-align: center;
     margin: auto;
     display: inline-block;
     margin-top: 30px;
-    color: #1F476B;
+    color: #1f476b;
 }
 
-.paragraph-about{
+.paragraph-about {
     display: inline-block;
     width: 50%;
 }
 //TODO: add flex-direction column for mobile
 
-
-.flex-container{
+.flex-container {
     display: flex;
     align-items: center;
-    justify-content: center; 
-    color: #1F476B;
+    justify-content: center;
+    color: #1f476b;
 }
 
-.flex-container > div{
+.flex-container > div {
     margin: 20px;
     text-align: center;
-    box-shadow: 0px 6px 4px rgba(0,0,0,0.25);
-    border-top: solid #1F476B;
+    box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
+    border-top: solid #1f476b;
     flex-basis: 30%;
 }
-.item-about{
-    padding:10px;
-    transition: transform .2s;
+.item-about {
+    padding: 10px;
+    transition: transform 0.2s;
 }
 
-.item-about:hover{
-    background-color: #D3EBF8;
-    transform: scale(1.05);  
+.item-about:hover {
+    background-color: #d3ebf8;
+    transform: scale(1.05);
 }
 
 // .homepage-about-blue-bar{
@@ -263,16 +256,16 @@ button{
 //     width: 50%;
 //     padding-left: 30px;
 // }
-.homepage-meet-reps{
-    background-color: #6690B6;
+.homepage-meet-reps {
+    background-color: #6690b6;
     padding-top: 20px;
     padding-bottom: 20px;
 }
-.container-image-meet-reps{
+.container-image-meet-reps {
     position: relative;
 }
-.list-meet-reps{
-    list-style-type: none;  
+.list-meet-reps {
+    list-style-type: none;
     position: absolute;
     top: 20%;
     left: 30%;
@@ -282,15 +275,28 @@ button{
     color: white;
 }
 
-
-.list-meet-reps-item{
-    background-color: #1F476B;
+.list-meet-reps-item {
+    background-color: #1f476b;
     padding: 5px;
     width: fit-content;
     margin-bottom: 0.5em;
 }
 
-.image-meet-reps{
+.image-meet-reps {
     width: 40%;
     margin-left: 30px;
 }
+
+/* For gutenberg */
+.col-md-12 {
+    padding: 0;
+}
+
+.border-around-block {
+    border-top: solid;
+    // border-style: solid;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 15px;
+    margin: 10px;
+}
+
