@@ -85,12 +85,24 @@ $container = get_theme_mod('understrap_container_type');
 					<?php if ('container' === $container) : ?>
 						<!-- .container -->
 					<?php endif; ?>
-					<form data-toggle="dropdown" role="search" method="get" id="searchform" class="searchform form-inline my-2 my-lg-0 " action="<?php echo home_url('/'); ?>">
-						<input class="form-control mr-sm-2" type="search" name="s" id="s" placeholder="Search" style="width: 80%;" aria-label="Search">
-						<button class="btn  my-2 my-sm-0" id="searchsubmit" type="button" form="searchform">
-							<i class="fa fa-search" aria-hidden="true"></i>
-						</button>
-					</form>
+					<?php if (function_exists("is_account_page")&&is_user_logged_in()) : ?>
+						<a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="MyAccountHeaderLink">
+							<div class="MyAccountHeader">
+
+								
+								<div class="myAccountTextHeader">
+									<?php
+									$user_info = get_userdata(get_current_user_id());
+									$first_name = $user_info->first_name;
+									if ($first_name != '') {
+										esc_html_e("Hi " . $first_name);
+									}
+									?>
+								</div>
+								<i class="fa fa-user-circle fa-2x"></i>
+							</div>
+						</a>
+					<?php endif; ?>
 					<?php if (function_exists("is_shop") && is_shop()) : ?>
 						<a href="<?php echo wc_get_cart_url(); ?>" class="shoppingCartHeaderLink">
 							<div class="shoppingCartHeader">
@@ -101,9 +113,15 @@ $container = get_theme_mod('understrap_container_type');
 							</div>
 						</a>
 					<?php endif; ?>
+
+					<form data-toggle="dropdown" role="search" method="get" id="searchform" class="searchform form-inline my-2 my-lg-0 " action="<?php echo home_url('/'); ?>">
+						<input class="form-control mr-sm-2" type="search" name="s" id="s" placeholder="Search" style="width: 80%;" aria-label="Search">
+						<button class="btn  my-2 my-sm-0" id="searchsubmit" type="button" form="searchform">
+							<i class="fa fa-search" aria-hidden="true"></i>
+						</button>
+					</form>
+
 				</div>
 
 
 		</div><!-- #wrapper-navbar end -->
-
-		

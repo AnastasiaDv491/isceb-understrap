@@ -194,13 +194,7 @@ a.shoppingCartHeaderLink:hover {
     text-decoration: none;
 }
 
-.site-footer {
-    background-color: #1f476b;
-}
 
-#wrapper-footer {
-    background-color: #1f476b;
-}
 
 // Homepage About
 // TODO: add to mobile :container-about -->taxt-align: left and margin-left: 30px
@@ -300,3 +294,35 @@ a.shoppingCartHeaderLink:hover {
     margin: 10px;
 }
 
+#wrapper-footer-full{
+    color: #d3ebf8;
+    background-color: #1f476b;
+}
+
+#wrapper-footer-full a{
+    color: #d3ebf8;
+}
+
+.site-footer {
+    background-color: #1f476b;
+}
+
+#wrapper-footer{
+    color: #d3ebf8;
+    background-color: #1f476b;
+}
+
+#wrapper-footer a{
+    color: #d3ebf8;
+}
+
+
+.MyAccountHeaderLink{
+    margin-right: 1em;
+}
+
+.myAccountTextHeader{
+    float:left;
+    margin-top: 5px;
+    margin-right: 5px;
+}
