@@ -4,16 +4,16 @@ button {
     color: #1f476b;
 }
 
-body{
-	color: #1f476b;
-}
-
-a{
+body {
     color: #1f476b;
 }
 
-a:hover{
-    color:#99d0ed;
+a {
+    color: #1f476b;
+}
+
+a:hover {
+    color: #99d0ed;
 }
 
 .navbar {
@@ -206,8 +206,6 @@ a.shoppingCartHeaderLink:hover {
     text-decoration: none;
 }
 
-
-
 // Homepage About
 // TODO: add to mobile :container-about -->taxt-align: left and margin-left: 30px
 
@@ -306,12 +304,12 @@ a.shoppingCartHeaderLink:hover {
     margin: 10px;
 }
 
-#wrapper-footer-full{
+#wrapper-footer-full {
     color: #d3ebf8;
     background-color: #1f476b;
 }
 
-#wrapper-footer-full a{
+#wrapper-footer-full a {
     color: #d3ebf8;
 }
 
@@ -319,22 +317,47 @@ a.shoppingCartHeaderLink:hover {
     background-color: #1f476b;
 }
 
-#wrapper-footer{
+#wrapper-footer {
     color: #d3ebf8;
     background-color: #1f476b;
 }
 
-#wrapper-footer a{
+#wrapper-footer a {
     color: #d3ebf8;
 }
 
-
-.MyAccountHeaderLink{
+.MyAccountHeaderLink {
     margin-right: 1em;
 }
 
-.myAccountTextHeader{
-    float:left;
+.myAccountTextHeader {
+    float: left;
     margin-top: 5px;
     margin-right: 5px;
 }
+
+/* Registration Page */
+.col {
+    padding-left: 0;
+}
+.lastname {
+    padding-right: 0;
+}
+.col-9 {
+    padding-right: 0;
+}
+
+.errorMessageRegistration {
+    text-align: center;
+    color: red;
+    margin-top: 1em;
+}
+
+.formPartTitle{
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.tab {
+    display: none;
+  }

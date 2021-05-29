@@ -94,3 +94,25 @@ remove_all_actions("woocommerce_after_single_product_summary");
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
 add_theme_support('align-wide');
+
+/* Not really the place, move to plugin */
+
+add_action( 'admin_post_nopriv_isceb_new_user_registration', 'isceb_new_user_registration' );
+add_action( 'admin_post_isceb_new_user_registration', 'isceb_new_user_registration' );
+function isceb_new_user_registration(){
+	
+	if(wp_verify_nonce($_POST['isceb_csrf'],'isceb-csrf')){
+		echo "hello";
+		var_dump($_POST);
+		$field_names = ['first_name','last_name','rnumber','email','area_code','phone'];
+		foreach ($field_names as $field_name) {
+			$field_content_trimmed = trim($_POST[$field_name]);
+			
+
+			if(isset($field_content_trimmed) && $field_content_trimmed === ''){
+				echo($field_name . ' is emtpy ');
+			}
+		}
+	}
+	
+}

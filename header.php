@@ -85,11 +85,11 @@ $container = get_theme_mod('understrap_container_type');
 					<?php if ('container' === $container) : ?>
 						<!-- .container -->
 					<?php endif; ?>
-					<?php if (function_exists("is_account_page")&&is_user_logged_in()) : ?>
+					<?php if (function_exists("is_account_page") && is_user_logged_in()) : ?>
 						<a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="MyAccountHeaderLink">
 							<div class="MyAccountHeader">
 
-								
+
 								<div class="myAccountTextHeader">
 									<?php
 									$user_info = get_userdata(get_current_user_id());
@@ -102,6 +102,9 @@ $container = get_theme_mod('understrap_container_type');
 								<i class="fa fa-user-circle fa-2x"></i>
 							</div>
 						</a>
+					<?php endif; ?>
+					<?php if (function_exists("is_account_page") && !is_user_logged_in()) : ?>
+						<a href="">Login</a>
 					<?php endif; ?>
 					<?php if (function_exists("is_shop") && is_shop()) : ?>
 						<a href="<?php echo wc_get_cart_url(); ?>" class="shoppingCartHeaderLink">
