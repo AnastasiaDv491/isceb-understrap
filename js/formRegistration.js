@@ -1,3 +1,6 @@
+
+//Inspiration: https://www.w3schools.com/howto/howto_js_form_steps.asp
+
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
@@ -6,21 +9,17 @@ function showTab(n) {
     // This function will display the specified tab of the form ...
     var x = document.getElementsByClassName("tab");
 
-
-    console.log(x);
-
-
     for (let index = 0; index < x.length; index++) {
         if (index != n) {
             var inputFieldsInCurrentTab = x[index].getElementsByTagName('input');
 
             for (let indexFields = 0; indexFields < inputFieldsInCurrentTab.length; indexFields++) {
-                inputFieldsInCurrentTab[indexFields].type = "hidden";
+               inputFieldsInCurrentTab[indexFields].disabled = "disabled";
 
             }
 
             var selectFieldsInCurrentTab = x[index].getElementsByTagName('select');
-            console.log(selectFieldsInCurrentTab);
+
 
             for (let indexSelectFields = 0; indexSelectFields < selectFieldsInCurrentTab.length; indexSelectFields++) {
                 selectFieldsInCurrentTab[indexSelectFields].disabled = "disabled";
@@ -28,15 +27,16 @@ function showTab(n) {
             }
         }
         else{
+            //If it's the current page enable input fields
             var inputFieldsInCurrentTab = x[index].getElementsByTagName('input');
 
             for (let indexFields = 0; indexFields < inputFieldsInCurrentTab.length; indexFields++) {
-                inputFieldsInCurrentTab[indexFields].type = "visible";
+                inputFieldsInCurrentTab[indexFields].disabled = "";
 
             }
 
             var selectFieldsInCurrentTab = x[index].getElementsByTagName('select');
-            console.log(selectFieldsInCurrentTab);
+
 
             for (let indexSelectFields = 0; indexSelectFields < selectFieldsInCurrentTab.length; indexSelectFields++) {
                 selectFieldsInCurrentTab[indexSelectFields].disabled = "";
@@ -88,6 +88,26 @@ function nextPrev(n) {
     showTab(currentTab);
 }
 
-function disableInputAndSelectFieldsInAllTabsExceptCurren(){
+document.getElementById("password").addEventListener('input',passwordCheck);
+document.getElementById("passwordConfirm").addEventListener('input',passwordCheck);
+var form = document.forms["iscebRegistrationForm"];
+function passwordCheck(input) {
+    var passwordConfirmField = document.getElementById("passwordConfirm");
+    var passwordField = document.getElementById('password');
 
+    console.log(passwordField.value);
+    console.log(passwordConfirmField.value);
+
+    if (passwordConfirmField.value != passwordField.value) {
+        input.target.setCustomValidity('Passwords Must be Matching.');
+        if(passwordConfirmField.value != ""){
+            input.target.reportValidity();
+        }
+        
+        
+    } else {
+        // input is valid -- reset the error message
+        passwordConfirmField.setCustomValidity('');
+        passwordField.setCustomValidity('');
+    }
 }
