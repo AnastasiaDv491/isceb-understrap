@@ -336,7 +336,7 @@ a.shoppingCartHeaderLink:hover {
     margin-right: 5px;
 }
 
-/* Registration Page */
+/* Registration Page Custom Old */
 .col {
     padding-left: 0;
 }
@@ -361,3 +361,15 @@ a.shoppingCartHeaderLink:hover {
 .tab {
     display: none;
   }
+
+/* Registration page with plugin New */
+.wrapperregistration{
+    background: linear-gradient(
+        180deg
+        , #1f476b 50%, #d3ebf8 50%);
+        padding: 5px;
+}
+
+.wrapperregistration > .container{
+    margin-bottom: 2em;
+}
