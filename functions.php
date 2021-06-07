@@ -46,6 +46,7 @@ foreach ($understrap_includes as $file) {
 
 
 /* Our own code */
+
 remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
 
 
@@ -110,8 +111,8 @@ function isceb_new_user_registration()
 
 		$text_field_names = ['first_name', 'last_name', 'rnumber', 'email', 'phone'];
 
-		if(isset($_POST['username']) & validate_username($_POST['username'])){
-			
+		if (isset($_POST['username']) & validate_username($_POST['username'])) {
+
 			foreach ($text_field_names as $field_name) {
 				$field_name = null;
 				if (isset($field_name)) {
@@ -124,11 +125,9 @@ function isceb_new_user_registration()
 							'response' 	=> 403,
 						)
 					);
-					
 				}
 			}
-		}
-		else{
+		} else {
 			wp_die(
 				"Username for registration is invalid",
 				"Error during registration",
@@ -137,41 +136,100 @@ function isceb_new_user_registration()
 				)
 			);
 		}
-
-		
-		
 	}
 }
 
-/*UserWP test extension*/ 
-// The filter callback function.
-function example_callback( $string) {
-    // (maybe) modify $string.
-	// var_dump($string);
-	// error_log( print_r($string,true));
-	// echo("hell");
+/*UserWP test extension*/
 
+/**
+ * Usable hooks
+ * ‘uwp_before_validate’ => Triggers before fields validation
+ * ‘uwp_validate_result’ => Filter for additional validations
+ * ‘uwp_after_validate’ => Triggers after validation
+ * ‘uwp_before_extra_fields_save’ => Filter for modifying custom fields before save
+ * ‘uwp_after_extra_fields_save’ => Filter for modifying custom fields after save
+ * ‘uwp_after_custom_fields_save’ => Triggers after custom fields saved
+ * ‘uwp_after_process_register’ => Triggers after registration is complete which
+ */
 
-	$string['Order'] = 
+/**
+ * Add tab to edit account page
+ * uwp_account_all_tabs
+ */
+add_filter('uwp_account_available_tabs', 'add_extra_tab_to_edit_account_page', 10, 3);
+function add_extra_tab_to_edit_account_page($tabs)
+{
+
+	// 	["title" => 'Orders',
+	// 	 'icon' => 'fas fa-sign-out-alt'];
+	// 	// 'link' => 'http://localhost/www/my-account/orders/'];
+
+	$new_tab = array('Order' => ["title" => 'Orders',	 'icon' => 'fas fa-sign-out-alt']);
+
+	//Remove notifcations tab
+	unset($new_tab["Notifications"]);
+
 	
-		["title" => 'Orders',
-		 'icon' => 'fas fa-sign-out-alt'];
-		// 'link' => 'http://localhost/www/my-account/orders/'];
 
-	// var_dump($string);
-    return $string;
+	$new_tabs = insertInArrayAfterPosition($tabs, $new_tab, 3);
+	unset($new_tabs['notifications']);
+
+
+
+	return $new_tabs;
 }
-add_filter( 'uwp_profile_tab_settings', 'example_callback', 10, 3 );
 
-add_filter( 'uwp_account_all_tabs', 'example_callback', 10, 3 );
+function insertInArrayAfterPosition($array, $toInsertValue, $position)
+{
+	return array_slice($array, 0, $position, true) + $toInsertValue +  array_slice($array, $position, count($array) - 3, true);
+}
 
-/* Add the following ot class-account.php*/
-/*if($type == "Order"){
-            // echo do_shortcode('[woocommerce_order_tracking]');
-            woocommerce_account_orders( 1);
-        }*/
 
-/* Maybe even better, remove  add_action( 'uwp_account_form_display', array($this, 'display_form'), 10, 1 );
-and then add function here (best in seperate plugin)*/
+add_filter('uwp_account_page_title', 'isceb_account_page_title_cb', 10, 2);
+function isceb_account_page_title_cb($title, $type){
+	if ( $type == 'Order' ) {
+		$title = __( 'Your orders', 'uwp-messaging' );
+	}
 
+	return $title;
+}
+
+
+
+
+
+add_action('uwp_account_form_display', 'isceb_display_form', 20, 1);
+
+/**
+ * Extends the displays account form
+ *
+ * @since       1.0.0
+ *
+ * @param array $type Type of the form
+ *
+ */
+function isceb_display_form($type)
+{
+	if ($type == "Order") {
+		// echo do_shortcode('[woocommerce_order_tracking]');
+		// woocommerce_account_orders( 1);
+		woocommerce_account_orders(1);
+	}
+}
+
+//
+
+add_action('uwp_after_process_account','isceb_after_custom_field_save',30,1);
+function isceb_after_custom_field_save($data){
+	// error_log("hello");
+	// error_log(print_r($action,true));
+	// error_log(print_r($data,true));
+	// error_log(print_r($result,true));
+	// error_log(print_r($user_id,true));
+
+	// var_dump($data);
+
+}
+
+// uwp_after_custom_fields_updated
 // remove_action('uwp_account_menu_display','uwp_add_account_menu_links');
