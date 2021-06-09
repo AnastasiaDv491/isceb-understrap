@@ -140,6 +140,7 @@ function isceb_new_user_registration()
 }
 
 /*UserWP test extension*/
+/* TODO: Move to seperate plugin */
 
 /**
  * Usable hooks
@@ -214,22 +215,106 @@ function isceb_display_form($type)
 		// echo do_shortcode('[woocommerce_order_tracking]');
 		// woocommerce_account_orders( 1);
 		woocommerce_account_orders(1);
+		print_r(get_user_meta(get_current_user_id()));
 	}
 }
 
 //
 
-add_action('uwp_after_process_account','isceb_after_custom_field_save',30,1);
-function isceb_after_custom_field_save($data){
-	// error_log("hello");
-	// error_log(print_r($action,true));
-	// error_log(print_r($data,true));
-	// error_log(print_r($result,true));
-	// error_log(print_r($user_id,true));
+/**
+ * Change of an account
+ */
+add_action('uwp_after_process_account','isceb_after_account_save',30,1);
+/* Data format
+Array
+(
+    [first_name] => ddsdf
+    [last_name] => ddqsdf
+    [display_name] => dddfsq
+    [email] => stijn.pinkhof@hotmail.comdsfq
+    [home_adress] => ffffqsdfsdfddd
+    [bio] => dddsdfqsdf
+    [uwp_account_nonce] => aa5f6bde30
+    [uwp_account_submit] => Update Account
+)
 
-	// var_dump($data);
+*/
+
+function isceb_after_account_save($data){
+	$user = wp_get_current_user();
+	error_log(print_r($data,true));
 
 }
 
-// uwp_after_custom_fields_updated
-// remove_action('uwp_account_menu_display','uwp_add_account_menu_links');
+
+add_action('uwp_after_process_register','isceb_after_register',30,2);
+function isceb_after_register($data,$user_id){
+
+
+	error_log(print_r($data,true));
+	error_log(print_r($user_id,true));
+
+}
+
+function isceb_sync_user_with_woocommerce($data,$user_ID){
+	$metaFieldsToUpdate = array(
+		'billing_first_name' => $data['first_name'],
+		'billing_last_name' => $data['last_name'],
+	);
+}
+
+
+
+/*
+Possible fields
+[first_name] 
+ [last_name] 
+  [billing_first_name] 
+   [billing_last_name] => Array ( [0] => name )
+    [billing_company] => Array ( [0] => Odisee ) 
+	[billing_address_1] => Array ( [0] => field ) 
+	[billing_address_2] => Array ( [0] => 26 ) 
+	[billing_city] => Array ( [0] => Brussel )
+	 [billing_postcode] => Array ( [0] => 1000 ) 
+	 [billing_country] => Array ( [0] => BE )
+	  [billing_state] => Array ( [0] => dd ) 
+	  [billing_phone] => Array ( [0] => +32123456789 ) 
+	  [billing_email] => Array ( [0] => example@example.com ) 
+	  [shipping_first_name] => Array ( [0] => aname ) 
+	  [shipping_last_name] => Array ( [0] => anothername ) 
+	  [shipping_company] => Array ( [0] => Odisee ) 
+	  [shipping_address_1] => Array ( [0] => Straatnaam ) 
+	  [shipping_address_2] => Array ( [0] => 13 ) 
+	  [shipping_city] => Array ( [0] => Schaarbeek ) 
+	  [shipping_postcode] => Array ( [0] => 1100 ) 
+	  [shipping_country] => Array ( [0] => BE ) 
+	  [shipping_state] => Array ( [0] => dd ) 
+
+	  */
+
+	  
+	  add_filter( 'uwp_form_fields_predefined', 'isceb_add_custom_field_userswp', 10, 2 );
+	  function isceb_add_custom_field_userswp($custom_fields, $type){
+		  // WordPress
+		$custom_fields['testisceb'] = array(
+			'field_type' => 'text',
+			'class'      => 'isceb-wc-field-sync',
+			'field_icon' => 'fab fa-wordpress-simple',
+			'site_title' => __( 'Isceb test', 'userswp' ),
+			'help_text'  => __( 'Let users enter their WordPress profile url.', 'userswp' ),
+			'defaults'   => array(
+				'admin_title'   => 'Test Isceb',
+				'site_title'    => 'Test Isceb',
+				'form_label'    => __( 'WordPress url', 'userswp' ),
+				'htmlvar_name'  => 'wordpress',
+				'is_active'     => 1,
+				'default_value' => '',
+				'is_required'   => 0,
+				'required_msg'  => '',
+				'field_icon'    => 'fab fa-wordpress-simple',
+				'css_class'     => 'btn-wordpress'
+			)
+		);
+
+		return $custom_fields;
+	  }
