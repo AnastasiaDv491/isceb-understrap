@@ -124,7 +124,7 @@ $container = get_theme_mod('understrap_container_type');
 			</div>
 		</section>
 
-		<section class="homepage-meet-reps">
+		<!-- <section class="homepage-meet-reps">
 			<div class="container-meet-reps">
 				<div class="container-image-meet-reps">
 					<img class="image-meet-reps" src="http://localhost:8080/wpISCEB2/wp-content/uploads/2021/02/67676-scaled.jpg">
@@ -136,7 +136,7 @@ $container = get_theme_mod('understrap_container_type');
 				</div>
 
 			</div>
-		</section> 
+		</section>  -->
 
 
 		<div class="row">
