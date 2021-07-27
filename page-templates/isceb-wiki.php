@@ -27,10 +27,10 @@ if (is_front_page()) {
         <header class="isceb-wiki-home-header">
             <h1 id="isceb-wiki-home-search-headerText">Welcome to ISCEB WIKI! </h1>
 
-            <div id="isceb-wiki-home-search-wrap">
-                <input type="text" id="isceb-wiki-home-search-field" name="searchText" placeholder=" What are you looking for?">
-                <button type="button" id="isceb-wiki-home-search-button" class="btn btn-secondary">Search</button>
-            </div>
+            <form id="isceb-wiki-home-search-wrap">
+                <input type="text" id="isceb-wiki-home-search-field" name="searchText" placeholder="What are you looking for?">
+                <button type="button" id="isceb-wiki-home-search-button" class="btn btn-secondary"><i class="fa fa-search"></i></button>
+            </form>
         </header>
 
         <main class="site-main" id="main" role="main">

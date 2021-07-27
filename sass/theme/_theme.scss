@@ -416,15 +416,17 @@ a.shoppingCartHeaderLink:hover {
 	align-items: center;
 }
 
-#isceb-wiki-home-search-wrap{
+#isceb-wiki-home-search-wrap {
 	margin-top: 3rem;
 	margin-bottom: 5rem;
 	display: flex;
 	position: relative;
 }
 
+
+
 #isceb-wiki-home-search-field {
-	
+
 	width: 20vw;
 	border-radius: 25px;
 	border: 0;
@@ -433,6 +435,7 @@ a.shoppingCartHeaderLink:hover {
 	font-weight: bold;
 	padding: 0.5rem;
 	// line-height: 2rem;
+
 }
 
 /*placeholder style on main wiki page */
@@ -443,7 +446,7 @@ a.shoppingCartHeaderLink:hover {
 #isceb-wiki-home-search-field:focus::-webkit-input-placeholder {
 	/* Chrome/Opera/Safari */
 	color: transparent;
-	
+
 }
 
 #isceb-wiki-home-search-field:focus::-moz-placeholder {
@@ -459,7 +462,7 @@ a.shoppingCartHeaderLink:hover {
 #isceb-wiki-home-search-field:focus::-moz-placeholder {
 	/* Firefox 18- */
 	color: transparent;
-	
+
 }
 
 /*End placeholder style on main wiki page*/
@@ -469,12 +472,15 @@ a.shoppingCartHeaderLink:hover {
 
 }
 
-#isceb-wiki-home-search-button{
+#isceb-wiki-home-search-button {
 	border-radius: 25px;
-	padding-left: 2rem;
-	padding-right: 2rem;
-	position: absolute;
-    right: -10rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+
+	position: relative;
+	left: -2.1rem;
+
+
 }
 
 
@@ -482,3 +488,4 @@ a.shoppingCartHeaderLink:hover {
 	margin-top: 2rem;
 	color: white;
 }
+
