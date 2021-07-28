@@ -414,6 +414,9 @@ a.shoppingCartHeaderLink:hover {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
+
+	height: 25vh;
 }
 
 #isceb-wiki-home-search-wrap {
@@ -489,3 +492,49 @@ a.shoppingCartHeaderLink:hover {
 	color: white;
 }
 
+.isceb-grid-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, minmax(200px, 1fr));
+	grid-column-gap: 10vw;
+	grid-row-gap: 5vh;
+
+	margin-left: 10vw;
+	margin-right: 10vw;
+	margin-bottom: 10vh;
+	margin-top: 10vh;
+
+}
+
+.isceb-grid-item{
+	border-top: solid #1f476b;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+	text-align: center;
+
+	padding: 2em;
+	padding-top: 1em;
+}
+
+.isceb-grid-item-header{
+	padding-top: 1rem;
+}
+
+.isceb-wiki-button-not-gb{
+	background-color: $primary;
+	color: white;
+	border: none;
+    border-radius: 28px;
+    box-shadow: none;
+    cursor: pointer;
+	font-size: 18px;
+    padding: 12px 24px;
+	text-align: center;
+    text-decoration: none;
+    overflow-wrap: break-word;
+	
+}
+
+.isceb-wiki-button-not-gb:hover{
+	background-color: $secondary;
+	color: $primary;
+}
