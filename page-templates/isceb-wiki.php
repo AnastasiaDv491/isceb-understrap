@@ -14,9 +14,6 @@ defined('ABSPATH') || exit;
 get_header();
 $container = get_theme_mod('understrap_container_type');
 
-if (is_front_page()) {
-    get_template_part('global-templates/hero');
-}
 ?>
 
 <div class="wrapper" id="full-width-page-wrapper">
@@ -53,11 +50,13 @@ if (is_front_page()) {
                 if ($query->have_posts()) :
 
                     while ($query->have_posts()) : $query->the_post();
+                        echo '<a href="'.get_permalink().'" class="isceb-grid-item-url"> ';
                         echo '<div class="isceb-grid-item">';
                         echo get_the_post_thumbnail($post->ID, array(75, 75),  array('class' => 'isceb-grid-item-logo'));;
                         echo '<h4 class="isceb-grid-item-header">' . get_the_title() . '</h4>';
                         echo '<p>' . get_the_content() . '<p>';
                         echo '</div>';
+                        echo '</a>';
                     endwhile;
 
                     wp_reset_postdata();
@@ -70,35 +69,10 @@ if (is_front_page()) {
                     <p>Some text here that is long</p>
                     <button class="isceb-wiki-button-not-gb"> Upload files </button>
                 </div>
-                <!--<div class="isceb-grid-item">
-                    <h4>XXX</h4>
-                    <p>Some text here that is long</p>
-                </div>
-                <div class="isceb-grid-item">
-                    <h4>XXX</h4>
-                    <p>Some text here that is long</p>
-                </div>
-                <div class="isceb-grid-item">
-                    <h4>XXX</h4>
-                    <p>Some text here that is long</p>
-                </div>
-                <div class="isceb-grid-item">
-                    <h4>XXX</h4>
-                    <p>Some text here that is long</p>
-                </div>
-                <div class="isceb-grid-item">
-                    <h4>XXX</h4>
-                    <p>Some text here that is long</p>
-                </div> -->
             </div>
-
-        </main><!-- #main -->
-
-
-
-
+        </main>
     </div>
-</div><!-- #full-width-page-wrapper -->
+</div>
 
 <?php
 get_footer();

@@ -184,5 +184,17 @@ if (!function_exists('understrap_widgets_init')) {
 			)
 		);
 
+		register_sidebar(
+			array(
+				'name'          => __('ISCEB Wiki sidebar', 'understrap'),
+				'id'            => 'isceb_wiki_sidebar_nav',
+				'description'   => __('Left sidebar for ISCEB WIKI', 'understrap'),
+				'before_widget' => '<div id="%1$s" class="isceb_wiki_sidebar_nav %2$s dynamic-classes">',
+				'after_widget'  => '</div>',
+				'before_sidebar' => '<span>',
+				
+			)
+		);
+
 	}
 } // End of function_exists( 'understrap_widgets_init' ).

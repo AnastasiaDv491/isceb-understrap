@@ -436,7 +436,7 @@ a.shoppingCartHeaderLink:hover {
 	text-align: center;
 	color: #1f476b;
 	font-weight: bold;
-	padding: 0.5rem;
+	padding: 1rem;
 	// line-height: 2rem;
 
 }
@@ -477,11 +477,11 @@ a.shoppingCartHeaderLink:hover {
 
 #isceb-wiki-home-search-button {
 	border-radius: 25px;
-	padding-left: 0.5rem;
-	padding-right: 0.5rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
 
 	position: relative;
-	left: -2.1rem;
+	left: -3rem;
 
 
 }
@@ -502,7 +502,7 @@ a.shoppingCartHeaderLink:hover {
 	margin-left: 10vw;
 	margin-right: 10vw;
 	margin-bottom: 10vh;
-	margin-top: 10vh;
+	margin-top: 5vh;
 
 }
 
@@ -513,6 +513,14 @@ a.shoppingCartHeaderLink:hover {
 
 	padding: 2em;
 	padding-top: 1em;
+
+	transition: transform .2s;
+	
+}
+
+
+.isceb-grid-item:hover{
+    transform: scale(1.05);
 }
 
 .isceb-grid-item-header{
@@ -531,10 +539,29 @@ a.shoppingCartHeaderLink:hover {
 	text-align: center;
     text-decoration: none;
     overflow-wrap: break-word;
+
+
 	
 }
 
 .isceb-wiki-button-not-gb:hover{
 	background-color: $secondary;
-	color: $primary;
+	color: $primary;	
+}
+
+a.isceb-grid-item-url{
+	color: inherit;
+	text-decoration: none;
+}
+
+// ISCEB Wiki Navigation
+#isceb-wiki-sidebar{
+	background-color: $primary;
+}
+
+.isceb-wiki-programs-nav-links{
+	color: ivory;
+}
+.isceb-wiki-phase-nav-links > li > a{
+	color: ivory;
 }
