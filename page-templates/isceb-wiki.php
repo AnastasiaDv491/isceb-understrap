@@ -45,20 +45,20 @@ $container = get_theme_mod('understrap_container_type');
                     'orderby' => 'title',
                     'posts_per_page' => -1
                 );
-
+                
                 $query = new WP_Query($wiki_programs_args);
                 if ($query->have_posts()) :
-
+                    remove_filter('get_the_excerpt', 'wp_trim_excerpt');
                     while ($query->have_posts()) : $query->the_post();
                         echo '<a href="'.get_permalink().'" class="isceb-grid-item-url"> ';
                         echo '<div class="isceb-grid-item">';
                         echo get_the_post_thumbnail($post->ID, array(75, 75),  array('class' => 'isceb-grid-item-logo'));;
                         echo '<h4 class="isceb-grid-item-header">' . get_the_title() . '</h4>';
-                        echo '<p>' . get_the_content() . '<p>';
+                        echo '<p>' . get_the_excerpt() . '<p>';
                         echo '</div>';
                         echo '</a>';
                     endwhile;
-
+                    add_filter('get_the_excerpt', 'wp_trim_excerpt');
                     wp_reset_postdata();
                 endif;
 
