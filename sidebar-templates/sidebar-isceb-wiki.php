@@ -19,33 +19,69 @@ $sidebar_pos = get_theme_mod('understrap_sidebar_position');
     <div class="isceb-nav-header">
 
 
-        <h4><i class="fa fa-home" aria-hidden="true"></i>ISCEB Wiki</h4>
+        <h4><a href="<?php echo (get_site_url().'/wiki')?>" id="isceb-wiki-nav-header-text"><i class="fa fa-home" aria-hidden="true"></i>ISCEB Wiki</a></h4>
 
     </div>
 
     <?php if (is_active_sidebar('isceb_wiki_sidebar_nav')) {
         dynamic_sidebar('ISCEB Wiki sidebar');
     } else {
+
+        switch (get_post_type()) {
+            case 'program':
+                $wiki_phases = get_posts(array(
+                    'post_type' => 'phase',
+                    'order' => 'ASC',
+                    'meta_query' => array(
+                        array(
+                            'key' => 'program', // name of custom field
+                            'value' => '"' . $post->ID . '"', // matches exactly "123", not just 123. This prevents a match for "1234"
+                            'compare' => 'LIKE'
+                        )
+                    )
+                ));
+                $title_of_page = get_the_title();
+                break;
+            case 'phase':
+                $programs_of_phase = get_field('program');
+                $wiki_phases = get_posts(array(
+                    'post_type' => 'phase',
+                    'order' => 'ASC',
+                    'meta_query' => array(
+                        array(
+                            'key' => 'program', // name of custom field
+                            'value' => '"' . $programs_of_phase[0]->ID . '"', // matches exactly "123", not just 123. This prevents a match for "1234"
+                            'compare' => 'LIKE'
+                        )
+                    )
+                ));
+                $title_of_page = $programs_of_phase[0]->post_title;
+                break;
+            case 'course':
+                $phases_of_course = get_field('phases',$post->ID);
+                $programs_of_phase = get_field('program',$phases_of_course[0]->ID);
+                
+                $wiki_phases = get_posts(array(
+                    'post_type' => 'phase',
+                    'order' => 'ASC',
+                    'meta_query' => array(
+                        array(
+                            'key' => 'program', // name of custom field
+                            'value' => '"' . $programs_of_phase[0]->ID . '"', // matches exactly "123", not just 123. This prevents a match for "1234"
+                            'compare' => 'LIKE'
+                        )
+                    )
+                ));
+                $title_of_page = $programs_of_phase[0]->post_title;
+                break;
+        }
         
 
-        //First get the programs
-
-        $wiki_phases = get_posts(array(
-            'post_type' => 'phase',
-            'order' => 'ASC',
-            'meta_query' => array(
-                array(
-                    'key' => 'program', // name of custom field
-                    'value' => '"' . $post->ID . '"', // matches exactly "123", not just 123. This prevents a match for "1234"
-                    'compare' => 'LIKE'
-                )
-            )
-        ));
 
     ?>
-        <h4 class="isceb-nav-program-name"> <?php echo get_the_title() ?></h4>
+        
+        <h4 class="isceb-nav-program-name"> <?php echo $title_of_page ?></h4>
         <?php
-
         if ($wiki_phases) : ?>
 
             <div id="isceb-wiki-nav-container">
@@ -84,4 +120,3 @@ $sidebar_pos = get_theme_mod('understrap_sidebar_position');
     ?>
     <button class="isceb-wiki-button-not-gb" id="isceb-wiki-nav-upload-btn"> Upload files </button>
 </div>
-

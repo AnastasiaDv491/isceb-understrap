@@ -595,6 +595,16 @@ a.isceb-grid-item-url {
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
+#isceb-wiki-nav-header-text{
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
+#isceb-wiki-nav-header-text:hover{
+	color: $secondary;
+	text-decoration: underline;
+}
+
 .isceb-nav-program-name {
 	color: $primary;
 	padding: 1.5rem;
@@ -637,4 +647,10 @@ hr.isceb-wiki-nav-phase-line {
 .isceb-wiki-site-main {
 	margin-left: 5rem;
 	margin-top: 2rem;
+}
+
+.isceb-wiki-last-breadcrumb{
+	text-decoration: underline;
+	font-weight: bold;
+	color: $primary;
 }

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The template for displaying a single program on the wiki
+ * The template for displaying a single phase on the wiki
  *
  * @package UnderStrap
  */
@@ -11,9 +11,7 @@ defined('ABSPATH') || exit;
 
 get_header();
 $container = get_theme_mod('understrap_container_type');
-
 ?>
-
 
 <div class="wrapper h-100" id="single-wrapper">
 
@@ -25,8 +23,8 @@ $container = get_theme_mod('understrap_container_type');
             <?php get_template_part('sidebar-templates/sidebar', 'isceb-wiki'); ?>
 
             <main class="isceb-wiki-site-main col-md-6" id="main">
+                <div id="isceb-wiki-breadcrumb"><?php echo get_the_breadcrumb($post) ?></div>
 
-               
 
                 <?php
 
