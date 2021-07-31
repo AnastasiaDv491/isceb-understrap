@@ -595,6 +595,10 @@ a.isceb-grid-item-url {
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
+.isceb-wiki-courses-per-phase{
+	list-style: none;
+}
+
 #isceb-wiki-nav-header-text{
 	text-decoration: none;
 	color: white;
@@ -617,13 +621,15 @@ a.isceb-grid-item-url {
 a.isceb-wiki-nav-phase {
 	text-decoration: none;
 	font-size: x-large;
-
+	font-weight: bold;
 
 }
 
 hr.isceb-wiki-nav-phase-line {
 	margin-top: 0;
 }
+
+
 
 #isceb-wiki-nav-upload-btn {
 	margin: 0 auto;
@@ -653,4 +659,17 @@ hr.isceb-wiki-nav-phase-line {
 	text-decoration: underline;
 	font-weight: bold;
 	color: $primary;
+}
+
+
+.fa-rotate-270 {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+.fa-sort-desc{
+	font-size: xx-large;
 }
