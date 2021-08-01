@@ -94,7 +94,7 @@ $container = get_theme_mod('understrap_container_type');
 		</section>
 
 
-		<section class="homepage-about">
+		<!-- <section class="homepage-about">
 			<div class="container-about">
 				<h2>
 					International Student Council of Economics and Business
@@ -122,7 +122,7 @@ $container = get_theme_mod('understrap_container_type');
 					<p class="paragraph-item-about">"Colour is a dance between your brain and the world. Every colour is a universe of its own, it unfolds differently and it evokes different feelings and emotions within us.”</p>
 				</div>
 			</div>
-		</section>
+		</section> -->
 
 		<!-- <section class="homepage-meet-reps">
 			<div class="container-meet-reps">

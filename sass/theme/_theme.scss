@@ -33,16 +33,17 @@ a:hover {
 .wrapper {
 	padding: 0;
 
-	
+
 }
 
-#single-wrapper{
+#single-wrapper {
 	min-height: 100vh;
-    display: flex;
+	display: flex;
+	margin-top: 2rem;
 }
 
-#single-wrapper > div{
-	
+#single-wrapper>div {
+
 	flex: 1;
 }
 
@@ -353,7 +354,7 @@ a.shoppingCartHeaderLink:hover {
 	background-color: #1f476b;
 
 	margin-top: auto;
-	
+
 }
 
 #wrapper-footer-full a {
@@ -368,7 +369,7 @@ a.shoppingCartHeaderLink:hover {
 	color: #d3ebf8;
 	background-color: #1f476b;
 
-	
+
 
 
 }
@@ -446,7 +447,7 @@ a.shoppingCartHeaderLink:hover {
 	display: flex;
 	position: relative;
 
-	
+
 }
 
 
@@ -598,16 +599,17 @@ a.isceb-grid-item-url {
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-.isceb-wiki-courses-per-phase{
+.isceb-wiki-courses-per-phase {
 	list-style: none;
 }
 
-#isceb-wiki-nav-header-text{
+#isceb-wiki-nav-header-text {
 	text-decoration: none;
 	color: white;
 	font-weight: bold;
 }
-#isceb-wiki-nav-header-text:hover{
+
+#isceb-wiki-nav-header-text:hover {
 	color: $secondary;
 	text-decoration: underline;
 }
@@ -658,7 +660,7 @@ hr.isceb-wiki-nav-phase-line {
 	margin-top: 2rem;
 }
 
-.isceb-wiki-last-breadcrumb{
+.isceb-wiki-last-breadcrumb {
 	text-decoration: underline;
 	font-weight: bold;
 	color: $primary;
@@ -666,49 +668,64 @@ hr.isceb-wiki-nav-phase-line {
 
 
 .fa-rotate-270 {
-    -webkit-transform: rotate(270deg);
-    -moz-transform: rotate(270deg);
-    -ms-transform: rotate(270deg);
-    -o-transform: rotate(270deg);
-    transform: rotate(270deg);
+	-webkit-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	-o-transform: rotate(270deg);
+	transform: rotate(270deg);
 }
 
-.fa-sort-desc{
+.fa-sort-desc {
 	font-size: xx-large;
 }
 
 //ISCEB Wiki Files
-.isceb-wiki-container{
+.isceb-wiki-container {
 	border: #1f476b;
 }
+
 .isceb-wiki-file {
 	border: 2px solid #1f476b;
 	border-radius: 25px;
 	padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 	display: flex;
 	flex-wrap: wrap;
-    align-items: center;
+	align-items: center;
 }
-.isceb-wiki-pdf{
-	width:5rem;
-	height:5rem;
+
+.isceb-wiki-pdf {
+	width: 5rem;
+	height: 5rem;
 
 	margin-right: 1rem;
 }
+
 // isceb-wiki-file-title
-.isceb-wiki-filesize,.isceb-wiki-ac-year {
+.isceb-wiki-filesize,
+.isceb-wiki-ac-year {
 	font-weight: bold;
 	margin: 0;
 }
-.isceb-wiki-file-title{
+
+.isceb-wiki-file-title {
 	margin: 0;
 	text-decoration: underline;
 }
-.isceb-wiki-file-download > a {
+
+.isceb-wiki-file-download>a {
 	color: white;
 }
+
 .isceb-wiki-download-wrap {
 	margin-left: auto;
 }
+
 // isceb-wiki-ac-year
 // isceb-wiki-file-meta
+
+
+/* Single styling */
+.entry-title {
+	font-weight: bold;
+	font-size: xxx-large;
+}
