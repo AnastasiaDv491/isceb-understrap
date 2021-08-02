@@ -94,8 +94,11 @@ function isceb_wc_remove_uncategorized_from_breadcrumb($crumbs)
 }
 
 //Only show the woocommerce stuff we need on the single product page
-remove_all_actions("woocommerce_after_single_product_summary");
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+// remove_all_actions("woocommerce_after_single_product_summary");
+// remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+
+
+
 
 add_theme_support('align-wide');
 
@@ -171,7 +174,7 @@ function add_extra_tab_to_edit_account_page($tabs)
 	//Remove notifcations tab
 	unset($new_tab["Notifications"]);
 
-	
+
 
 	$new_tabs = insertInArrayAfterPosition($tabs, $new_tab, 3);
 	unset($new_tabs['notifications']);
@@ -188,9 +191,10 @@ function insertInArrayAfterPosition($array, $toInsertValue, $position)
 
 
 add_filter('uwp_account_page_title', 'isceb_account_page_title_cb', 10, 2);
-function isceb_account_page_title_cb($title, $type){
-	if ( $type == 'Order' ) {
-		$title = __( 'Your orders', 'uwp-messaging' );
+function isceb_account_page_title_cb($title, $type)
+{
+	if ($type == 'Order') {
+		$title = __('Your orders', 'uwp-messaging');
 	}
 
 	return $title;
@@ -225,7 +229,7 @@ function isceb_display_form($type)
 /**
  * Change of an account
  */
-add_action('uwp_after_process_account','isceb_after_account_save',30,1);
+add_action('uwp_after_process_account', 'isceb_after_account_save', 30, 1);
 /* Data format
 Array
 (
@@ -241,23 +245,24 @@ Array
 
 */
 
-function isceb_after_account_save($data){
+function isceb_after_account_save($data)
+{
 	$user = wp_get_current_user();
-	error_log(print_r($data,true));
-
+	error_log(print_r($data, true));
 }
 
 
-add_action('uwp_after_process_register','isceb_after_register',30,2);
-function isceb_after_register($data,$user_id){
+add_action('uwp_after_process_register', 'isceb_after_register', 30, 2);
+function isceb_after_register($data, $user_id)
+{
 
 
-	error_log(print_r($data,true));
-	error_log(print_r($user_id,true));
-
+	error_log(print_r($data, true));
+	error_log(print_r($user_id, true));
 }
 
-function isceb_sync_user_with_woocommerce($data,$user_ID){
+function isceb_sync_user_with_woocommerce($data, $user_ID)
+{
 	$metaFieldsToUpdate = array(
 		'billing_first_name' => $data['first_name'],
 		'billing_last_name' => $data['last_name'],
@@ -293,29 +298,33 @@ Possible fields
 
 	  */
 
-	  
-	  add_filter( 'uwp_form_fields_predefined', 'isceb_add_custom_field_userswp', 10, 2 );
-	  function isceb_add_custom_field_userswp($custom_fields, $type){
-		  // WordPress
-		$custom_fields['testisceb'] = array(
-			'field_type' => 'text',
-			'class'      => 'isceb-wc-field-sync',
-			'field_icon' => 'fab fa-wordpress-simple',
-			'site_title' => __( 'Isceb test', 'userswp' ),
-			'help_text'  => __( 'Let users enter their WordPress profile url.', 'userswp' ),
-			'defaults'   => array(
-				'admin_title'   => 'Test Isceb',
-				'site_title'    => 'Test Isceb',
-				'form_label'    => __( 'WordPress url', 'userswp' ),
-				'htmlvar_name'  => 'wordpress',
-				'is_active'     => 1,
-				'default_value' => '',
-				'is_required'   => 0,
-				'required_msg'  => '',
-				'field_icon'    => 'fab fa-wordpress-simple',
-				'css_class'     => 'btn-wordpress'
-			)
-		);
 
-		return $custom_fields;
-	  }
+add_filter('uwp_form_fields_predefined', 'isceb_add_custom_field_userswp', 10, 2);
+function isceb_add_custom_field_userswp($custom_fields, $type)
+{
+	// WordPress
+	$custom_fields['testisceb'] = array(
+		'field_type' => 'text',
+		'class'      => 'isceb-wc-field-sync',
+		'field_icon' => 'fab fa-wordpress-simple',
+		'site_title' => __('Isceb test', 'userswp'),
+		'help_text'  => __('Let users enter their WordPress profile url.', 'userswp'),
+		'defaults'   => array(
+			'admin_title'   => 'Test Isceb',
+			'site_title'    => 'Test Isceb',
+			'form_label'    => __('WordPress url', 'userswp'),
+			'htmlvar_name'  => 'wordpress',
+			'is_active'     => 1,
+			'default_value' => '',
+			'is_required'   => 0,
+			'required_msg'  => '',
+			'field_icon'    => 'fab fa-wordpress-simple',
+			'css_class'     => 'btn-wordpress'
+		)
+	);
+
+	return $custom_fields;
+}
+
+
+

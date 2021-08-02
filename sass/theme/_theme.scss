@@ -39,7 +39,6 @@ a:hover {
 #single-wrapper {
 	min-height: 100vh;
 	display: flex;
-	margin-top: 2rem;
 }
 
 #single-wrapper>div {
@@ -728,4 +727,9 @@ hr.isceb-wiki-nav-phase-line {
 .entry-title {
 	font-weight: bold;
 	font-size: xxx-large;
+	
+}
+
+.single-main, .page-main{
+	margin-top: 2rem;
 }
