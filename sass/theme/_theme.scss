@@ -654,8 +654,24 @@ hr.isceb-wiki-nav-phase-line {
 
 }
 
+.isceb-nav-container-sticky{
+	position: sticky;
+	top: 0;
+}
+
+
+@media only screen and (min-width: 768px) {
+	.isceb-wiki-site-main {
+		margin-left: 5rem;
+	}
+
+	.isceb-wiki-container{
+		max-width: 60%;
+	}
+}
+
+
 .isceb-wiki-site-main {
-	margin-left: 5rem;
 	margin-top: 2rem;
 }
 
@@ -684,31 +700,75 @@ hr.isceb-wiki-nav-phase-line {
 }
 
 .isceb-wiki-file {
-	border: 2px solid #1f476b;
-	border-radius: 25px;
-	padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+	// border: 2px solid #1f476b;
+	// border-radius: 25px;
+	// padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+	// display: flex;
+	// flex-wrap: wrap;
+	// align-items: center;
+
+	// box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
+	border-radius: 5px;
+	margin-bottom: 1rem;
+
+	
+	
 }
 
+.isceb-wiki-file-left-part{
+	max-width: 250px;
+	// background-color: #eaebed;
+	background-color: $primary;
+	padding: 15px;
+
+
+}
 .isceb-wiki-pdf {
-	width: 5rem;
-	height: 5rem;
+	// width: 5rem;
+	// height: 5rem;
 
-	margin-right: 1rem;
+	// margin-right: 1rem;
+
+	// width: 50px;
+	// margin-top: 10px;
+	min-width: 50px;
 }
 
+.isceb-wiki-file-meta{
+	padding: 10px;
+	font-size: smaller;
+
+	/*Needed for word-wrap*/
+	min-width: 0;
+}
+
+.isceb-wiki-file-right-part{
+	margin-left: auto;
+	padding-right: 15px;
+
+	display: flex;
+    align-items: center;
+}
 // isceb-wiki-file-title
 .isceb-wiki-filesize,
 .isceb-wiki-ac-year {
-	font-weight: bold;
 	margin: 0;
 }
 
 .isceb-wiki-file-title {
 	margin: 0;
-	text-decoration: underline;
+	font-weight: bold;
+
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.fa-download{
+	color: $primary;
 }
 
 .isceb-wiki-file-download>a {
