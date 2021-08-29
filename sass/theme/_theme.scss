@@ -1,4 +1,7 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+body{
+	font-family: 'Open Sans', sans-serif;
+}
 
 button {
 	color: #1f476b;
@@ -654,7 +657,7 @@ hr.isceb-wiki-nav-phase-line {
 
 }
 
-.isceb-nav-container-sticky{
+.isceb-nav-container-sticky {
 	position: sticky;
 	top: 0;
 }
@@ -665,7 +668,7 @@ hr.isceb-wiki-nav-phase-line {
 		margin-left: 5rem;
 	}
 
-	.isceb-wiki-container{
+	.isceb-wiki-container {
 		max-width: 60%;
 	}
 }
@@ -700,24 +703,30 @@ hr.isceb-wiki-nav-phase-line {
 }
 
 .isceb-wiki-file {
-	// border: 2px solid #1f476b;
-	// border-radius: 25px;
-	// padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-	// display: flex;
-	// flex-wrap: wrap;
-	// align-items: center;
-
-	// box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 	display: flex;
 	border-radius: 5px;
 	margin-bottom: 1rem;
 
-	
-	
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+
+
 }
 
-.isceb-wiki-file-left-part{
+.isceb-wiki-file:hover {
+	-webkit-transform: scale(1.05);
+	transform: scale(1.05);
+
+
+}
+
+.isceb-wiki-file-left-part {
 	max-width: 250px;
 	// background-color: #eaebed;
 	background-color: $primary;
@@ -725,6 +734,7 @@ hr.isceb-wiki-nav-phase-line {
 
 
 }
+
 .isceb-wiki-pdf {
 	// width: 5rem;
 	// height: 5rem;
@@ -736,7 +746,7 @@ hr.isceb-wiki-nav-phase-line {
 	min-width: 50px;
 }
 
-.isceb-wiki-file-meta{
+.isceb-wiki-file-meta {
 	padding: 10px;
 	font-size: smaller;
 
@@ -744,17 +754,19 @@ hr.isceb-wiki-nav-phase-line {
 	min-width: 0;
 }
 
-.isceb-wiki-file-right-part{
+.isceb-wiki-file-right-part {
 	margin-left: auto;
 	padding-right: 15px;
 
 	display: flex;
-    align-items: center;
+	align-items: center;
 }
+
 // isceb-wiki-file-title
 .isceb-wiki-filesize,
 .isceb-wiki-ac-year {
 	margin: 0;
+	color: #A9A9A9;
 }
 
 .isceb-wiki-file-title {
@@ -762,12 +774,12 @@ hr.isceb-wiki-nav-phase-line {
 	font-weight: bold;
 
 	text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 
-.fa-download{
+.fa-download {
 	color: $primary;
 }
 
@@ -787,9 +799,10 @@ hr.isceb-wiki-nav-phase-line {
 .entry-title {
 	font-weight: bold;
 	font-size: xxx-large;
-	
+
 }
 
-.single-main, .page-main{
+.single-main,
+.page-main {
 	margin-top: 2rem;
 }
