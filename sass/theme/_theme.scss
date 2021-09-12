@@ -19,10 +19,9 @@ a:hover {
 	color: #99d0ed;
 }
 
-.navbar {
-	// box-shadow: 5px 5px 20px;
+.navbar-brand.custom-logo-link{
+	padding: 0;
 }
-
 #main-nav {
 	margin-bottom: 0px;
 }
@@ -433,38 +432,47 @@ a.shoppingCartHeaderLink:hover {
 
 .isceb-wiki-home-header {
 	background-color: #1f476b;
-	margin-bottom: 1em;
+	margin-bottom: 1rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 
-	height: 25vh;
 }
 
 #isceb-wiki-home-search-wrap {
-	margin-top: 3rem;
-	left: 2rem;
-	margin-bottom: 5rem;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
 	display: flex;
 	position: relative;
-
-
 }
+
+#isceb-wiki-home-search-wrap.isceb-nav-top {
+	margin-top: 0;
+
+	margin-bottom: 0;
+	
+}
+
 
 
 
 #isceb-wiki-home-search-field {
 
-	width: 20vw;
+	width: 400px;
 	border-radius: 25px;
 	border: 0;
 	text-align: center;
 	color: #1f476b;
 	font-weight: bold;
-	padding: 1rem;
 	// line-height: 2rem;
+	height: 38px;
 
+}
+
+#isceb-wiki-home-search-field.isceb-nav-top{
+	width: 250px;
+	border: 1px solid $primary;
 }
 
 /*placeholder style on main wiki page */
@@ -506,10 +514,18 @@ a.shoppingCartHeaderLink:hover {
 	padding-left: 1rem;
 	padding-right: 1rem;
 
+	// position: relative;
+	// left: -3rem;
+	position: absolute;
+	right: 0;
+
+
+}
+
+#isceb-wiki-home-search-button.isceb-nav-top{
+	left: -45px;
+	border: 1px solid $primary;
 	position: relative;
-	left: -3rem;
-
-
 }
 
 
@@ -537,12 +553,10 @@ a.shoppingCartHeaderLink:hover {
 	border-top: solid #1f476b;
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 	text-align: center;
-
-	padding: 2em;
-	padding-top: 1em;
-
+	padding: 1rem;
 	transition: transform .2s;
 
+	height: 170px;
 }
 
 

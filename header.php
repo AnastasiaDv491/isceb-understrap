@@ -35,7 +35,7 @@ $container = get_theme_mod('understrap_container_type');
 
 			<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e('Skip to content', 'understrap'); ?></a>
 
-			<nav id="main-nav" class="navbar navbar-expand-md navbar-light bg-primary shadow p-3 bg-white rounded font-weight-bold mr-auto" aria-labelledby="main-nav-label">
+			<nav id="main-nav" class="navbar navbar-expand-md navbar-light bg-primary shadow p-3 pl-2 bg-white rounded font-weight-bold mr-auto" aria-labelledby="main-nav-label">
 
 
 				<h2 id="main-nav-label" class="sr-only">
@@ -69,14 +69,16 @@ $container = get_theme_mod('understrap_container_type');
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'understrap'); ?>">
 						<span class="navbar-toggler-icon"></span>
 					</button>
-
+					<div class="collapse navbar-collapse" id="navbarNavDropdown">
 					<!-- The WordPress Menu goes here -->
 					<?php
 					wp_nav_menu(
 						array(
 							'theme_location'  => 'primary',
-							'container_class' => 'collapse navbar-collapse',
-							'container_id'    => 'navbarNavDropdown',
+							// 'container_class' => 'collapse navbar-collapse',
+							// 'container_id'    => 'navbarNavDropdown',
+							'container_class' => false,
+							'container_id'    => false,
 							'menu_class'      => 'navbar-nav mr-auto',
 							'fallback_cb'     => '',
 							'menu_id'         => 'main-menu',
@@ -120,12 +122,20 @@ $container = get_theme_mod('understrap_container_type');
 						</a>
 					<?php endif; ?>
 
-					<form data-toggle="dropdown" role="search" method="get" id="searchform" class="searchform form-inline my-2 my-lg-0 " action="<?php echo home_url('/'); ?>">
+					<form id="isceb-wiki-home-search-wrap" class="isceb-nav-top" action="<?php echo esc_url(home_url('/')); ?>">
+						<input type="text" id="isceb-wiki-home-search-field" class="isceb-nav-top" name="s" placeholder="Search" value="<?php echo get_search_query(); ?>">
+						<button type="submit" id="isceb-wiki-home-search-button"  class="btn btn-secondary isceb-nav-top"><i class="fa fa-search"></i></button>
+					</form>
+
+				
+
+					</div>
+					<!-- <form data-toggle="dropdown" role="search" method="get" id="searchform" class="searchform form-inline my-2 my-lg-0 " action="<?php echo home_url('/'); ?>">
 						<input class="form-control mr-sm-2" type="search" name="s" id="s" placeholder="Search" style="width: 80%;" aria-label="Search">
 						<button class="btn  my-2 my-sm-0" id="searchsubmit" type="button" form="searchform">
 							<i class="fa fa-search" aria-hidden="true"></i>
 						</button>
-					</form>
+					</form> -->
 
 				</div>
 
