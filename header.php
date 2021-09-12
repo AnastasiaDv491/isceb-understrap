@@ -69,14 +69,16 @@ $container = get_theme_mod('understrap_container_type');
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'understrap'); ?>">
 						<span class="navbar-toggler-icon"></span>
 					</button>
-
+					<div class="collapse navbar-collapse" id="navbarNavDropdown">
 					<!-- The WordPress Menu goes here -->
 					<?php
 					wp_nav_menu(
 						array(
 							'theme_location'  => 'primary',
-							'container_class' => 'collapse navbar-collapse',
-							'container_id'    => 'navbarNavDropdown',
+							// 'container_class' => 'collapse navbar-collapse',
+							// 'container_id'    => 'navbarNavDropdown',
+							'container_class' => false,
+							'container_id'    => false,
 							'menu_class'      => 'navbar-nav mr-auto',
 							'fallback_cb'     => '',
 							'menu_id'         => 'main-menu',
@@ -127,7 +129,7 @@ $container = get_theme_mod('understrap_container_type');
 
 				
 
-
+					</div>
 					<!-- <form data-toggle="dropdown" role="search" method="get" id="searchform" class="searchform form-inline my-2 my-lg-0 " action="<?php echo home_url('/'); ?>">
 						<input class="form-control mr-sm-2" type="search" name="s" id="s" placeholder="Search" style="width: 80%;" aria-label="Search">
 						<button class="btn  my-2 my-sm-0" id="searchsubmit" type="button" form="searchform">
