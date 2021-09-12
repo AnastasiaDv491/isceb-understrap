@@ -806,3 +806,93 @@ hr.isceb-wiki-nav-phase-line {
 .page-main {
 	margin-top: 2rem;
 }
+
+// Gutenberg styling
+
+.isceb-homepage-about-block{
+    margin: 0px 25px 0px 50px;
+    padding: 20px;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	border-top: solid $primary;
+	transition: transform .2s;
+}
+.isceb-homepage-about-block:hover {
+	-ms-transform: scale(1.5); /* IE 9 */
+	-webkit-transform: scale(1.5); /* Safari 3-8 */
+	transform: scale(1.1); 
+}
+.isceb-homepage-about-heading {
+	margin: 40px 50px 0px 50px;
+
+}
+
+.isceb-homepage-blue-separator {
+	background-color: $secondary;
+	height:100px;
+
+}
+
+.isceb-homepage-meet-img{
+	margin-left: 100px;
+    width: 40%;
+    height: 100px;
+}
+
+.isceb-homepage-meet-text {
+	background-color: $primary;
+	width: fit-content;
+	padding: 5px;
+
+
+}
+.isceb-homepage-meet-text-group {
+
+	position: absolute;
+	left: 400px;
+	top: 100px;
+	width: 400px;
+}
+.isceb-homepage-get-to-know-block{
+	// color: black;
+    position: absolute;
+    left: 750px;
+	margin-right:20px;
+    top: 100px;
+    /* right: 0; */
+    width: 400px;
+	text-align: right;
+	color: #1f476b;
+}
+
+.isceb-homepage-more-button{
+	position: absolute;
+	right: 0;
+
+}
+
+.isceb-homepage-student-resources-block{
+	margin: 0 50px 0 50px;
+	padding-top: 20px;
+	display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.isceb-homepage-student-resources-item {
+	width:247px;
+}
+
+.isceb-homepage-student-resources-heading {
+	padding-bottom: 20px;
+
+}
+
+.isceb-homepage-faq-container	{
+	padding-top: 20px;	
+}
+
+.isceb-homepage-faq-item{
+	width:50%;
+	margin-left: 230px;
+	padding-top: 20px;	
+}
