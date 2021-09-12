@@ -19,10 +19,9 @@ a:hover {
 	color: #99d0ed;
 }
 
-.navbar {
-	// box-shadow: 5px 5px 20px;
+.navbar-brand.custom-logo-link{
+	padding: 0;
 }
-
 #main-nav {
 	margin-bottom: 0px;
 }
@@ -449,6 +448,14 @@ a.shoppingCartHeaderLink:hover {
 	position: relative;
 }
 
+#isceb-wiki-home-search-wrap.isceb-nav-top {
+	margin-top: 0;
+	
+	margin-bottom: 0;
+	
+}
+
+
 
 
 #isceb-wiki-home-search-field {
@@ -461,6 +468,11 @@ a.shoppingCartHeaderLink:hover {
 	font-weight: bold;
 	// line-height: 2rem;
 
+}
+
+#isceb-wiki-home-search-field.isceb-nav-top{
+	width: 250px;
+	border: 1px solid $primary;
 }
 
 /*placeholder style on main wiki page */
@@ -506,6 +518,11 @@ a.shoppingCartHeaderLink:hover {
 	left: -3rem;
 
 
+}
+
+#isceb-wiki-home-search-button.isceb-nav-top{
+	left: -45px;
+	border: 1px solid $primary;
 }
 
 
