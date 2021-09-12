@@ -433,36 +433,32 @@ a.shoppingCartHeaderLink:hover {
 
 .isceb-wiki-home-header {
 	background-color: #1f476b;
-	margin-bottom: 1em;
+	margin-bottom: 1rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 
-	height: 25vh;
 }
 
 #isceb-wiki-home-search-wrap {
-	margin-top: 3rem;
+	margin-top: 1rem;
 	left: 2rem;
-	margin-bottom: 5rem;
+	margin-bottom: 2rem;
 	display: flex;
 	position: relative;
-
-
 }
 
 
 
 #isceb-wiki-home-search-field {
 
-	width: 20vw;
+	width: 400px;
 	border-radius: 25px;
 	border: 0;
 	text-align: center;
 	color: #1f476b;
 	font-weight: bold;
-	padding: 1rem;
 	// line-height: 2rem;
 
 }
@@ -537,10 +533,7 @@ a.shoppingCartHeaderLink:hover {
 	border-top: solid #1f476b;
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 	text-align: center;
-
-	padding: 2em;
-	padding-top: 1em;
-
+	padding: 1rem;
 	transition: transform .2s;
 
 }
