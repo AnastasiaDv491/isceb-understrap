@@ -1,6 +1,10 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
-body{
-	font-family: 'Open Sans', sans-serif;
+html,
+body {
+	overflow-x: hidden;
+}
+body {
+	font-family: "Open Sans", sans-serif;
 }
 
 button {
@@ -19,7 +23,7 @@ a:hover {
 	color: #99d0ed;
 }
 
-.navbar-brand.custom-logo-link{
+.navbar-brand.custom-logo-link {
 	padding: 0;
 }
 #main-nav {
@@ -34,8 +38,6 @@ a:hover {
 
 .wrapper {
 	padding: 0;
-
-
 }
 
 #single-wrapper {
@@ -43,8 +45,7 @@ a:hover {
 	display: flex;
 }
 
-#single-wrapper>div {
-
+#single-wrapper > div {
 	flex: 1;
 }
 
@@ -76,7 +77,7 @@ a:hover {
 	background-color: #1f476b;
 }
 
-.mainMessage>* {
+.mainMessage > * {
 	margin: 0;
 	color: white;
 	text-align: center;
@@ -257,7 +258,7 @@ a.shoppingCartHeaderLink:hover {
 	color: #1f476b;
 }
 
-.flex-container>div {
+.flex-container > div {
 	margin: 20px;
 	text-align: center;
 	box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
@@ -347,7 +348,6 @@ a.shoppingCartHeaderLink:hover {
 	// top: 20%;
 	/* left: 30%; */
 	right: -20%;
-
 }
 
 #wrapper-footer-full {
@@ -355,7 +355,6 @@ a.shoppingCartHeaderLink:hover {
 	background-color: #1f476b;
 
 	margin-top: auto;
-
 }
 
 #wrapper-footer-full a {
@@ -369,10 +368,6 @@ a.shoppingCartHeaderLink:hover {
 #wrapper-footer {
 	color: #d3ebf8;
 	background-color: #1f476b;
-
-
-
-
 }
 
 #wrapper-footer a {
@@ -423,10 +418,9 @@ a.shoppingCartHeaderLink:hover {
 	padding: 5px;
 }
 
-.wrapperregistration>.container {
+.wrapperregistration > .container {
 	margin-bottom: 2em;
 }
-
 
 /*Wiki */
 
@@ -437,7 +431,6 @@ a.shoppingCartHeaderLink:hover {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-
 }
 
 #isceb-wiki-home-search-wrap {
@@ -451,14 +444,9 @@ a.shoppingCartHeaderLink:hover {
 	margin-top: 0;
 
 	margin-bottom: 0;
-	
 }
 
-
-
-
 #isceb-wiki-home-search-field {
-
 	width: 400px;
 	border-radius: 25px;
 	border: 0;
@@ -467,10 +455,9 @@ a.shoppingCartHeaderLink:hover {
 	font-weight: bold;
 	// line-height: 2rem;
 	height: 38px;
-
 }
 
-#isceb-wiki-home-search-field.isceb-nav-top{
+#isceb-wiki-home-search-field.isceb-nav-top {
 	width: 250px;
 	border: 1px solid $primary;
 }
@@ -483,7 +470,6 @@ a.shoppingCartHeaderLink:hover {
 #isceb-wiki-home-search-field:focus::-webkit-input-placeholder {
 	/* Chrome/Opera/Safari */
 	color: transparent;
-
 }
 
 #isceb-wiki-home-search-field:focus::-moz-placeholder {
@@ -499,14 +485,12 @@ a.shoppingCartHeaderLink:hover {
 #isceb-wiki-home-search-field:focus::-moz-placeholder {
 	/* Firefox 18- */
 	color: transparent;
-
 }
 
 /*End placeholder style on main wiki page*/
 
 #isceb-wiki-home-search-field:focus {
 	outline: none;
-
 }
 
 #isceb-wiki-home-search-button {
@@ -518,16 +502,13 @@ a.shoppingCartHeaderLink:hover {
 	// left: -3rem;
 	position: absolute;
 	right: 0;
-
-
 }
 
-#isceb-wiki-home-search-button.isceb-nav-top{
+#isceb-wiki-home-search-button.isceb-nav-top {
 	left: -45px;
 	border: 1px solid $primary;
 	position: relative;
 }
-
 
 #isceb-wiki-home-search-headerText {
 	margin-top: 2rem;
@@ -545,8 +526,6 @@ a.shoppingCartHeaderLink:hover {
 	margin-right: 10vw;
 	margin-bottom: 10vh;
 	margin-top: 5vh;
-
-
 }
 
 .isceb-grid-item {
@@ -554,11 +533,10 @@ a.shoppingCartHeaderLink:hover {
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 	text-align: center;
 	padding: 1rem;
-	transition: transform .2s;
+	transition: transform 0.2s;
 
 	height: 170px;
 }
-
 
 .isceb-grid-item:hover {
 	transform: scale(1.05);
@@ -582,15 +560,12 @@ a.shoppingCartHeaderLink:hover {
 	overflow-wrap: break-word;
 
 	font-weight: bold;
-
-
 }
 
 .isceb-wiki-button-not-gb:hover {
 	background-color: $secondary;
 	color: $primary;
 	border: 2px solid $primary;
-
 }
 
 a.isceb-grid-item-url {
@@ -603,9 +578,6 @@ a.isceb-grid-item-url {
 	padding-left: 2.5em;
 	padding-right: 2rem;
 }
-
-
-
 
 #isceb-wiki-sidebar {
 	background-color: white;
@@ -635,7 +607,7 @@ a.isceb-grid-item-url {
 	padding: 1.5rem;
 }
 
-.isceb-wiki-phase-nav-links>li>a {
+.isceb-wiki-phase-nav-links > li > a {
 	color: ivory;
 }
 
@@ -643,14 +615,11 @@ a.isceb-wiki-nav-phase {
 	text-decoration: none;
 	font-size: x-large;
 	font-weight: bold;
-
 }
 
 hr.isceb-wiki-nav-phase-line {
 	margin-top: 0;
 }
-
-
 
 #isceb-wiki-nav-upload-btn {
 	margin: 0 auto;
@@ -668,14 +637,12 @@ hr.isceb-wiki-nav-phase-line {
 	margin-left: 0;
 	color: white;
 	padding: 1rem;
-
 }
 
 .isceb-nav-container-sticky {
 	position: sticky;
 	top: 0;
 }
-
 
 @media only screen and (min-width: 768px) {
 	.isceb-wiki-site-main {
@@ -687,7 +654,6 @@ hr.isceb-wiki-nav-phase-line {
 	}
 }
 
-
 .isceb-wiki-site-main {
 	margin-top: 2rem;
 }
@@ -697,7 +663,6 @@ hr.isceb-wiki-nav-phase-line {
 	font-weight: bold;
 	color: $primary;
 }
-
 
 .fa-rotate-270 {
 	-webkit-transform: rotate(270deg);
@@ -729,15 +694,11 @@ hr.isceb-wiki-nav-phase-line {
 	transition-duration: 0.3s;
 	-webkit-transition-property: transform;
 	transition-property: transform;
-
-
 }
 
 .isceb-wiki-file:hover {
 	-webkit-transform: scale(1.05);
 	transform: scale(1.05);
-
-
 }
 
 .isceb-wiki-file-left-part {
@@ -745,8 +706,6 @@ hr.isceb-wiki-nav-phase-line {
 	// background-color: #eaebed;
 	background-color: $primary;
 	padding: 15px;
-
-
 }
 
 .isceb-wiki-pdf {
@@ -780,7 +739,7 @@ hr.isceb-wiki-nav-phase-line {
 .isceb-wiki-filesize,
 .isceb-wiki-ac-year {
 	margin: 0;
-	color: #A9A9A9;
+	color: #a9a9a9;
 }
 
 .isceb-wiki-file-title {
@@ -792,12 +751,11 @@ hr.isceb-wiki-nav-phase-line {
 	overflow: hidden;
 }
 
-
 .fa-download {
 	color: $primary;
 }
 
-.isceb-wiki-file-download>a {
+.isceb-wiki-file-download > a {
 	color: white;
 }
 
@@ -808,12 +766,10 @@ hr.isceb-wiki-nav-phase-line {
 // isceb-wiki-ac-year
 // isceb-wiki-file-meta
 
-
 /* Single styling */
 .entry-title {
 	font-weight: bold;
 	font-size: xxx-large;
-
 }
 
 .single-main,
@@ -823,90 +779,125 @@ hr.isceb-wiki-nav-phase-line {
 
 // Gutenberg styling
 
-.isceb-homepage-about-block{
-    margin: 0px 25px 0px 50px;
-    padding: 20px;
+.isceb-homepage-about-block {
+	margin: 0px 25px 25px 25px;
+	background-color: aqua;
+	padding: 20px;
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 	border-top: solid $primary;
-	transition: transform .2s;
+	transition: transform 0.2s;
 }
-.isceb-homepage-about-block:hover {
-	-ms-transform: scale(1.5); /* IE 9 */
-	-webkit-transform: scale(1.5); /* Safari 3-8 */
-	transform: scale(1.1); 
+
+
+@media (min-width: 641px) {
+	.isceb-homepage-about-block {
+		margin: 0px 25px 0px 50px;
+		padding: 20px;
+		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+		border-top: solid $primary;
+		transition: transform 0.2s;
+	}
+	.isceb-homepage-about-block:hover {
+		-ms-transform: scale(1.5); /* IE 9 */
+		-webkit-transform: scale(1.5); /* Safari 3-8 */
+		transform: scale(1.1);
+	}
 }
+
 .isceb-homepage-about-heading {
 	margin: 40px 50px 0px 50px;
-
 }
 
-.isceb-homepage-blue-separator {
-	background-color: $secondary;
-	height:100px;
 
+@media (min-width: 641px) {
+	.isceb-homepage-about-heading {
+		margin: 40px 50px 0px 50px;
+	}
+	
+	.isceb-homepage-blue-separator {
+		background-color: $secondary;
+		height: 100px;
+	}
+	.isceb-homepage-meet-img {
+		margin-left: 100px;
+		width: 40%;
+		height: 100px;
+	}
+	.isceb-homepage-meet-text {
+		background-color: $primary;
+		width: fit-content;
+		padding: 5px;
+	}
+	.isceb-homepage-meet-text-group {
+		position: absolute;
+		left: 400px;
+		top: 100px;
+		width: 400px;
+	}
+	.isceb-homepage-get-to-know-block {
+		// color: black;
+		position: absolute;
+		left: 750px;
+		margin-right: 20px;
+		top: 100px;
+		/* right: 0; */
+		width: 400px;
+		text-align: right;
+		color: #1f476b;
+	}
+	
+	.isceb-homepage-more-button {
+		position: absolute;
+		right: 0;
+	}
 }
 
-.isceb-homepage-meet-img{
-	margin-left: 100px;
-    width: 40%;
-    height: 100px;
+.wp-block-group__inner-container > h4{
+    font-size: large;
+
 }
 
 .isceb-homepage-meet-text {
 	background-color: $primary;
 	width: fit-content;
 	padding: 5px;
-
-
 }
-.isceb-homepage-meet-text-group {
-
-	position: absolute;
-	left: 400px;
-	top: 100px;
-	width: 400px;
-}
-.isceb-homepage-get-to-know-block{
-	// color: black;
-    position: absolute;
-    left: 750px;
-	margin-right:20px;
-    top: 100px;
-    /* right: 0; */
-    width: 400px;
-	text-align: right;
-	color: #1f476b;
-}
-
-.isceb-homepage-more-button{
-	position: absolute;
-	right: 0;
-
-}
-
-.isceb-homepage-student-resources-block{
+.isceb-homepage-student-resources-block {
 	margin: 0 50px 0 50px;
 	padding-top: 20px;
 	display: flex;
-    align-content: center;
-    justify-content: center;
+	align-content: center;
+	justify-content: center;
 }
 
+
+@media (min-width: 641px) {
+	.isceb-homepage-student-resources-item {
+		width: 247px;
+	
+	}
+}
 .isceb-homepage-student-resources-item {
-	width:247px;
+	width: 247px;
+	margin-top: 1rem;
+
 }
 
 .isceb-homepage-student-resources-heading {
 	padding-bottom: 20px;
-
 }
 
-.isceb-homepage-faq-container	{
-	padding-top: 20px;	
+.isceb-homepage-faq-container {
+	padding-top: 20px;
 }
 
-.isceb-homepage-faq-item{
-	width:50%;
-	margin-left: 230px;
-	padding-top: 20px;	
+@media (min-width: 641px) {
+	.isceb-homepage-student-resources-item {
+		width: 247px;
+	
+	}
+}
+
+.isceb-homepage-faq-item {
+	margin: 15px 15px 0 15px;
 }
