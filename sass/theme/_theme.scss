@@ -3,12 +3,21 @@ html,
 body {
 	overflow-x: hidden;
 }
+
+@media (min-width:641px) {
+	body {
+		font-size: 1rem;
+	}
+}
 body {
 	font-family: "Open Sans", sans-serif;
+	font-size: 1rem;
 }
 
 button {
 	color: #1f476b;
+    font-size: smaller;
+
 }
 
 body {
@@ -23,6 +32,9 @@ a:hover {
 	color: #99d0ed;
 }
 
+h2 {
+	font-size: 1.2rem;
+}
 .navbar-brand.custom-logo-link {
 	padding: 0;
 }
@@ -431,6 +443,21 @@ a.shoppingCartHeaderLink:hover {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	padding: 0 10px 0 10px;
+
+}
+
+
+@media (min-width: 641px) {
+
+	.isceb-wiki-home-header{
+		background-color: #1f476b;
+		margin-bottom: 1rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 }
 
 #isceb-wiki-home-search-wrap {
@@ -438,11 +465,12 @@ a.shoppingCartHeaderLink:hover {
 	margin-bottom: 2rem;
 	display: flex;
 	position: relative;
+
 }
+
 
 #isceb-wiki-home-search-wrap.isceb-nav-top {
 	margin-top: 0;
-
 	margin-bottom: 0;
 }
 
@@ -455,7 +483,7 @@ a.shoppingCartHeaderLink:hover {
 
 
 #isceb-wiki-home-search-field {
-	width: 400px;
+	width: 250px;
 	border-radius: 25px;
 	border: 0;
 	text-align: center;
@@ -463,6 +491,21 @@ a.shoppingCartHeaderLink:hover {
 	font-weight: bold;
 	// line-height: 2rem;
 	height: 38px;
+	font-size: smaller;
+
+}
+
+@media (min-width:641px) {
+	#isceb-wiki-home-search-field {
+		width: 400px;
+		border-radius: 25px;
+		border: 0;
+		text-align: center;
+		color: #1f476b;
+		font-weight: bold;
+		// line-height: 2rem;
+		height: 38px;
+	}
 }
 
 #isceb-wiki-home-search-field.isceb-nav-top {
@@ -525,16 +568,36 @@ a.shoppingCartHeaderLink:hover {
 
 .isceb-grid-container {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(2, minmax(200px, 1fr));
-	grid-column-gap: 5vw;
-	grid-row-gap: 5vh;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(5, 1fr);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
 
 	margin-left: 10vw;
 	margin-right: 10vw;
 	margin-bottom: 10vh;
 	margin-top: 5vh;
 }
+
+@media (min-width:641px) {
+	.isceb-grid-container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, minmax(200px, 1fr));
+		grid-column-gap: 5vw;
+		grid-row-gap: 5vh;
+	
+		margin-left: 10vw;
+		margin-right: 10vw;
+		margin-bottom: 10vh;
+		margin-top: 5vh;
+	}
+	#isceb-grid-item-upload{
+		grid-column: 2;
+	}
+
+}
+
 
 .isceb-grid-item {
 	border-top: solid #1f476b;
@@ -544,6 +607,20 @@ a.shoppingCartHeaderLink:hover {
 	transition: transform 0.2s;
 
 	height: 170px;
+	margin-top: 20px;
+
+}
+@media (min-width:641px) {
+	
+.isceb-grid-item {
+	border-top: solid #1f476b;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+	text-align: center;
+	padding: 1rem;
+	transition: transform 0.2s;
+
+	height: 170px;
+}
 }
 
 .isceb-grid-item:hover {
@@ -554,6 +631,16 @@ a.shoppingCartHeaderLink:hover {
 	padding-top: 1rem;
 }
 
+#isceb-grid-item-upload {
+	grid-column: 1;
+}
+
+@media (min-width: 641px) {
+	#isceb-grid-item-upload {
+		grid-column: 2;
+
+	}
+}
 .isceb-wiki-button-not-gb {
 	background-color: $primary;
 	color: white;
@@ -568,6 +655,26 @@ a.shoppingCartHeaderLink:hover {
 	overflow-wrap: break-word;
 
 	font-weight: bold;
+	font-size: smaller;
+}
+
+@media (min-width: 641px) {
+	.isceb-wiki-button-not-gb{
+		background-color: $primary;
+		color: white;
+		border: none;
+		border-radius: 28px;
+		box-shadow: none;
+		cursor: pointer;
+		font-size: 18px;
+		padding: 12px 24px;
+		text-align: center;
+		text-decoration: none;
+		overflow-wrap: break-word;
+	
+		font-weight: bold;
+	}
+
 }
 
 .isceb-wiki-button-not-gb:hover {
@@ -583,7 +690,7 @@ a.isceb-grid-item-url {
 
 // ISCEB Wiki Navigation
 #isceb-wiki-nav-container {
-	padding-left: 2.5em;
+	padding-left: 34px;
 	padding-right: 2rem;
 }
 
@@ -621,6 +728,11 @@ a.isceb-grid-item-url {
 
 a.isceb-wiki-nav-phase {
 	text-decoration: none;
+	font-weight: bold;
+}
+
+@media (min-width:641px) {
+	text-decoration: none;
 	font-size: x-large;
 	font-weight: bold;
 }
@@ -633,8 +745,15 @@ hr.isceb-wiki-nav-phase-line {
 	margin: 0 auto;
 	display: block;
 	border: none;
+	margin: 0 auto 10px auto;
+
 }
 
+@media (min-width: 641px) {
+	margin: 0 auto;
+	display: block;
+	border: none;
+}
 .fa-home {
 	margin-right: 10px;
 }
@@ -662,8 +781,11 @@ hr.isceb-wiki-nav-phase-line {
 	}
 }
 
-.isceb-wiki-site-main {
-	margin-top: 2rem;
+
+@media (min-width: 641px) {
+	.isceb-wiki-site-main {
+		margin-top: 2rem;
+	}
 }
 
 .isceb-wiki-last-breadcrumb {
@@ -680,10 +802,11 @@ hr.isceb-wiki-nav-phase-line {
 	transform: rotate(270deg);
 }
 
-.fa-sort-desc {
-	font-size: xx-large;
-}
 
+@media (min-width: 641px) {
+	font-size: xx-large;
+
+}
 //ISCEB Wiki Files
 .isceb-wiki-container {
 	border: #1f476b;
@@ -750,6 +873,12 @@ hr.isceb-wiki-nav-phase-line {
 	color: #a9a9a9;
 }
 
+#isceb-wiki-breadcrumb{
+	margin-bottom: 30px;
+	margin-top: 30px;
+		
+}
+
 .isceb-wiki-file-title {
 	margin: 0;
 	font-weight: bold;
@@ -776,6 +905,11 @@ hr.isceb-wiki-nav-phase-line {
 
 /* Single styling */
 .entry-title {
+	font-weight: bold;
+	font-size: 1.3rem;
+}
+
+@media (min-width: 641px) {
 	font-weight: bold;
 	font-size: xxx-large;
 }
