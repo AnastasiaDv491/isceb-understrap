@@ -921,17 +921,10 @@ hr.isceb-wiki-nav-phase-line {
 
 @media (min-width: 641px) {
 	.isceb-homepage-about-heading {
-		display: flex;
-		align-items: center;
-		/* align-content: flex-end; */
-		/* flex-wrap: wrap; */
-		flex-direction: column;
+		margin: 40px 50px 0px 50px;
+
 	}
 
-	.isceb-homepage-about-heading-text {
-		display: inline-block;
-		width: 50%;
-	}
 
 	.isceb-homepage-blue-separator {
 		background-color: $secondary;

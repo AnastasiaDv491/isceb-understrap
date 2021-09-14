@@ -30,9 +30,11 @@ $container = get_theme_mod('understrap_container_type');
 		<section class="homepage-banners">
 			<div class="container-banners">
 				<?php
+
+
 				$args = array(
 					'numberposts' => 4,
-					'category' => 'frontpagenews'
+					'category' => get_cat_ID( 'Front Page news')
 				);
 
 				$isceb_latest_news = get_posts($args);
