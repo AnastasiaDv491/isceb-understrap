@@ -122,20 +122,14 @@ $container = get_theme_mod('understrap_container_type');
 						</a>
 					<?php endif; ?>
 
-					<form id="isceb-wiki-home-search-wrap" class="isceb-nav-top" action="<?php echo esc_url(home_url('/')); ?>">
-						<input type="text" id="isceb-wiki-home-search-field" class="isceb-nav-top" name="s" placeholder="Search" value="<?php echo get_search_query(); ?>">
-						<button type="submit" id="isceb-wiki-home-search-button"  class="btn btn-secondary isceb-nav-top"><i class="fa fa-search"></i></button>
+					<form  class="isceb-nav-top-wrap" action="<?php echo esc_url(home_url('/')); ?>">
+						<input type="text"  class="isceb-nav-top-input" name="s" placeholder="Search" value="<?php echo get_search_query(); ?>">
+						<button type="submit"  class="btn btn-secondary isceb-nav-top-button"><i class="fa fa-search"></i></button>
 					</form>
 
 				
 
 					</div>
-					<!-- <form data-toggle="dropdown" role="search" method="get" id="searchform" class="searchform form-inline my-2 my-lg-0 " action="<?php echo home_url('/'); ?>">
-						<input class="form-control mr-sm-2" type="search" name="s" id="s" placeholder="Search" style="width: 80%;" aria-label="Search">
-						<button class="btn  my-2 my-sm-0" id="searchsubmit" type="button" form="searchform">
-							<i class="fa fa-search" aria-hidden="true"></i>
-						</button>
-					</form> -->
 
 				</div>
 

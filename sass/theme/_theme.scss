@@ -4,7 +4,7 @@ body {
 	overflow-x: hidden;
 }
 
-@media (min-width:641px) {
+@media (min-width: 641px) {
 	body {
 		font-size: 1rem;
 	}
@@ -16,8 +16,7 @@ body {
 
 button {
 	color: #1f476b;
-    font-size: smaller;
-
+	font-size: smaller;
 }
 
 body {
@@ -76,7 +75,7 @@ h2 {
 	display: grid;
 	height: 100%;
 	grid-gap: 0.45rem;
-	grid-template-columns: repeat(4, minmax(280px, 1fr));
+	grid-template-columns: minmax(280px, 1fr);
 	grid-auto-flow: column;
 	grid-auto-columns: minmax(240px, 1fr);
 	overflow: auto;
@@ -98,34 +97,12 @@ h2 {
 /* Screen larger than 600px? 2 column */
 @media (min-width: 641px) {
 	.container-banners {
-		grid-template-columns: repeat(4, minmax(320px, 1fr));
+		grid-template-columns: minmax(320px, 1fr);
 		justify-content: center;
 		/* grid-gap: 2rem; */
 	}
 }
 
-/* Screen larger than 600px? 2 column */
-// @media (min-width: 641px) {
-//     .container-banners {
-//         grid-template-columns: repeat(2, minmax(240px, 1fr));
-//         /* grid-gap: 2rem; */
-//     }
-// }
-
-/* Screen larger than 600px? 2 column */
-// @media (min-width: 641px) {
-//     .container-banners {
-//         grid-template-columns: repeat(2, minmax(240px, 1fr));
-//         /* grid-gap: 2rem; */
-//     }
-// }
-
-// /* Screen larger than 900px? 3 columns */
-// @media (min-width: 961px) {
-//     .container-banners {
-//         grid-template-columns: repeat(4, minmax(240px, 1fr));
-//     }
-// }
 .item {
 	height: 600px;
 	padding: 10px;
@@ -155,6 +132,9 @@ h2 {
 	// height: 137px;
 }
 
+.wrapper-help-button:hover {
+	transform: scale(1.05);
+}
 .container-help {
 	padding: 10px;
 }
@@ -288,16 +268,6 @@ a.shoppingCartHeaderLink:hover {
 	transform: scale(1.05);
 }
 
-// .homepage-about-blue-bar{
-//     background-color: #6690B6;
-//     height: 224px;
-// }
-
-// .image-meet-reps{
-//     height: 50%;
-//     width: 50%;
-//     padding-left: 30px;
-// }
 .homepage-meet-reps {
 	background-color: #6690b6;
 	padding-top: 20px;
@@ -444,13 +414,10 @@ a.shoppingCartHeaderLink:hover {
 	align-items: center;
 	justify-content: center;
 	padding: 0 10px 0 10px;
-
 }
 
-
 @media (min-width: 641px) {
-
-	.isceb-wiki-home-header{
+	.isceb-wiki-home-header {
 		background-color: #1f476b;
 		margin-bottom: 1rem;
 		display: flex;
@@ -465,22 +432,17 @@ a.shoppingCartHeaderLink:hover {
 	margin-bottom: 2rem;
 	display: flex;
 	position: relative;
-
 }
-
 
 #isceb-wiki-home-search-wrap.isceb-nav-top {
 	margin-top: 0;
 	margin-bottom: 0;
 }
 
-.isceb-end-of-nav{
+.isceb-end-of-nav {
 	margin-left: auto;
 	margin-right: 20px;
 }
-
-
-
 
 #isceb-wiki-home-search-field {
 	width: 250px;
@@ -492,10 +454,9 @@ a.shoppingCartHeaderLink:hover {
 	// line-height: 2rem;
 	height: 38px;
 	font-size: smaller;
-
 }
 
-@media (min-width:641px) {
+@media (min-width: 641px) {
 	#isceb-wiki-home-search-field {
 		width: 400px;
 		border-radius: 25px;
@@ -555,6 +516,26 @@ a.shoppingCartHeaderLink:hover {
 	right: 0;
 }
 
+.isceb-nav-top-input {
+	border: 1px solid #ced4da;
+	/* border: springgreen; */
+	border-radius: 0.25rem;
+}
+
+/* Mobile search nav button*/
+
+.isceb-nav-top-button {
+	text-align: inherit;
+	vertical-align: inherit;
+	padding: 0.1rem 0.3rem;
+}
+
+@media (min-width: 641px) {
+	.isceb-nav-top-button {
+		padding: 0.375rem 0.75rem;
+	}
+}
+
 #isceb-wiki-home-search-button.isceb-nav-top {
 	left: -45px;
 	border: 1px solid $primary;
@@ -579,25 +560,23 @@ a.shoppingCartHeaderLink:hover {
 	margin-top: 5vh;
 }
 
-@media (min-width:641px) {
+@media (min-width: 641px) {
 	.isceb-grid-container {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-template-rows: repeat(2, minmax(200px, 1fr));
 		grid-column-gap: 5vw;
 		grid-row-gap: 5vh;
-	
+
 		margin-left: 10vw;
 		margin-right: 10vw;
 		margin-bottom: 10vh;
 		margin-top: 5vh;
 	}
-	#isceb-grid-item-upload{
+	#isceb-grid-item-upload {
 		grid-column: 2;
 	}
-
 }
-
 
 .isceb-grid-item {
 	border-top: solid #1f476b;
@@ -608,19 +587,17 @@ a.shoppingCartHeaderLink:hover {
 
 	height: 170px;
 	margin-top: 20px;
-
 }
-@media (min-width:641px) {
-	
-.isceb-grid-item {
-	border-top: solid #1f476b;
-	box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-	text-align: center;
-	padding: 1rem;
-	transition: transform 0.2s;
+@media (min-width: 641px) {
+	.isceb-grid-item {
+		border-top: solid #1f476b;
+		box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+		text-align: center;
+		padding: 1rem;
+		transition: transform 0.2s;
 
-	height: 170px;
-}
+		height: 170px;
+	}
 }
 
 .isceb-grid-item:hover {
@@ -638,7 +615,6 @@ a.shoppingCartHeaderLink:hover {
 @media (min-width: 641px) {
 	#isceb-grid-item-upload {
 		grid-column: 2;
-
 	}
 }
 .isceb-wiki-button-not-gb {
@@ -659,7 +635,7 @@ a.shoppingCartHeaderLink:hover {
 }
 
 @media (min-width: 641px) {
-	.isceb-wiki-button-not-gb{
+	.isceb-wiki-button-not-gb {
 		background-color: $primary;
 		color: white;
 		border: none;
@@ -671,10 +647,9 @@ a.shoppingCartHeaderLink:hover {
 		text-align: center;
 		text-decoration: none;
 		overflow-wrap: break-word;
-	
+
 		font-weight: bold;
 	}
-
 }
 
 .isceb-wiki-button-not-gb:hover {
@@ -731,7 +706,7 @@ a.isceb-wiki-nav-phase {
 	font-weight: bold;
 }
 
-@media (min-width:641px) {
+@media (min-width: 641px) {
 	text-decoration: none;
 	font-size: x-large;
 	font-weight: bold;
@@ -746,7 +721,6 @@ hr.isceb-wiki-nav-phase-line {
 	display: block;
 	border: none;
 	margin: 0 auto 10px auto;
-
 }
 
 @media (min-width: 641px) {
@@ -781,7 +755,6 @@ hr.isceb-wiki-nav-phase-line {
 	}
 }
 
-
 @media (min-width: 641px) {
 	.isceb-wiki-site-main {
 		margin-top: 2rem;
@@ -802,10 +775,8 @@ hr.isceb-wiki-nav-phase-line {
 	transform: rotate(270deg);
 }
 
-
 @media (min-width: 641px) {
 	font-size: xx-large;
-
 }
 //ISCEB Wiki Files
 .isceb-wiki-container {
@@ -873,10 +844,9 @@ hr.isceb-wiki-nav-phase-line {
 	color: #a9a9a9;
 }
 
-#isceb-wiki-breadcrumb{
+#isceb-wiki-breadcrumb {
 	margin-bottom: 30px;
 	margin-top: 30px;
-		
 }
 
 .isceb-wiki-file-title {
@@ -930,7 +900,6 @@ hr.isceb-wiki-nav-phase-line {
 	transition: transform 0.2s;
 }
 
-
 @media (min-width: 641px) {
 	.isceb-homepage-about-block {
 		margin: 0px 25px 0px 50px;
@@ -950,12 +919,20 @@ hr.isceb-wiki-nav-phase-line {
 	margin: 40px 50px 0px 50px;
 }
 
-
 @media (min-width: 641px) {
 	.isceb-homepage-about-heading {
-		margin: 40px 50px 0px 50px;
+		display: flex;
+		align-items: center;
+		/* align-content: flex-end; */
+		/* flex-wrap: wrap; */
+		flex-direction: column;
 	}
-	
+
+	.isceb-homepage-about-heading-text {
+		display: inline-block;
+		width: 50%;
+	}
+
 	.isceb-homepage-blue-separator {
 		background-color: $secondary;
 		height: 100px;
@@ -963,12 +940,13 @@ hr.isceb-wiki-nav-phase-line {
 	.isceb-homepage-meet-img {
 		margin-left: 100px;
 		width: 40%;
-		height: 100px;
+		min-height: 400px !important;
 	}
 	.isceb-homepage-meet-text {
 		background-color: $primary;
 		width: fit-content;
 		padding: 5px;
+		font-size: xx-large;
 	}
 	.isceb-homepage-meet-text-group {
 		position: absolute;
@@ -977,26 +955,24 @@ hr.isceb-wiki-nav-phase-line {
 		width: 400px;
 	}
 	.isceb-homepage-get-to-know-block {
-		// color: black;
 		position: absolute;
-		left: 750px;
+		left: 120%;
 		margin-right: 20px;
 		top: 100px;
-		/* right: 0; */
+
 		width: 400px;
 		text-align: right;
 		color: #1f476b;
 	}
-	
+
 	.isceb-homepage-more-button {
 		position: absolute;
 		right: 0;
 	}
 }
 
-.wp-block-group__inner-container > h4{
-    font-size: large;
-
+.wp-block-group__inner-container > h4 {
+	font-size: large;
 }
 
 .isceb-homepage-meet-text {
@@ -1012,17 +988,14 @@ hr.isceb-wiki-nav-phase-line {
 	justify-content: center;
 }
 
-
 @media (min-width: 641px) {
 	.isceb-homepage-student-resources-item {
 		width: 247px;
-	
 	}
 }
 .isceb-homepage-student-resources-item {
 	width: 247px;
 	margin-top: 1rem;
-
 }
 
 .isceb-homepage-student-resources-heading {
@@ -1036,7 +1009,6 @@ hr.isceb-wiki-nav-phase-line {
 @media (min-width: 641px) {
 	.isceb-homepage-student-resources-item {
 		width: 247px;
-	
 	}
 }
 
