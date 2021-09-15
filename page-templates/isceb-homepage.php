@@ -45,23 +45,25 @@ $container = get_theme_mod('understrap_container_type');
 					<div class="item">
 						<div class="bannerCardImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(<?php echo get_the_post_thumbnail_url($news_item); ?>);">
 
-							<?php
-							if (get_the_tags($news_item)) :
 
-							?>
-								<div class="bannerCardTag">
-									<p class="banerTagText"><?php echo get_the_tags($news_item)[0]->name ?></p>
-								</div>
-							<?php endif; ?>
-							<div class="bannerCardContent">
-								<h3 class="bannerCardTitle"><?php echo $news_item->post_title ?></h3>
-								<p class="bannerCardDescription"><?php echo $news_item->post_excerpt ?></p>
-								<a href="<?php echo get_permalink($news_item) ?>">
-									<button class="bannerCardButton">More Info</button>
 
-								</a>
+
+						</div>
+						<?php
+						if (get_the_tags($news_item)) :
+
+						?>
+							<div class="bannerCardTag">
+								<p class="banerTagText"><?php echo get_the_tags($news_item)[0]->name ?></p>
 							</div>
+						<?php endif; ?>
+						<div class="bannerCardContent">
+							<h3 class="bannerCardTitle"><?php echo $news_item->post_title ?></h3>
+							<p class="bannerCardDescription"><?php echo $news_item->post_excerpt ?></p>
+							<a href="<?php echo get_permalink($news_item) ?>">
+								<button class="bannerCardButton">More Info</button>
 
+							</a>
 						</div>
 					</div>
 				<?php endforeach; ?>
