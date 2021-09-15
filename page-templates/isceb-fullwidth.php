@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Full Width Page ISCEB
  *
@@ -8,13 +9,13 @@
  */
 
 // Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 get_header();
-$container = get_theme_mod( 'understrap_container_type' );
+$container = get_theme_mod('understrap_container_type');
 
-if ( is_front_page() ) {
-	get_template_part( 'global-templates/hero' );
+if (is_front_page()) {
+	get_template_part('global-templates/hero');
 }
 ?>
 
@@ -27,18 +28,22 @@ if ( is_front_page() ) {
 			<div class="col-md-12 content-area" id="primary">
 
 				<main class="site-main" id="main" role="main">
+						<h2>
+							
+						</h2>
+						<?php
+						while (have_posts()) {
+							the_post();
+							get_template_part('loop-templates/content', 'page');
 
-					<?php
-					while ( have_posts() ) {
-						the_post();
-						get_template_part( 'loop-templates/content', 'page' );
-
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) {
-							comments_template();
+							// 	// If comments are open or we have at least one comment, load up the comment template.
+							// 	if ( comments_open() || get_comments_number() ) {
+							// 		comments_template();
+							// 	}
 						}
-					}
-					?>
+						?>
+
+
 
 				</main><!-- #main -->
 
