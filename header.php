@@ -20,9 +20,12 @@ $container = get_theme_mod('understrap_container_type');
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"> -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Quicksand:wght@500&display=swap" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
 
@@ -70,64 +73,64 @@ $container = get_theme_mod('understrap_container_type');
 						<span class="navbar-toggler-icon"></span>
 					</button>
 					<div class="collapse navbar-collapse" id="navbarNavDropdown">
-					<!-- The WordPress Menu goes here -->
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location'  => 'primary',
-							// 'container_class' => 'collapse navbar-collapse',
-							// 'container_id'    => 'navbarNavDropdown',
-							'container_class' => false,
-							'container_id'    => false,
-							'menu_class'      => 'navbar-nav mr-auto',
-							'fallback_cb'     => '',
-							'menu_id'         => 'main-menu',
-							'depth'           => 2,
-							'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-						)
-					);
-					?>
-					<?php if ('container' === $container) : ?>
-						<!-- .container -->
-					<?php endif; ?>
-					<?php if (function_exists("is_account_page") && is_user_logged_in()) : ?>
-						<a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="MyAccountHeaderLink isceb-end-of-nav">
-							<div class="MyAccountHeader">
+						<!-- The WordPress Menu goes here -->
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location'  => 'primary',
+								// 'container_class' => 'collapse navbar-collapse',
+								// 'container_id'    => 'navbarNavDropdown',
+								'container_class' => false,
+								'container_id'    => false,
+								'menu_class'      => 'navbar-nav mr-auto',
+								'fallback_cb'     => '',
+								'menu_id'         => 'main-menu',
+								'depth'           => 2,
+								'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+							)
+						);
+						?>
+						<?php if ('container' === $container) : ?>
+							<!-- .container -->
+						<?php endif; ?>
+						<?php if (function_exists("is_account_page") && is_user_logged_in()) : ?>
+							<a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="MyAccountHeaderLink isceb-end-of-nav">
+								<div class="MyAccountHeader">
 
 
-								<div class="myAccountTextHeader">
-									<?php
-									$user_info = get_userdata(get_current_user_id());
-									$first_name = $user_info->first_name;
-									if ($first_name != '') {
-										esc_html_e("Hi " . $first_name);
-									}
-									?>
+									<div class="myAccountTextHeader">
+										<?php
+										$user_info = get_userdata(get_current_user_id());
+										$first_name = $user_info->first_name;
+										if ($first_name != '') {
+											esc_html_e("Hi " . $first_name);
+										}
+										?>
+									</div>
+									<i class="fa fa-user-circle fa-2x"></i>
 								</div>
-								<i class="fa fa-user-circle fa-2x"></i>
-							</div>
-						</a>
-					<?php endif; ?>
-					<?php if (function_exists("is_account_page") && !is_user_logged_in()) : ?>
-						<a href="" class="isceb-end-of-nav">Login</a>
-					<?php endif; ?>
-					<?php if (function_exists("is_shop") && is_shop()) : ?>
-						<a href="<?php echo wc_get_cart_url(); ?>" class="shoppingCartHeaderLink">
-							<div class="shoppingCartHeader">
-								<i class="fa fa-shopping-cart fa-2x"></i>
-								<span class="shoppingCartCount">
-									<?php echo (WC()->cart->get_cart_contents_count()); ?>
-								</span>
-							</div>
-						</a>
-					<?php endif; ?>
+							</a>
+						<?php endif; ?>
+						<?php if (function_exists("is_account_page") && !is_user_logged_in()) : ?>
+							<a href="" class="isceb-end-of-nav">Login</a>
+						<?php endif; ?>
+						<?php if (function_exists("is_shop") && is_shop()) : ?>
+							<a href="<?php echo wc_get_cart_url(); ?>" class="shoppingCartHeaderLink">
+								<div class="shoppingCartHeader">
+									<i class="fa fa-shopping-cart fa-2x"></i>
+									<span class="shoppingCartCount">
+										<?php echo (WC()->cart->get_cart_contents_count()); ?>
+									</span>
+								</div>
+							</a>
+						<?php endif; ?>
 
-					<form  class="isceb-nav-top-wrap" action="<?php echo esc_url(home_url('/')); ?>">
-						<input type="text"  class="isceb-nav-top-input" name="s" placeholder="Search" value="<?php echo get_search_query(); ?>">
-						<button type="submit"  class="btn btn-secondary isceb-nav-top-button"><i class="fa fa-search"></i></button>
-					</form>
+						<form class="isceb-nav-top-wrap" action="<?php echo esc_url(home_url('/')); ?>">
+							<input type="text" class="isceb-nav-top-input" name="s" placeholder="Search" value="<?php echo get_search_query(); ?>">
+							<button type="submit" class="btn btn-secondary isceb-nav-top-button"><i class="fa fa-search"></i></button>
+						</form>
 
-				
+
 
 					</div>
 
