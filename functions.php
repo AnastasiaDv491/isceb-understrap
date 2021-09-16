@@ -229,7 +229,7 @@ function isceb_display_form($type)
 /**
  * Change of an account
  */
-add_action('uwp_after_process_account', 'isceb_after_account_save', 30, 1);
+
 /* Data format
 Array
 (
@@ -245,20 +245,26 @@ Array
 
 */
 
+add_action('uwp_after_process_account', 'isceb_after_account_save', 30, 1);
+//This function is being called when a profile in UsersWP is being updated
 function isceb_after_account_save($data)
 {
 	$user = wp_get_current_user();
-	error_log(print_r($data, true));
+	// error_log(print_r($data, true));
+	// error_log($user->ID);
+
+	isceb_sync_user_with_woocommerce($data, $user->ID);
 }
 
 
 add_action('uwp_after_process_register', 'isceb_after_register', 30, 2);
+//This function is being called when a new account is registered
 function isceb_after_register($data, $user_id)
 {
+	// error_log(print_r($data, true));
+	// error_log(print_r($user_id, true));
 
-
-	error_log(print_r($data, true));
-	error_log(print_r($user_id, true));
+	isceb_sync_user_with_woocommerce($data, $user_id);
 }
 
 function isceb_sync_user_with_woocommerce($data, $user_ID)
@@ -267,12 +273,17 @@ function isceb_sync_user_with_woocommerce($data, $user_ID)
 		'billing_first_name' => $data['first_name'],
 		'billing_last_name' => $data['last_name'],
 	);
+
+	foreach ($metaFieldsToUpdate as $key => $value) {
+		update_user_meta($user_ID,$key,$value);
+	}
+	
 }
 
 
 
 /*
-Possible fields
+Possible fields of Woocommerce
 [first_name] 
  [last_name] 
   [billing_first_name] 
@@ -300,6 +311,7 @@ Possible fields
 
 
 add_filter('uwp_form_fields_predefined', 'isceb_add_custom_field_userswp', 10, 2);
+//A way to add a custom filed to userswp
 function isceb_add_custom_field_userswp($custom_fields, $type)
 {
 	// WordPress

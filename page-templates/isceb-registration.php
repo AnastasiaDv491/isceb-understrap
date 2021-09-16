@@ -1,5 +1,18 @@
 <?php
 
+
+
+
+
+
+/* THIS IS NOT BEING USED*/
+
+
+
+
+
+
+
 /**
  * Template Name: Register Page
  *
