@@ -24,9 +24,7 @@ defined('ABSPATH') || exit;
 			<?php the_title('<h1 class="entry-title isceb-standard-page-header">', '</h1>'); ?>
 			
 		</div>
-			<!-- <?php the_author_meta('first_name'); ?>
-			<?php the_author_meta('last_name'); ?> -->
-			<!-- <?php echo get_avatar( get_the_author_meta('ID'), 60); ?> -->
+			
 
 		<div>
 			<?php the_content(); ?>

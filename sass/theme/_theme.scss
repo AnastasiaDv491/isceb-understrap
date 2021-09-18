@@ -403,10 +403,23 @@ a.shoppingCartHeaderLink:hover {
 .wrapperregistration {
 	background: linear-gradient(180deg, #1f476b 50%, #d3ebf8 50%);
 	padding: 5px;
+
+	
+    width: 100%;
+    height: 100%;
+
+	
 }
 
 .wrapperregistration > .container {
 	margin-bottom: 2em;
+}
+
+@media (min-width: 641px) {
+	.wrapperregistration {
+		position: fixed;
+		padding-top: 10rem;
+	}
 }
 
 /*Wiki */
@@ -592,6 +605,7 @@ a.shoppingCartHeaderLink:hover {
 
 	height: 170px;
 	margin-top: 20px;
+	border-radius: 5px;
 }
 @media (min-width: 641px) {
 	.isceb-grid-item {
