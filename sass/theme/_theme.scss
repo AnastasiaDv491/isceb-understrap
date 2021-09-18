@@ -1018,7 +1018,7 @@ hr.isceb-wiki-nav-phase-line {
 /* Standard Signle page Template*/
 
 .isceb-standard-page-container{
-	margin: 0 0 auto 20px;
+    margin: 0 10px auto 10px;
 
     display: flex;
     justify-content: start;
@@ -1028,9 +1028,7 @@ hr.isceb-wiki-nav-phase-line {
 
 @media (min-width: 641px){
 	.isceb-standard-page-container{
-
 	margin: 0 auto;
-	width: 50%;
 	}
 }
 
@@ -1039,14 +1037,58 @@ hr.isceb-wiki-nav-phase-line {
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-
-
 .isceb-standard-page-title-container{
-	border-bottom: solid $primary;
+
     margin-bottom: 20px;
 }
 
 .isceb-standard-page-header{
 	font-size: xx-large;
+}
+
+.isceb-standard-page-head-container{
+	display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    width: 50%;
+    grid-row-gap: 0px;
+	margin-top: 20px;
+
+	// border-top: solid $primary;
+}
+
+@media (min-width: 641px){
+	.isceb-standard-page-head-container{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 1fr;
+		grid-column-gap: 0px;
+		width: 15%;
+		grid-row-gap: 0px;
+		margin-top: 20px;
+	
+	}
+}
+
+.isceb-standard-page-topic {
+	// border-bottom: solid $primary;
+    padding-bottom: 10px;
+	color: grey;
+    font-weight: normal;
+}
+
+/* Code for the head of standard page (topic, date) */
+.isceb-standard-page-title-head{
+	border-bottom: solid #1f476b;
+	display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+}
+
+.isceb-standard-page-date {
+	justify-content: flex-end;
+	display: flex;
 }
 

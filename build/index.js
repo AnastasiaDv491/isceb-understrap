@@ -90,6 +90,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 
+// Everytime you change code here & it is final, you have to run "npm run build:scripts"
+// Run "npm run start-build to watch your changes in index.js file"
 var registerBlockType = wp.blocks.registerBlockType;
 var _wp$editor = wp.editor,
     InspectorControls = _wp$editor.InspectorControls,
@@ -114,6 +116,14 @@ registerBlockType('isceb-theme/isceb-author-img', {
     titleColor: {
       type: 'string',
       "default": 'red'
+    },
+    topic: {
+      type: 'string',
+      "default": null
+    },
+    date: {
+      type: 'integer',
+      "default": null
     }
   },
   edit: function edit(_ref) {
@@ -121,7 +131,9 @@ registerBlockType('isceb-theme/isceb-author-img', {
         setAttributes = _ref.setAttributes;
     var author = attributes.author,
         titleColor = attributes.titleColor,
-        authorImage = attributes.authorImage;
+        authorImage = attributes.authorImage,
+        topic = attributes.topic,
+        date = attributes.date;
 
     function onSelectAuthorImage(image) {
       //improve with right resolution 
@@ -141,9 +153,19 @@ registerBlockType('isceb-theme/isceb-author-img', {
       setAttributes({
         author: event.target.value
       });
-    } // Everytime you change code here & it is final, you have to run "npm run build:scripts"
-    // Run "npm run start-build to watch your changes in index.js file"
+    }
 
+    function updateTopic(topic) {
+      setAttributes({
+        topic: topic.target.value
+      });
+    }
+
+    function updateDate(date) {
+      setAttributes({
+        date: date.target.value
+      });
+    }
 
     return [(0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InspectorControls, {
       style: {
@@ -168,13 +190,31 @@ registerBlockType('isceb-theme/isceb-author-img', {
           onClick: open
         }, "Background Image");
       }
-    }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      "class": "isceb-standard-page-title-head"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+      type: "text",
+      onChange: updateTopic,
+      value: attributes.topic,
+      placeholder: "Post topic",
+      "class": "isceb-standard-page-topic"
+    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+      type: "text",
+      onChange: updateDate,
+      value: attributes.date,
+      placeholder: "Post date",
+      "class": "isceb-standard-page-date"
+    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      "class": "isceb-standard-page-head-container"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
       type: "text",
       onChange: updateAuthor,
       value: attributes.author,
       style: {
         color: titleColor
-      }
+      },
+      placeholder: "Name of the page's author",
+      "class": "isceb-standard-page-author"
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
       src: authorImage,
       style: {
@@ -185,13 +225,23 @@ registerBlockType('isceb-theme/isceb-author-img', {
 
       },
       "class": "isceb-standard-page-author-img"
-    }))];
+    })))];
   },
   save: function save(_ref3) {
     var attributes = _ref3.attributes;
     var authorImage = attributes.authorImage,
-        author = attributes.author;
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h6", null, author), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+        author = attributes.author,
+        topic = attributes.topic,
+        date = attributes.date;
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      "class": "isceb-standard-page-title-head"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h6", {
+      "class": "isceb-standard-page-topic"
+    }, "Topic: ", topic), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h6", {
+      "class": "isceb-standard-page-date"
+    }, date)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      "class": "isceb-standard-page-head-container"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
       src: authorImage,
       style: {
         borderRadius: '50%',
@@ -201,7 +251,9 @@ registerBlockType('isceb-theme/isceb-author-img', {
 
       },
       "class": "isceb-standard-page-author-img"
-    }));
+    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h6", {
+      "class": "isceb-standard-page-author"
+    }, author, " ")));
   }
 });
 }();
