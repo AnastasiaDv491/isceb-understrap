@@ -111,7 +111,7 @@ $container = get_theme_mod('understrap_container_type');
 								</div>
 							</a>
 						<?php endif; ?>
-						<?php if (function_exists("is_account_page") && !is_user_logged_in()) : ?>
+						<?php if (in_array('userswp/userswp.php', apply_filters('active_plugins', get_option('active_plugins'))) && !is_user_logged_in()) : ?>
 							<a href="<?php echo get_permalink(get_option('uwp_settings')['login_page']); ?>" class="isceb-end-of-nav">Login</a>
 						<?php endif; ?>
 						<?php if (function_exists("is_shop") && is_shop()) : ?>
@@ -129,12 +129,6 @@ $container = get_theme_mod('understrap_container_type');
 							<input type="text" class="isceb-nav-top-input" name="s" placeholder="Search" value="<?php echo get_search_query(); ?>">
 							<button type="submit" class="btn btn-secondary isceb-nav-top-button"><i class="fa fa-search"></i></button>
 						</form>
-
-
-
 					</div>
-
 				</div>
-
-
 		</div><!-- #wrapper-navbar end -->
