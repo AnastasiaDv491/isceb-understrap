@@ -220,6 +220,9 @@ function isceb_display_form($type)
 		// echo do_shortcode('[woocommerce_order_tracking]');
 		// woocommerce_account_orders( 1);
 		woocommerce_account_orders(1);
+
+		var_dump(get_option( 'uwp_settings')['account_page'] );
+
 		print_r(get_user_meta(get_current_user_id()));
 	}
 }
