@@ -422,6 +422,47 @@ a.shoppingCartHeaderLink:hover {
 	}
 }
 
+/* wiki Upload Page*/
+
+// .isceb-wiki-upload-input {
+// 	// border: 1px solid #ced4da;
+//     border-radius: .25rem;
+// 	// background: linear-gradient(top, #f9f9f9, #e3e3e3);
+// 	// border: 1px solid #999;
+// 	border-radius: 3px;
+// 	padding: 5px 8px;
+// 	outline: none;
+// 	white-space: nowrap;
+// 	-webkit-user-select: none;
+// 	cursor: pointer;
+// 	text-shadow: 1px 1px #fff;
+// 	font-weight: 700;
+// 	font-size: 10pt;
+	  
+// }
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+	border-radius: .25rem;
+	font-weight: 700;
+	font-size: 10pt;
+	color: $primary;
+}
+
+.li:before {
+	content:”\00A3″; font-family: “FontAwesome”; font-weight: normal; }
+
+.isceb-wiki-upload-submit {
+	border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
 /*Wiki */
 
 .isceb-wiki-home-header {
@@ -578,6 +619,8 @@ a.shoppingCartHeaderLink:hover {
 	margin-top: 5vh;
 }
 
+
+
 @media (min-width: 641px) {
 	.isceb-grid-container {
 		display: grid;
@@ -596,7 +639,7 @@ a.shoppingCartHeaderLink:hover {
 	}
 }
 
-.isceb-grid-item {
+.isceb-grid-item  {
 	border-top: solid #1f476b;
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 	text-align: center;
@@ -636,6 +679,55 @@ a.shoppingCartHeaderLink:hover {
 		grid-column: 2;
 	}
 }
+
+/* Styling of grid for phases*/
+.isceb-phases-grid-container{
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+	grid-row-gap: 0px;
+}
+
+.isceb-phase-grid-item {
+	border-top: solid #1f476b;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+	text-align: center;
+	padding: 1rem;
+	// transition: transform 0.2s;
+	margin: 20px;
+	border-radius: 5px;
+}
+
+
+
+@media (min-width: 641px) {
+	.isceb-phases-grid-container {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: 1fr;
+		grid-column-gap: 20px;
+		grid-row-gap: 0px;
+	}
+
+	.isceb-phase-grid-item{
+		border-top: solid #1f476b;
+		box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+		text-align: center;
+		padding: 1rem;
+		transition: transform 0.2s;
+		width: 170px;
+		height: 100px;
+		margin-top: 20px;
+		border-radius: 5px;
+	}
+	.isceb-phase-grid-item:hover {
+		transform: scale(1.05);
+	}
+	
+
+}
+
 .isceb-wiki-button-not-gb {
 	background-color: $primary;
 	color: white;
