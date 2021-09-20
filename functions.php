@@ -105,8 +105,98 @@ add_theme_support('align-wide');
 
 
 
+/* Woocommerce testing */
+/* First test add field in general*/
+add_action('woocommerce_product_options_pricing', 'wc_rrp_product_field');
+function wc_rrp_product_field()
+{
+	woocommerce_wp_text_input(array('id' => 'rrp_price', 'class' => 'wc_input_price short', 'label' => __('RRP', 'woocommerce') . ' (' . get_woocommerce_currency_symbol() . ')'));
+}
 
 
 
+add_action('save_post', 'wc_rrp_save_product');
+function wc_rrp_save_product($product_id)
+{
+	// If this is a auto save do nothing, we only save when update button is clicked
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
+		return;
+	if (isset($_POST['rrp_price'])) {
+		if (is_numeric($_POST['rrp_price']))
+			update_post_meta($product_id, 'rrp_price', $_POST['rrp_price']);
+	} else delete_post_meta($product_id, 'rrp_price');
+}
+
+/* Second test custom product type */
+// add a product type
+add_filter('product_type_selector', 'wdm_add_custom_product_type');
+function wdm_add_custom_product_type($types)
+{
+	$types['wdm_custom_product'] = __('Wdm Product');
+	return $types;
+}
+
+add_action('plugins_loaded', 'wdm_create_custom_product_type');
+function wdm_create_custom_product_type()
+{
+	// declare the product class
+	class WC_Product_Wdm extends WC_Product
+	{
+		public function __construct($product)
+		{
+			$this->product_type = 'wdm_custom_product';
+			parent::__construct($product);
+			// add additional functions here
+		}
+
+		// public function get_type() {
+		// 	return 'simple';
+		//  }
+	}
+}
+
+function wh_variable_bulk_admin_custom_js()
+{
+
+	if ('product' != get_post_type()) :
+		return;
+	endif;
+
+	wp_enqueue_script('WC_CUSTOM_PRODUCT_SHOW_TABS', get_template_directory_uri() . '/js/wc_custom_product.js');
+}
+
+add_action('admin_enqueue_scripts', 'wh_variable_bulk_admin_custom_js');
 
 
+add_action('admin_footer', 'gift_coupon_custom_js');
+/**
+ * Show pricing fields for gift_coupon product.
+ */
+/**
+ * Show pricing fields for gift_coupon product.
+ */
+function gift_coupon_custom_js()
+{
+	if ('product' != get_post_type()) :
+		return;
+	endif;
+?><script type='text/javascript'>
+		jQuery(function($) {
+			//for Price tab
+
+			$('#product-type').on('change', function($) {
+				console.log(this.value);
+				console.log("tesst");
+				jQuery('.product_data_tabs .general_tab').addClass('show_if_variable_bulk').show();
+				jQuery('#general_product_data').addClass('show_if_variable_bulk').show();
+				jQuery('.show_if_simple').addClass('show_if_variable_bulk').show();
+				//for Inventory tab
+				jQuery('.inventory_options').addClass('show_if_variable_bulk').show();
+				jQuery('#inventory_product_data ._manage_stock_field').addClass('show_if_variable_bulk').show();
+				jQuery('#inventory_product_data ._sold_individually_field').parent().addClass('show_if_variable_bulk').show();
+				jQuery('#inventory_product_data ._sold_individually_field').addClass('show_if_variable_bulk').show();
+			});
+
+		});
+	</script><?php
+			}
