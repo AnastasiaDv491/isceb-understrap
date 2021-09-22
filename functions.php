@@ -108,7 +108,7 @@ function isceb_add_new_event_product_tab($tabs)
 	$tabs['isceb_event_tab'] = array(
 		'label' => __('Events info', 'woocommerce'),
 		'target' => 'isceb_events_tab',
-		'class'    => array( 'hide_if_simple', 'hide_if_variable', 'hide_if_grouped', 'hide_if_external' ),
+		'class'    => array('hide_if_simple', 'hide_if_variable', 'hide_if_grouped', 'hide_if_external'),
 		'priority' => 10,
 	);
 
@@ -120,37 +120,38 @@ function isceb_add_new_event_product_tab($tabs)
 /* Woocommerce testing */
 /* First test add field in general*/
 // add_action('woocommerce_product_options_general_product_data', 'isceb_create_start_date_fields');
-add_action( 'woocommerce_product_data_panels', 'isceb_fill_new_events_tab' );
+add_action('woocommerce_product_data_panels', 'isceb_fill_new_events_tab');
 function isceb_fill_new_events_tab()
 {
 
 	// global $post, $product_object;
 
 	// Dont forget to change the id in the div with your target of your product tab
-	?><div id='isceb_events_tab' class='panel woocommerce_options_panel'><?php
-		?><div class='options_group'><?php
-		woocommerce_wp_text_input(
-			array(
-				'id' => 'isceb-start-of-event',
-				'label' => __('Start of event', 'woocommerce'),
-				'type'  => 'datetime-local'
-			)
-	
-		);
-	
-		woocommerce_wp_text_input(
-			array(
-				'id'                => 'isceb-end-of-event',
-				'label'             => __('End of event', 'woocommerce'),
-				'placeholder'       => '',
-				'type'              => 'datetime-local',
-			)
-		);
-			
-		?></div></div>
-		<?php
+?><div id='isceb_events_tab' class='panel woocommerce_options_panel'><?php
+																		?><div class='options_group'><?php
+								woocommerce_wp_text_input(
+									array(
+										'id' => 'isceb-start-of-event',
+										'label' => __('Start of event', 'woocommerce'),
+										'type'  => 'datetime-local'
+									)
 
-	
+								);
+
+								woocommerce_wp_text_input(
+									array(
+										'id'                => 'isceb-end-of-event',
+										'label'             => __('End of event', 'woocommerce'),
+										'placeholder'       => '',
+										'type'              => 'datetime-local',
+									)
+								);
+
+								?></div>
+	</div>
+<?php
+
+
 
 }
 
@@ -168,8 +169,6 @@ function isceb_save_product_custom_fields($post_id)
 	$custom_fields_event_end_date = isset($_POST['isceb-end-of-event']) ? $_POST['isceb-end-of-event'] : '';
 	$product->update_meta_data('isceb-end-of-event', sanitize_text_field($custom_fields_event_end_date));
 	$product->save();
-
-	
 }
 add_action('woocommerce_process_product_meta', 'isceb_save_product_custom_fields');
 
@@ -220,19 +219,19 @@ function isceb_create_custom_product_type_event()
 			parent::__construct($product);
 			// add additional functions here
 		}
-
 	}
 }
 
-function isceb_woocommerce_event_product_class( $classname, $product_type ) {
-    if ( $product_type == 'WC_Product_Isceb_event' ) { // notice the checking here.
-        $classname = 'WC_Product_isceb_event';
-    }
+function isceb_woocommerce_event_product_class($classname, $product_type)
+{
+	if ($product_type == 'WC_Product_Isceb_event') { // notice the checking here.
+		$classname = 'WC_Product_isceb_event';
+	}
 
-    return $classname;
+	return $classname;
 }
 
-add_filter( 'woocommerce_product_class', 'isceb_woocommerce_event_product_class', 10, 2 );
+add_filter('woocommerce_product_class', 'isceb_woocommerce_event_product_class', 10, 2);
 
 
 // add_action('admin_footer', 'isceb_wc_show_tabs_on_custom_product');
@@ -276,3 +275,35 @@ function isceb_wc_show_tabs_on_custom_product()
 		});
 	</script><?php
 			}
+
+
+			function woocommerce_custom_fields_display()
+			{
+				global $product;
+				// $product = wc_get_product($post->ID);
+				// $custom_fields_woocommerce_start_title = $product->get_meta('isceb-start-of-event');
+
+				// $custom_fields_woocommerce_end_title = $product->get_meta('isceb-end-of-event');
+				// if ($custom_fields_woocommerce_title) {
+				// 	printf(
+				// 		'<div id="isceb-start-of-event"><label>%s</label></div>',
+				// 		'<div id="isceb-end-of-event"><label>%s</label></div>',
+				// 		esc_html($custom_fields_woocommerce_start_title),
+				// 		esc_html($custom_fields_woocommerce_end_title)
+				// 	);
+				// }
+
+				$custom_field = get_post_meta($product->get_id(), 'isceb-start-of-event', true);
+				if (!empty($custom_field))
+					$exampleDate = strtotime($custom_field);
+				$newDate = date('l jS \of F Y h:i A', $exampleDate);
+				$newDate2 = date('l jS \of F Y h:i A', $exampleDate);
+
+				echo  '<strong>Start of the event: <p id="isceb-start-of-event" class="isceb-event-date">' . $newDate . '</p></strong>';
+
+				$custom_field2 = get_post_meta($product->get_id(), 'isceb-end-of-event', true);
+				if (!empty($custom_field2))
+					echo '<strong>End of the event: <p id="isceb-end-of-event" class="isceb-event-date">' . $newDate2 . '</p></strong>';
+			}
+
+			add_action('woocommerce_single_product_summary', 'woocommerce_custom_fields_display');
