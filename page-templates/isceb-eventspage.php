@@ -20,11 +20,10 @@ if (is_front_page()) {
 
 $args = array(
     'post_type' => 'product',
-    'tax_query' => array(
+    'meta_query' => array(
         array(
-            'taxonomy' => 'product_type',
-            'field'    => 'slug',
-            'terms'    => 'isceb_event',
+            'key' => '_isceb_event',
+            'value'    => 'yes',
         ),
     ),
 );
@@ -59,16 +58,22 @@ $product_posts = get_posts($args);
 
                     foreach ($product_posts as $product_post) {
                         # code...
-                        var_dump($product_post);
-                        
-                        var_dump(wc_get_product($product_post->ID));
+                        // var_dump($product_post);
+                        $post_meta = get_post_meta($product_post->ID);
+                        print_r(get_post_meta($product_post->ID));
+
+                        // var_dump(wc_get_product($product_post->ID)->get_available_variations());
 
                         $event_template_data = array(
-                            'name_event' => $product_post->post_title
+                            'name_event' => $product_post->post_title,
+                            'start_event' => ['isceb-start-of-event'],
+                            'end_event' => ['isceb-end-of-event'],
+                            'location_event' => ['isceb-location-of-event'],
+
+
                         );
 
-                        get_template_part('loop-templates/content', 'isceb-event',$event_template_data);
-                        
+                        get_template_part('loop-templates/content', 'isceb-event', $event_template_data);
                     }
 
 

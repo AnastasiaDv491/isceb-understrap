@@ -103,33 +103,33 @@ add_theme_support('align-wide');
 
 
 
-			function woocommerce_custom_fields_display()
-			{
-				global $product;
-				// $product = wc_get_product($post->ID);
-				// $custom_fields_woocommerce_start_title = $product->get_meta('isceb-start-of-event');
+function woocommerce_custom_fields_display()
+{
+	global $product;
+	// $product = wc_get_product($post->ID);
+	// $custom_fields_woocommerce_start_title = $product->get_meta('isceb-start-of-event');
 
-				// $custom_fields_woocommerce_end_title = $product->get_meta('isceb-end-of-event');
-				// if ($custom_fields_woocommerce_title) {
-				// 	printf(
-				// 		'<div id="isceb-start-of-event"><label>%s</label></div>',
-				// 		'<div id="isceb-end-of-event"><label>%s</label></div>',
-				// 		esc_html($custom_fields_woocommerce_start_title),
-				// 		esc_html($custom_fields_woocommerce_end_title)
-				// 	);
-				// }
+	// $custom_fields_woocommerce_end_title = $product->get_meta('isceb-end-of-event');
+	// if ($custom_fields_woocommerce_title) {
+	// 	printf(
+	// 		'<div id="isceb-start-of-event"><label>%s</label></div>',
+	// 		'<div id="isceb-end-of-event"><label>%s</label></div>',
+	// 		esc_html($custom_fields_woocommerce_start_title),
+	// 		esc_html($custom_fields_woocommerce_end_title)
+	// 	);
+	// }
 
-				$custom_field = get_post_meta($product->get_id(), 'isceb-start-of-event', true);
-				if (!empty($custom_field))
-					$exampleDate = strtotime($custom_field);
-				$newDate = date('l jS \of F Y h:i A', $exampleDate);
-				$newDate2 = date('l jS \of F Y h:i A', $exampleDate);
+	$custom_field = get_post_meta($product->get_id(), 'isceb-start-of-event', true);
+	if (!empty($custom_field))
+		$exampleDate = strtotime($custom_field);
+	$newDate = date('l jS \of F Y h:i A', $exampleDate);
+	$newDate2 = date('l jS \of F Y h:i A', $exampleDate);
 
-				echo  '<strong>Start of the event: <p id="isceb-start-of-event" class="isceb-event-date">' . $newDate . '</p></strong>';
+	echo  '<strong>Start of the event: <p id="isceb-start-of-event" class="isceb-event-date">' . $newDate . '</p></strong>';
 
-				$custom_field2 = get_post_meta($product->get_id(), 'isceb-end-of-event', true);
-				if (!empty($custom_field2))
-					echo '<strong>End of the event: <p id="isceb-end-of-event" class="isceb-event-date">' . $newDate2 . '</p></strong>';
-			}
+	$custom_field2 = get_post_meta($product->get_id(), 'isceb-end-of-event', true);
+	if (!empty($custom_field2))
+		echo '<strong>End of the event: <p id="isceb-end-of-event" class="isceb-event-date">' . $newDate2 . '</p></strong>';
+}
 
-			add_action('woocommerce_single_product_summary', 'woocommerce_custom_fields_display');
+add_action('woocommerce_single_product_summary', 'woocommerce_custom_fields_display');
