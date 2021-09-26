@@ -41,9 +41,7 @@ $product_posts = get_posts($args);
             <div class="col-md-12 content-area" id="primary">
 
                 <main class="site-main" id="main" role="main">
-                    <h2>
-
-                    </h2>
+               
                     <?php
 
                     while (have_posts()) {
@@ -51,6 +49,10 @@ $product_posts = get_posts($args);
                         get_template_part('loop-templates/content', 'page');
 
                     }
+                    ?>
+                    <div class="isceb-events-container">
+
+                    <?php
 
                     foreach ($product_posts as $product_post) {
                         # code...
@@ -74,7 +76,7 @@ $product_posts = get_posts($args);
                     ?>
 
 
-
+                </div>
                 </main><!-- #main -->
 
             </div><!-- #primary -->
