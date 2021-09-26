@@ -50,27 +50,21 @@ $product_posts = get_posts($args);
                         the_post();
                         get_template_part('loop-templates/content', 'page');
 
-                        // 	// If comments are open or we have at least one comment, load up the comment template.
-                        // 	if ( comments_open() || get_comments_number() ) {
-                        // 		comments_template();
-                        // 	}
                     }
 
                     foreach ($product_posts as $product_post) {
                         # code...
                         // var_dump($product_post);
                         $post_meta = get_post_meta($product_post->ID);
-                        print_r(get_post_meta($product_post->ID));
+                        // print_r(get_post_meta($product_post->ID));
 
-                        // var_dump(wc_get_product($product_post->ID)->get_available_variations());
+                        
 
                         $event_template_data = array(
-                            'name_event' => $product_post->post_title,
-                            'start_event' => ['isceb-start-of-event'],
-                            'end_event' => ['isceb-end-of-event'],
-                            'location_event' => ['isceb-location-of-event'],
-
-
+                            'event_post_id' => $product_post->ID,
+                            'start_event' =>  $post_meta['isceb-start-of-event'],
+                            'end_event' =>  $post_meta['isceb-end-of-event'],
+                            'location_event' =>  $post_meta['isceb-location-of-event'],
                         );
 
                         get_template_part('loop-templates/content', 'isceb-event', $event_template_data);

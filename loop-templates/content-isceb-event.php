@@ -7,8 +7,13 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
+echo 'hello<br><br>';
 global $event_template_data;
 print_r($event_template_data);
+
+$isceb_wc_event = wc_get_product( $event_template_data['event_post_id']);
+var_dump(wc_get_product( $event_template_data['event_post_id']));
+
 ?>
 
 
@@ -16,7 +21,8 @@ print_r($event_template_data);
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	<header class="entry-header">
 
-		<h1 class="entry-title"><?php echo $event_template_data['name_event']?></h1>
+		<h1 class="entry-title"><?php echo $isceb_wc_event->get_name()?> </h1>
+		<?php echo $isceb_wc_event->get_price()?>
 
 
 	</header><!-- .entry-header -->
