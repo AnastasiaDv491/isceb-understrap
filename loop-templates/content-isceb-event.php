@@ -24,7 +24,7 @@ $isceb_wc_event = wc_get_product($event_template_data['event_post_id']);
 	<!-- body container -->
 	<div class="card-media-body">
 		<div class="card-media-body-top">
-		<?php echo $isceb_wc_event->get_name() ?>
+		<h3 class="isceb-event-body-top"><?php echo $isceb_wc_event->get_name() ?></h3>
 			<!-- <div class="isceb-card-media-title"> </div> -->
 		</div>
 
@@ -44,7 +44,7 @@ $isceb_wc_event = wc_get_product($event_template_data['event_post_id']);
 
 	<div class="card-media-object-container">
 		<div class="card-media-object" style="
-				background-image: url(<?php echo get_the_post_thumbnail_url($event_template_data['event_post_id'], 'large'); ?>);
+				background-image: url(<?php echo get_the_post_thumbnail_url($event_template_data['event_post_id'], 'large') ; ?> );
 				opacity: 0.2;
 				"></div>
 		<!-- <span class="card-media-object-tag subtle">Selling Fast</span> -->
