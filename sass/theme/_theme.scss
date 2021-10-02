@@ -1284,11 +1284,11 @@ hr.isceb-wiki-nav-phase-line {
 
 	align-items: center;
 	justify-content: center;
-	
+
 	position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .card-media-object-tag-countdown-number {
@@ -1511,7 +1511,7 @@ hr.isceb-wiki-nav-phase-line {
 	margin: 0;
 }
 
-.card-event-meta{
+.card-event-meta {
 	padding-left: 1rem;
 	padding-right: 1rem;
 	padding-top: 5px;
@@ -1520,12 +1520,79 @@ hr.isceb-wiki-nav-phase-line {
 	font-weight: 500;
 
 	display: flex;
-    flex-direction: row;
+	flex-direction: row;
 	justify-content: space-between;
 }
 
-.fa-calendar-alt
-,.fa-clock
-,.fa-ticket-alt{
+.fa-calendar-alt,
+.fa-clock,
+.fa-ticket-alt,
+.fa-map-marker-alt,
+.fa-user-alt {
 	margin-right: 5px;
+}
+
+.fa-map-marker-alt{
+	margin-right: 10px;
+}
+
+
+/*Event product page*/
+.isceb-event-hero-banner-wrapper {
+	height: 100%;
+}
+
+.isceb-event-hero-banner {
+	/* Set a specific height */
+	height: 250px;
+
+	/* Position and center the image to scale nicely on all screens */
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+
+	// background-attachment: fixed;
+
+}
+
+.isceb-event-hero-banner-text {
+	text-align: center;
+	color: $primary;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	font-weight: 500;
+	font-size: 48px;
+	line-height: 56px;
+	text-align: center;
+
+}
+
+.isceb-event-detail-box-container{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	margin-left: 200px;
+	margin-right: 200px;
+
+	position: relative;
+	top: -20px;
+}
+
+.isceb-event-detail-box{
+	background-color: $primary;
+	color: white;
+	// padding: 2px;
+	padding-left: 10px;
+	border-radius: 10px;
+	width: 220px;
+	
+
+	display: flex;
+    justify-content: center;
+    align-items: center;
 }
