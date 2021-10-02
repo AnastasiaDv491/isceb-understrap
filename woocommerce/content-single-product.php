@@ -54,6 +54,17 @@ $post_meta = get_post_meta($product->get_id());
 		<div class="isceb-event-detail-box"><i class="fas fa-map-marker-alt fa-lg"></i>KU Leuven Campus Brussel</div>
 		<div class="isceb-event-detail-box"><i class="fas fa-user-alt fa-lg"></i>200 seats available</div>
 	</div>
+	<div class="isceb-event-page-content-wrap">
+		<div class="isceb-event-page-description">
+			<?php echo $product->get_description(); ?>
+		</div>
+		<div class="isceb-event-page-tickets-wrap">
+			<p>
+			Tickets
+			</p>
+			<p></p>
+		</div>
+	</div>
 
 <?php else : ?>
 

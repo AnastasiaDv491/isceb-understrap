@@ -1538,6 +1538,7 @@ hr.isceb-wiki-nav-phase-line {
 
 
 /*Event product page*/
+
 .isceb-event-hero-banner-wrapper {
 	height: 100%;
 }
@@ -1574,25 +1575,89 @@ hr.isceb-wiki-nav-phase-line {
 
 .isceb-event-detail-box-container{
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-evenly;
-	margin-left: 200px;
-	margin-right: 200px;
-
+	align-items: center;
 	position: relative;
 	top: -20px;
 }
+@media (min-width: 641px){
+	.isceb-event-detail-box-container{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		margin-left: 200px;
+		margin-right: 200px;
+	
+		position: relative;
+		top: -20px;
+	}	
+}
+
 
 .isceb-event-detail-box{
 	background-color: $primary;
 	color: white;
 	// padding: 2px;
-	padding-left: 10px;
+	padding: 10px;
+	margin:5px;
 	border-radius: 10px;
-	width: 220px;
+	width: 200px;
 	
 
 	display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (min-width: 641px){
+	.isceb-event-detail-box{
+		background-color: $primary;
+		color: white;
+		// padding: 2px;
+		padding-left: 10px;
+		border-radius: 10px;
+		width: 200px;
+	
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.isceb-event-page-content-wrap{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.isceb-event-page-description {
+
+    margin: 10px 30px 10px 30px;
+}
+.isceb-event-page-tickets-wrap{
+	
+    background-color: $primary;
+	color: white;
+	border-radius: 10px;
+	padding:10px;
+	margin: 10px 30px 10px 30px;
+}
+@media (min-width: 641px){
+	.isceb-event-page-content-wrap{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+	.isceb-event-page-description {
+		width: 40%;
+		margin-right: 30px;
+	}
+	.isceb-event-page-tickets-wrap{
+		width: 25%;
+		background-color: $primary;
+		color: white;
+		border-radius: 10px;
+		padding:5px;
+	}
 }
