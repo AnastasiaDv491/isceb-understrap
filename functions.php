@@ -132,4 +132,4 @@ function woocommerce_custom_fields_display()
 		echo '<strong>End of the event: <p id="isceb-end-of-event" class="isceb-event-date">' . $newDate2 . '</p></strong>';
 }
 
-add_action('woocommerce_single_product_summary', 'woocommerce_custom_fields_display');
+// add_action('woocommerce_single_product_summary', 'woocommerce_custom_fields_display');

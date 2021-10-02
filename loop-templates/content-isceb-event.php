@@ -14,6 +14,19 @@ global $event_template_data;
 
 $isceb_wc_event = wc_get_product($event_template_data['event_post_id']);
 // var_dump(wc_get_product($event_template_data['event_post_id']));
+$event_start_day_text = '';
+$event_start_time_text = '';
+$event_time_obj = false;
+
+if (!empty($event_template_data['start_event'][0])) {
+	$event_time_obj = strtotime($event_template_data['start_event'][0]);
+	if ($event_time_obj) {
+		$event_start_day_text = date('j M', $event_time_obj);
+		$event_start_time_text = date('H:i', $event_time_obj);
+	}
+}
+
+$price_event = isceb_get_price_html_zero_free($isceb_wc_event);
 
 ?>
 
@@ -34,11 +47,20 @@ $isceb_wc_event = wc_get_product($event_template_data['event_post_id']);
 			</div>
 
 		</div>
-		<div class="card-event-meta">
-			<span class="subtle"><i class="far fa-calendar-alt"></i>Mon, APR 09</span>
-			<span class="subtle"><i class="far fa-clock"></i>23:59</span>
-			<span class="card-media-body-supporting-bottom-text subtle"><i class="fas fa-ticket-alt"></i>Free &ndash; $30</span>
-		</div>
+
+		<?php if ($event_time_obj || $price_event = '') : ?>
+			<div class="card-event-meta">
+
+				<?php if ($event_time_obj) : ?>
+					<span class="subtle"><i class="far fa-calendar-alt"></i><?php echo $event_start_day_text ?></span>
+					<span class="subtle"><i class="far fa-clock"></i><?php echo $event_start_time_text ?></span>
+				<?php endif; ?>
+
+				<?php if ($price_event != '') : ?>
+					<span class="card-media-body-supporting-bottom-text subtle"><i class="fas fa-ticket-alt"></i><?php echo isceb_get_price_html_zero_free($isceb_wc_event) ?></span>
+				<?php endif; ?>
+			</div>
+		<?php endif; ?>
 		<div class="card-media-body-bottom">
 			<span class="card-media-body-bottom-text">Read more</span>
 			<button class="card-media-body-bottom-button">Sold out</button>
