@@ -26,7 +26,9 @@ if (!empty($event_template_data['start_event'][0])) {
 	}
 }
 
-$price_event = isceb_get_price_html_zero_free($isceb_wc_event);
+// $price_event = isceb_get_price_html_zero_free($isceb_wc_event);
+
+
 
 ?>
 
