@@ -24,7 +24,7 @@ $isceb_wc_event = wc_get_product($event_template_data['event_post_id']);
 	<!-- body container -->
 	<div class="card-media-body">
 		<div class="card-media-body-top">
-		<h3 class="isceb-event-body-top"><?php echo $isceb_wc_event->get_name() ?></h3>
+			<h3 class="isceb-event-body-top"><?php echo $isceb_wc_event->get_name() ?></h3>
 			<!-- <div class="isceb-card-media-title"> </div> -->
 		</div>
 
@@ -32,9 +32,12 @@ $isceb_wc_event = wc_get_product($event_template_data['event_post_id']);
 			<div>
 				<div class="card-media-body-supporting-bottom-text subtle description"><?php echo $isceb_wc_event->get_description(); ?></div>
 			</div>
-			<span class="subtle">Mon, APR 09</span>
-			<span class="subtle">7:00 PM</span>
-			<span class="card-media-body-supporting-bottom-text subtle u-float-right">Free &ndash; $30</span>
+
+		</div>
+		<div class="card-event-meta">
+			<span class="subtle"><i class="far fa-calendar-alt"></i>Mon, APR 09</span>
+			<span class="subtle"><i class="far fa-clock"></i>23:59</span>
+			<span class="card-media-body-supporting-bottom-text subtle"><i class="fas fa-ticket-alt"></i>Free &ndash; $30</span>
 		</div>
 		<div class="card-media-body-bottom">
 			<span class="card-media-body-bottom-text">Read more</span>
@@ -44,7 +47,7 @@ $isceb_wc_event = wc_get_product($event_template_data['event_post_id']);
 
 	<div class="card-media-object-container">
 		<div class="card-media-object" style="
-				background-image: url(<?php echo get_the_post_thumbnail_url($event_template_data['event_post_id'], 'large') ; ?> );
+				background-image: url(<?php echo get_the_post_thumbnail_url($event_template_data['event_post_id'], 'large'); ?> );
 				opacity: 0.2;
 				"></div>
 		<!-- <span class="card-media-object-tag subtle">Selling Fast</span> -->
