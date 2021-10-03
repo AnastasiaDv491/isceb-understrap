@@ -32,16 +32,120 @@ if (post_password_required()) {
 	return;
 }
 $post_meta = get_post_meta($product->get_id());
-// var_dump(wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) )[0]);
-// get_the_post_thumbnail_url($product->get_id(),'large');
+$event_seats = $product->get_stock_quantity();
+
+
+function get_stock_variations_from_product()
+{
+	global $product;
+	$post_meta = get_post_meta($product->get_id());
+	$total_stock =0;
+	switch ($product->get_type()) {
+		case 'variable':
+			if ($post_meta['_manage_stock'][0] === 'yes') {
+				$total_stock = $product->get_stock_quantity();
+			}
+		
+			else{
+				$variations = $product->get_available_variations();
+
+				foreach ($variations as $variation) {
+					$variation_id = $variation['variation_id'];
+					$variation_obj = new WC_Product_variation($variation_id);
+					$total_stock += $variation_obj->get_stock_quantity();
+				}
+			}
+			break;
+
+		default:		
+			$total_stock = $product->get_stock_quantity();
+			break;
+	}
+	
+	return $total_stock;
+}
+
+$event_location = $post_meta['isceb-location-of-event'][0];
+$post_thumbnail_id = get_post_thumbnail_id($post->ID);
+$event_time_obj_start = false;
+
+if (!empty($post_meta['isceb-start-of-event'][0])) {
+	$event_time_obj_start = strtotime($post_meta['isceb-start-of-event'][0]);
+	//Check if we have a valid start time
+	if ($event_time_obj_start) {
+		//Check if we have end time
+		if (!empty($post_meta['isceb-end-of-event'][0])) {
+			//Check if we have a valid end time
+			$event_time_obj_end = strtotime($post_meta['isceb-end-of-event'][0]);
+			if ($event_time_obj_end) {
+				//End time is valid
+				//Check if the same month
+				$event_month_start = date('F', $event_time_obj_start);
+				$event_month_end = date('F', $event_time_obj_end);
+				$event_month = '';
+				if ($event_month_start !== $event_month_end) {
+					$event_month = date('M', $event_time_obj_start) . ' - ' . date('M', $event_time_obj_end);
+				} else {
+					$event_month = 	$event_month_start;
+				}
+
+				//Check if the same day
+				$event_day_start = date('j', $event_time_obj_start);
+				$event_day_end = date('j', $event_time_obj_end);
+				$event_day = '';
+				if ($event_day_start !== $event_day_end) {
+					$event_day = $event_day_start . ' - ' . $event_day_end;
+				} else {
+					$event_day = $event_day_start;
+				}
+
+				//get the start and end time
+				$event_time_start = date('H:i', $event_time_obj_start);
+				$event_time_end = date('H:i', $event_time_obj_end);
+				$event_time = '';
+
+				// Times are different and on different days
+				if ($event_time_start !== $event_time_end) {
+					$event_time = $event_time_start . ' - ' . $event_time_end;
+				} elseif ($event_time_start === $event_time_end && $event_day_start !== $event_day_end) {
+					$event_time = $event_time_start . ' - ' . $event_time_end;
+				}
+				// times are the same on the same day
+				else {
+					$event_time = $event_time_start;
+				}
+
+				$event_date_text = $event_day . ', ' . $event_month;
+				$event_time_text = $event_time;
+			} else {
+				//End time is invalid only use start time
+				$event_date_text = date('j F', $event_time_obj_start);
+				$event_time_text = date('H:i', $event_time_obj_start);
+			}
+		} else {
+			//We don't have and end time only use start time
+			$event_date_text = date('j F', $event_time_obj_start);
+			$event_time_text = date('H:i', $event_time_obj_start);
+		}
+	}
+}
+
 ?>
 
 
-<?php if (isset($post_meta['_isceb_event']) && $post_meta['_isceb_event'][0] === 'yes') : ?>
+<?php if (isset($post_meta['_isceb_event']) && $post_meta['_isceb_event'][0] === 'yes') :
+
+?>
 	<div id="product-<?php the_ID(); ?>" <?php wc_product_class('isceb-event-hero-banner-wrapper', $product); ?>>
 		<div class="isceb-event-hero-banner" style="
-				background-image: url(<?php echo wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), "largest ")[0]; ?> );
-				opacity:0.4;
+		         opacity:0.4;
+				<?php if ($post_thumbnail_id != 0) : ?>
+				background-image: url(<?php echo wp_get_attachment_image_src($post_thumbnail_id, "largest ")[0]; ?> );
+				<?php else : ?>
+				background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+				<?php endif; ?>
+				
 				">
 
 		</div>
@@ -49,10 +153,18 @@ $post_meta = get_post_meta($product->get_id());
 	</div>
 
 	<div class="isceb-event-detail-box-container">
-		<div class="isceb-event-detail-box"><i class="far fa-calendar-alt fa-lg"></i>12th of October</div>
-		<div class="isceb-event-detail-box"><i class="far fa-clock fa-lg"></i>12:00</div>
-		<div class="isceb-event-detail-box"><i class="fas fa-map-marker-alt fa-lg"></i>KU Leuven Campus Brussel</div>
-		<div class="isceb-event-detail-box"><i class="fas fa-user-alt fa-lg"></i>200 seats available</div>
+		<?php if ($event_time_obj_start) : ?>
+			<div class="isceb-event-detail-box"><i class="far fa-calendar-alt fa-lg"></i><?php echo $event_date_text ?></div>
+			<div class="isceb-event-detail-box"><i class="far fa-clock fa-lg"></i><?php echo $event_time_text ?></div>
+		<?php endif; ?>
+
+		<?php if ($event_location !== '') : ?>
+			<div class="isceb-event-detail-box"><i class="fas fa-map-marker-alt fa-lg"></i><?php echo $event_location; ?></div>
+		<?php endif; ?>
+
+		<?php if (get_stock_variations_from_product() !== null) :?>
+		<div class="isceb-event-detail-box"><i class="fas fa-user-alt fa-lg"></i><?php echo get_stock_variations_from_product() ?> seats available</div>
+		<?php endif; ?>
 	</div>
 	<div class="isceb-event-page-content-wrap">
 		<div class="isceb-event-page-description">
@@ -60,7 +172,7 @@ $post_meta = get_post_meta($product->get_id());
 		</div>
 		<div class="isceb-event-page-tickets-wrap">
 			<p>
-			Tickets
+				Tickets
 			</p>
 			<p></p>
 		</div>
