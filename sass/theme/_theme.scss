@@ -1231,13 +1231,18 @@ hr.isceb-wiki-nav-phase-line {
 .isceb-events-container {
 	box-sizing: border-box;
 	margin: 50px auto 0;
-	width: 80%;
+ /* delete on mobile*/
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-column-gap: 100px;
 	grid-row-gap: 0px;
 }
-
+@media (min-width: 641px){
+	.isceb-events-container {
+		width: 80%;
+	}
+}
+ 
 /* 
   
   .u-flex-center {
