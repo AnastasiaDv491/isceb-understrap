@@ -28,14 +28,15 @@ if (!empty($event_template_data['start_event'][0])) {
 
 $price_event = isceb_get_price_html_zero_free($isceb_wc_event);
 
-$isceb_event_description_trimmed = strlen($isceb_wc_event->get_description()) > 100 ? substr($isceb_wc_event->get_description(),0,100)."..." : $isceb_wc_event->get_description();
+$event_descriptions_without_tags = strip_tags($isceb_wc_event->get_description());
+$isceb_event_description_trimmed = strlen($event_descriptions_without_tags ) > 100 ?  substr($event_descriptions_without_tags ,0,100)."...": $event_descriptions_without_tags ;
+
 
 ?>
 
 
 <div class="card-media">
 	<!-- media container -->
-
 	<!-- body container -->
 	<div class="card-media-body">
 		<div class="card-media-body-top">
@@ -45,7 +46,10 @@ $isceb_event_description_trimmed = strlen($isceb_wc_event->get_description()) > 
 
 		<div class="card-media-body-middle">
 			<div>
-				<div class="card-media-body-supporting-bottom-text subtle description"><?php echo $isceb_event_description_trimmed;  ?></div>
+				<div class="card-media-body-supporting-bottom-text subtle description">
+					
+					<p><?php echo($isceb_event_description_trimmed)?></p>
+				</div>
 			</div>
 
 		</div>
