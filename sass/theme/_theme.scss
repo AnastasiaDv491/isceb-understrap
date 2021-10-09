@@ -7,7 +7,7 @@ body {
 body {
 	font-family: "Open Sans", sans-serif;
 	font-size: 1rem;
-	color: #1f476b;
+	color: $primary;
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -22,12 +22,12 @@ h6 {
 }
 
 button {
-	color: #1f476b;
+	color: $primary;
 	font-size: smaller;
 }
 
 a {
-	color: #1f476b;
+	color: $primary;
 }
 
 a:hover {
@@ -47,7 +47,7 @@ h2 {
 }
 
 .homepage-banners {
-	background: linear-gradient(180deg, #1f476b 50%, #d3ebf8 50%);
+	background: linear-gradient(180deg, $primary 50%, $secondary 50%);
 	height: 640px;
 	display: flex;
 	padding-left: 1rem;
@@ -96,7 +96,7 @@ h2 {
 
 .mainMessage {
 	padding-top: 15px;
-	background-color: #1f476b;
+	background-color: $primary;
 }
 
 .mainMessage>* {
@@ -131,7 +131,7 @@ h2 {
 }
 
 .homepage-help-bar {
-	background-color: #d3ebf8;
+	background-color: $secondary;
 	position: relative;
 }
 
@@ -152,7 +152,7 @@ h2 {
 
 .help-button {
 	border-radius: 30px;
-	background-color: #1f476b;
+	background-color: $primary;
 	color: white;
 	padding: 0 30px 0 30px;
 	border: none;
@@ -181,7 +181,7 @@ h2 {
 	position: absolute;
 	top: 20px;
 	right: 20px;
-	background-color: #d3ebf8;
+	background-color: $secondary;
 	border-radius: 5px;
 }
 
@@ -189,7 +189,7 @@ h2 {
 	margin: 0;
 	padding: 4px;
 	font-weight: bold;
-	color: #1f476b;
+	color: $primary;
 }
 
 @keyframes slideInFromLeft {
@@ -218,8 +218,8 @@ a.shoppingCartHeaderLink:hover {
 }
 
 .shoppingCartCount {
-	background-color: #1f476b;
-	color: #d3ebf8;
+	background-color: $primary;
+	color: $secondary;
 	border-radius: 50%;
 	padding: 4px 8px 4px 8px;
 	position: relative;
@@ -247,7 +247,7 @@ a.shoppingCartHeaderLink:hover {
 	margin: auto;
 	display: inline-block;
 	margin-top: 30px;
-	color: #1f476b;
+	color: $primary;
 }
 
 .paragraph-about {
@@ -261,14 +261,14 @@ a.shoppingCartHeaderLink:hover {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: #1f476b;
+	color: $primary;
 }
 
 .flex-container>div {
 	margin: 20px;
 	text-align: center;
 	box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
-	border-top: solid #1f476b;
+	border-top: solid $primary;
 	flex-basis: 30%;
 }
 
@@ -278,7 +278,7 @@ a.shoppingCartHeaderLink:hover {
 }
 
 .item-about:hover {
-	background-color: #d3ebf8;
+	background-color: $secondary;
 	transform: scale(1.05);
 }
 
@@ -304,7 +304,7 @@ a.shoppingCartHeaderLink:hover {
 }
 
 .list-meet-reps-item {
-	background-color: #1f476b;
+	background-color: $primary;
 	padding: 5px;
 	width: fit-content;
 	margin-bottom: 0.5em;
@@ -322,7 +322,6 @@ a.shoppingCartHeaderLink:hover {
 
 .isceb-about-block {
 	border-top: solid;
-	// border-style: solid;
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	padding: 15px;
 	margin: 10px;
@@ -330,44 +329,42 @@ a.shoppingCartHeaderLink:hover {
 }
 
 .isceb-about-block:hover {
-	background-color: #d3ebf8;
+	background-color: $secondary;
 	transform: scale(1.05);
 }
 
 .isceb-hor-text-bars-image {
-	background-color: #1f476b;
+	background-color: $primary;
 	padding: 5px;
 	width: fit-content;
 	margin-bottom: 0.5em;
 	position: relative;
 	left: 100%;
-	// top: 20%;
-	/* left: 30%; */
 	right: -20%;
 }
 
 #wrapper-footer-full {
-	color: #d3ebf8;
-	background-color: #1f476b;
+	color: $secondary;
+	background-color: $primary;
 
 	margin-top: auto;
 }
 
 #wrapper-footer-full a {
-	color: #d3ebf8;
+	color: $secondary;
 }
 
 .site-footer {
-	background-color: #1f476b;
+	background-color: $primary;
 }
 
 #wrapper-footer {
-	color: #d3ebf8;
-	background-color: #1f476b;
+	color: $secondary;
+	background-color: $primary;
 }
 
 #wrapper-footer a {
-	color: #d3ebf8;
+	color: $secondary;
 }
 
 .MyAccountHeaderLink {
@@ -410,7 +407,7 @@ a.shoppingCartHeaderLink:hover {
 
 /* Registration page with plugin New */
 .wrapperregistration {
-	background: linear-gradient(180deg, #1f476b 50%, #d3ebf8 50%);
+	background: linear-gradient(180deg, $primary 50%, $secondary 50%);
 	padding: 5px;
 
 
@@ -479,7 +476,7 @@ input[type="file"] {
 /*Wiki */
 
 .isceb-wiki-home-header {
-	background-color: #1f476b;
+	background-color: $primary;
 	margin-bottom: 1rem;
 	display: flex;
 	flex-direction: column;
@@ -490,7 +487,7 @@ input[type="file"] {
 
 @media (min-width: 641px) {
 	.isceb-wiki-home-header {
-		background-color: #1f476b;
+		background-color: $primary;
 		margin-bottom: 1rem;
 		display: flex;
 		flex-direction: column;
@@ -521,7 +518,7 @@ input[type="file"] {
 	border-radius: 25px;
 	border: 0;
 	text-align: center;
-	color: #1f476b;
+	color: $primary;
 	font-weight: bold;
 	// line-height: 2rem;
 	height: 38px;
@@ -534,7 +531,7 @@ input[type="file"] {
 		border-radius: 25px;
 		border: 0;
 		text-align: center;
-		color: #1f476b;
+		color: $primary;
 		font-weight: bold;
 		// line-height: 2rem;
 		height: 38px;
@@ -654,7 +651,7 @@ input[type="file"] {
 }
 
 .isceb-grid-item {
-	border-top: solid #1f476b;
+	border-top: solid $primary;
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 	text-align: center;
 	padding: 1rem;
@@ -667,7 +664,7 @@ input[type="file"] {
 
 @media (min-width: 641px) {
 	.isceb-grid-item {
-		border-top: solid #1f476b;
+		border-top: solid $primary;
 		box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 		text-align: center;
 		padding: 1rem;
@@ -705,7 +702,7 @@ input[type="file"] {
 }
 
 .isceb-phase-grid-item {
-	border-top: solid #1f476b;
+	border-top: solid $primary;
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 	text-align: center;
 	padding: 1rem;
@@ -726,7 +723,7 @@ input[type="file"] {
 	}
 
 	.isceb-phase-grid-item {
-		border-top: solid #1f476b;
+		border-top: solid $primary;
 		box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 		text-align: center;
 		padding: 1rem;
@@ -909,7 +906,7 @@ hr.isceb-wiki-nav-phase-line {
 
 //ISCEB Wiki Files
 .isceb-wiki-container {
-	border: #1f476b;
+	border: $primary;
 }
 
 .isceb-wiki-file {
@@ -1091,7 +1088,7 @@ hr.isceb-wiki-nav-phase-line {
 
 		width: 400px;
 		text-align: right;
-		color: #1f476b;
+		color: $primary;
 	}
 
 	.isceb-homepage-more-button {
@@ -1213,7 +1210,7 @@ hr.isceb-wiki-nav-phase-line {
 
 /* Code for the head of standard page (topic, date) */
 .isceb-standard-page-title-head {
-	border-bottom: solid #1f476b;
+	border-bottom: solid $primary;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: 1fr;
@@ -1231,7 +1228,6 @@ hr.isceb-wiki-nav-phase-line {
 .isceb-events-container {
 	box-sizing: border-box;
 	margin: 50px auto 0;
- /* delete on mobile*/
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-column-gap: 100px;
@@ -1304,7 +1300,7 @@ hr.isceb-wiki-nav-phase-line {
 
 .card-media-object-tag-countdown-text {
 	text-align: center;
-	color: #1F476B;
+	color: $primary;
 	font-weight: bold;
 	white-space: nowrap;
 }
@@ -1354,7 +1350,7 @@ hr.isceb-wiki-nav-phase-line {
   } */
 
 .card-media-object-tag {
-	background-color: #1F476B;
+	background-color: $primary;
 	border-radius: 2px;
 	padding: 2px 7px;
 	position: absolute;
@@ -1549,16 +1545,12 @@ hr.isceb-wiki-nav-phase-line {
 }
 
 .isceb-event-hero-banner {
-	/* Set a specific height */
 	height: 250px;
 
-	/* Position and center the image to scale nicely on all screens */
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 	position: relative;
-
-	// background-attachment: fixed;
 
 }
 
@@ -1624,29 +1616,32 @@ hr.isceb-wiki-nav-phase-line {
 .isceb-event-page-description {
     margin: 10px 30px 10px 30px;
 }
-.isceb-event-page-tickets-wrap{
-	
-    background-color: $primary;
-	color: white;
+
+.isceb-event-ticket-header{
+	background-color: $primary;
 	border-radius: 10px;
 	padding:10px;
+}
+
+.isceb-event-page-tickets-wrap{
+	
+    background-color: $secondary;
+	color: white;
+	border-radius: 10px;
 	margin: 10px 30px 10px 30px;
 }
+
+.isceb-event-ticket-content{
+	padding:10px;
+}
+
 @media (min-width: 641px){
 	.isceb-event-page-content-wrap{
-		display: flex;
 		flex-direction: row;
-		justify-content: center;
 	}
 	.isceb-event-page-description {
 		width: 40%;
 		margin-right: 30px;
 	}
-	.isceb-event-page-tickets-wrap{
-		width: 25%;
-		background-color: $primary;
-		color: white;
-		border-radius: 10px;
-		padding:5px;
-	}
 }
+

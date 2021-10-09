@@ -39,14 +39,12 @@ function get_stock_variations_from_product()
 {
 	global $product;
 	$post_meta = get_post_meta($product->get_id());
-	$total_stock =0;
+	$total_stock = 0;
 	switch ($product->get_type()) {
 		case 'variable':
 			if ($post_meta['_manage_stock'][0] === 'yes') {
 				$total_stock = $product->get_stock_quantity();
-			}
-		
-			else{
+			} else {
 				$variations = $product->get_available_variations();
 
 				foreach ($variations as $variation) {
@@ -57,11 +55,11 @@ function get_stock_variations_from_product()
 			}
 			break;
 
-		default:		
+		default:
 			$total_stock = $product->get_stock_quantity();
 			break;
 	}
-	
+
 	return $total_stock;
 }
 
@@ -149,7 +147,7 @@ if (!empty($post_meta['isceb-start-of-event'][0])) {
 				">
 
 		</div>
-		<div class="isceb-event-hero-banner-text"><?php echo $product->get_name(); ?></div>
+		<h1 class="isceb-event-hero-banner-text"><?php echo $product->get_name(); ?></h1>
 	</div>
 
 	<div class="isceb-event-detail-box-container">
@@ -162,8 +160,8 @@ if (!empty($post_meta['isceb-start-of-event'][0])) {
 			<div class="isceb-event-detail-box"><i class="fas fa-map-marker-alt fa-lg"></i><?php echo $event_location; ?></div>
 		<?php endif; ?>
 
-		<?php if (get_stock_variations_from_product() !== null) :?>
-		<div class="isceb-event-detail-box"><i class="fas fa-user-alt fa-lg"></i><?php echo get_stock_variations_from_product() ?> seats available</div>
+		<?php if (get_stock_variations_from_product() !== null) : ?>
+			<div class="isceb-event-detail-box"><i class="fas fa-user-alt fa-lg"></i><?php echo get_stock_variations_from_product() ?> seats available</div>
 		<?php endif; ?>
 	</div>
 	<div class="isceb-event-page-content-wrap">
@@ -171,11 +169,10 @@ if (!empty($post_meta['isceb-start-of-event'][0])) {
 			<?php echo $product->get_description(); ?>
 		</div>
 		<div class="isceb-event-page-tickets-wrap">
-			<p>
-				Tickets
-				<?php do_action('woocommerce_single_product_summary');?>
-			</p>
-			<p></p>
+			<div class="isceb-event-ticket-header">Tickets</div>
+			<div class="isceb-event-ticket-content">
+				<?php do_action('woocommerce_single_product_summary'); ?>
+			</div>
 		</div>
 	</div>
 
