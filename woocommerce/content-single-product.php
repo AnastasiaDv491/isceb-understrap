@@ -31,6 +31,8 @@ if (post_password_required()) {
 	echo get_the_password_form(); // WPCS: XSS ok.
 	return;
 }
+
+
 $post_meta = get_post_meta($product->get_id());
 $event_seats = $product->get_stock_quantity();
 
@@ -62,78 +64,76 @@ function get_stock_variations_from_product()
 
 	return $total_stock;
 }
+if (isset($post_meta['_isceb_event']) && $post_meta['_isceb_event'][0] === 'yes') {
+	$event_location = $post_meta['isceb-location-of-event'][0];
+	$post_thumbnail_id = get_post_thumbnail_id($post->ID);
+	$event_time_obj_start = false;
 
-$event_location = $post_meta['isceb-location-of-event'][0];
-$post_thumbnail_id = get_post_thumbnail_id($post->ID);
-$event_time_obj_start = false;
+	if (!empty($post_meta['isceb-start-of-event'][0])) {
+		$event_time_obj_start = strtotime($post_meta['isceb-start-of-event'][0]);
+		//Check if we have a valid start time
+		if ($event_time_obj_start) {
+			//Check if we have end time
+			if (!empty($post_meta['isceb-end-of-event'][0])) {
+				//Check if we have a valid end time
+				$event_time_obj_end = strtotime($post_meta['isceb-end-of-event'][0]);
+				if ($event_time_obj_end) {
+					//End time is valid
+					//Check if the same month
+					$event_month_start = date('F', $event_time_obj_start);
+					$event_month_end = date('F', $event_time_obj_end);
+					$event_month = '';
+					if ($event_month_start !== $event_month_end) {
+						$event_month = date('M', $event_time_obj_start) . ' - ' . date('M', $event_time_obj_end);
+					} else {
+						$event_month = 	$event_month_start;
+					}
 
-if (!empty($post_meta['isceb-start-of-event'][0])) {
-	$event_time_obj_start = strtotime($post_meta['isceb-start-of-event'][0]);
-	//Check if we have a valid start time
-	if ($event_time_obj_start) {
-		//Check if we have end time
-		if (!empty($post_meta['isceb-end-of-event'][0])) {
-			//Check if we have a valid end time
-			$event_time_obj_end = strtotime($post_meta['isceb-end-of-event'][0]);
-			if ($event_time_obj_end) {
-				//End time is valid
-				//Check if the same month
-				$event_month_start = date('F', $event_time_obj_start);
-				$event_month_end = date('F', $event_time_obj_end);
-				$event_month = '';
-				if ($event_month_start !== $event_month_end) {
-					$event_month = date('M', $event_time_obj_start) . ' - ' . date('M', $event_time_obj_end);
+					//Check if the same day
+					$event_day_start = date('j', $event_time_obj_start);
+					$event_day_end = date('j', $event_time_obj_end);
+					$event_day = '';
+					if ($event_day_start !== $event_day_end) {
+						$event_day = $event_day_start . ' - ' . $event_day_end;
+					} else {
+						$event_day = $event_day_start;
+					}
+
+					//get the start and end time
+					$event_time_start = date('H:i', $event_time_obj_start);
+					$event_time_end = date('H:i', $event_time_obj_end);
+					$event_time = '';
+
+					// Times are different and on different days
+					if ($event_time_start !== $event_time_end) {
+						$event_time = $event_time_start . ' - ' . $event_time_end;
+					} elseif ($event_time_start === $event_time_end && $event_day_start !== $event_day_end) {
+						$event_time = $event_time_start . ' - ' . $event_time_end;
+					}
+					// times are the same on the same day
+					else {
+						$event_time = $event_time_start;
+					}
+
+					$event_date_text = $event_day . ', ' . $event_month;
+					$event_time_text = $event_time;
 				} else {
-					$event_month = 	$event_month_start;
+					//End time is invalid only use start time
+					$event_date_text = date('j F', $event_time_obj_start);
+					$event_time_text = date('H:i', $event_time_obj_start);
 				}
-
-				//Check if the same day
-				$event_day_start = date('j', $event_time_obj_start);
-				$event_day_end = date('j', $event_time_obj_end);
-				$event_day = '';
-				if ($event_day_start !== $event_day_end) {
-					$event_day = $event_day_start . ' - ' . $event_day_end;
-				} else {
-					$event_day = $event_day_start;
-				}
-
-				//get the start and end time
-				$event_time_start = date('H:i', $event_time_obj_start);
-				$event_time_end = date('H:i', $event_time_obj_end);
-				$event_time = '';
-
-				// Times are different and on different days
-				if ($event_time_start !== $event_time_end) {
-					$event_time = $event_time_start . ' - ' . $event_time_end;
-				} elseif ($event_time_start === $event_time_end && $event_day_start !== $event_day_end) {
-					$event_time = $event_time_start . ' - ' . $event_time_end;
-				}
-				// times are the same on the same day
-				else {
-					$event_time = $event_time_start;
-				}
-
-				$event_date_text = $event_day . ', ' . $event_month;
-				$event_time_text = $event_time;
 			} else {
-				//End time is invalid only use start time
+				//We don't have and end time only use start time
 				$event_date_text = date('j F', $event_time_obj_start);
 				$event_time_text = date('H:i', $event_time_obj_start);
 			}
-		} else {
-			//We don't have and end time only use start time
-			$event_date_text = date('j F', $event_time_obj_start);
-			$event_time_text = date('H:i', $event_time_obj_start);
 		}
 	}
 }
-
 ?>
 
 
-<?php if (isset($post_meta['_isceb_event']) && $post_meta['_isceb_event'][0] === 'yes') :
-
-?>
+<?php if (isset($post_meta['_isceb_event']) && $post_meta['_isceb_event'][0] === 'yes') : ?>
 	<div id="product-<?php the_ID(); ?>" <?php wc_product_class('isceb-event-hero-banner-wrapper', $product); ?>>
 		<div class="isceb-event-hero-banner" style="
 		         opacity:0.4;
@@ -173,7 +173,7 @@ if (!empty($post_meta['isceb-start-of-event'][0])) {
 			<div class="isceb-event-ticket-content">
 				<?php if ($product->get_price_html() !== '') : ?>
 					<p class="isceb-event-ticket-price">Price: <?php echo $product->get_price_html(); ?></p>
-				<?php else:?>
+				<?php else : ?>
 					<p>No registration needed</p>
 				<?php endif; ?>
 				<?php woocommerce_template_single_add_to_cart(); ?>
