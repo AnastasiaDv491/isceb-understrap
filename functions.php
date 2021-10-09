@@ -52,11 +52,20 @@ remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30
 
 
 //Update shopping cart amount automatically
-add_filter('woocommerce_add_to_cart_fragments', 'iconic_cart_count_fragments', 10, 1);
-function iconic_cart_count_fragments($fragments)
+add_filter('woocommerce_add_to_cart_fragments', 'isceb_cart_count_fragments', 10, 1);
+function isceb_cart_count_fragments($fragments)
 {
 	$fragments['span.shoppingCartCount'] = '<span class="shoppingCartCount">' . WC()->cart->get_cart_contents_count() . '</span>';
 	return $fragments;
+}
+
+/*Handling add to cart with ajax*/
+add_action('wp_enqueue_scripts', 'isceb_woocommerce_ajax_add_to_cart_js');
+function isceb_woocommerce_ajax_add_to_cart_js()
+{
+	if (function_exists('is_product') && is_product()) {
+		wp_enqueue_script('custom_script', get_bloginfo('stylesheet_directory') . '/js/isceb_wc_handling.js', array('jquery'), '1.0');
+	}
 }
 
 
@@ -133,3 +142,29 @@ function woocommerce_custom_fields_display()
 }
 
 // add_action('woocommerce_single_product_summary', 'woocommerce_custom_fields_display');
+
+//Woocommerce ajax add to cart
+add_action('wp_ajax_ql_woocommerce_ajax_add_to_cart', 'isceb_woocommerce_ajax_add_to_cart');
+add_action('wp_ajax_nopriv_ql_woocommerce_ajax_add_to_cart', 'isceb_woocommerce_ajax_add_to_cart');
+function isceb_woocommerce_ajax_add_to_cart()
+{
+	$product_id = apply_filters('isceb_woocommerce_add_to_cart_product_id', absint($_POST['product_id']));
+	$quantity = empty($_POST['quantity']) ? 1 : wc_stock_amount($_POST['quantity']);
+	$variation_id = absint($_POST['variation_id']);
+	$passed_validation = apply_filters('isceb_woocommerce_add_to_cart_validation', true, $product_id, $quantity);
+	$product_status = get_post_status($product_id);
+	if ($passed_validation && WC()->cart->add_to_cart($product_id, $quantity, $variation_id) && 'publish' === $product_status) {
+		do_action('isceb_woocommerce_ajax_added_to_cart', $product_id);
+		if ('yes' === get_option('isceb_woocommerce_cart_redirect_after_add')) {
+			wc_add_to_cart_message(array($product_id => $quantity), true);
+		}
+		WC_AJAX::get_refreshed_fragments();
+	} else {
+		$data = array(
+			'error' => true,
+			'product_url' => apply_filters('isceb_woocommerce_cart_redirect_after_error', get_permalink($product_id), $product_id)
+		);
+		echo wp_send_json($data);
+	}
+	wp_die();
+}
