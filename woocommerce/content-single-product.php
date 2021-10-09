@@ -171,7 +171,12 @@ if (!empty($post_meta['isceb-start-of-event'][0])) {
 		<div class="isceb-event-page-tickets-wrap">
 			<div class="isceb-event-ticket-header">Tickets</div>
 			<div class="isceb-event-ticket-content">
-				<?php do_action('woocommerce_single_product_summary'); ?>
+				<?php if ($product->get_price_html() !== '') : ?>
+					<p class="isceb-event-ticket-price">Price: <?php echo $product->get_price_html(); ?></p>
+				<?php else:?>
+					<p>No registration needed</p>
+				<?php endif; ?>
+				<?php woocommerce_template_single_add_to_cart(); ?>
 			</div>
 		</div>
 	</div>

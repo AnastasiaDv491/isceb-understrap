@@ -1233,12 +1233,13 @@ hr.isceb-wiki-nav-phase-line {
 	grid-column-gap: 100px;
 	grid-row-gap: 0px;
 }
-@media (min-width: 641px){
+
+@media (min-width: 641px) {
 	.isceb-events-container {
 		width: 80%;
 	}
 }
- 
+
 /* 
   
   .u-flex-center {
@@ -1533,7 +1534,7 @@ hr.isceb-wiki-nav-phase-line {
 	margin-right: 5px;
 }
 
-.fa-map-marker-alt{
+.fa-map-marker-alt {
 	margin-right: 10px;
 }
 
@@ -1570,7 +1571,7 @@ hr.isceb-wiki-nav-phase-line {
 
 }
 
-.isceb-event-detail-box-container{
+.isceb-event-detail-box-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -1578,70 +1579,102 @@ hr.isceb-wiki-nav-phase-line {
 	position: relative;
 	top: -34px;
 }
-@media (min-width: 641px){
-	.isceb-event-detail-box-container{
+
+@media (min-width: 641px) {
+	.isceb-event-detail-box-container {
 		flex-direction: row;
 		margin-left: 200px;
 		margin-right: 200px;
-	}	
+	}
 }
 
 
-.isceb-event-detail-box{
+.isceb-event-detail-box {
 	background-color: $primary;
 	color: white;
 	padding: 10px;
-	margin:5px;
+	margin: 5px;
 	border-radius: 10px;
 	width: 200px;
 	height: 68px;
 
 	display: flex;
-    justify-content: center;
-    align-items: center;
+	justify-content: center;
+	align-items: center;
 }
 
-@media (min-width: 641px){
-	.isceb-event-detail-box{
+@media (min-width: 641px) {
+	.isceb-event-detail-box {
 		padding-left: 10px;
 	}
 }
 
-.isceb-event-page-content-wrap{
+.isceb-event-page-content-wrap {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
 
 .isceb-event-page-description {
-    margin: 10px 30px 10px 30px;
-}
-
-.isceb-event-ticket-header{
-	background-color: $primary;
-	border-radius: 10px;
-	padding:10px;
-}
-
-.isceb-event-page-tickets-wrap{
-	
-    background-color: $secondary;
-	color: white;
-	border-radius: 10px;
 	margin: 10px 30px 10px 30px;
 }
 
-.isceb-event-ticket-content{
-	padding:10px;
+.isceb-event-ticket-header {
+	background-color: $primary;
+	border-radius: 10px;
+	padding: 10px;
+	font-weight: bolder;
+	font-size: large;
 }
 
-@media (min-width: 641px){
-	.isceb-event-page-content-wrap{
+.isceb-event-page-tickets-wrap {
+
+	background-color: $secondary;
+	color: white;
+	border-radius: 10px;
+	margin: 10px 30px 10px 30px;
+	min-width: 200px;
+}
+
+.isceb-event-ticket-content {
+	padding: 10px;
+	color: $primary;
+}
+
+@media (min-width: 641px) {
+	.isceb-event-page-content-wrap {
 		flex-direction: row;
 	}
+
 	.isceb-event-page-description {
 		width: 40%;
 		margin-right: 30px;
 	}
 }
 
+.isceb-event-ticket-price {
+	color: $primary;
+}
+
+.isceb-event-ticket-content .woocommerce-Price-amount {
+	color: $primary;
+	font-weight: bold;
+	text-decoration: underline;
+}
+.isceb-event-page-tickets-wrap button.button.alt{
+	background-color: $primary;
+	margin-left: 5px;
+}
+
+.isceb-event-page-tickets-wrap button.button.alt:hover{
+	background-color: #1f476bb0;
+	
+}
+
+.isceb-event-page-tickets-wrap .quantity{
+	float: left;
+}
+
+.isceb-event-ticket-content .stock {
+	color: #a9a9a9;
+}
