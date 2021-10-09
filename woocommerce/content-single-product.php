@@ -173,6 +173,7 @@ if (!empty($post_meta['isceb-start-of-event'][0])) {
 		<div class="isceb-event-page-tickets-wrap">
 			<p>
 				Tickets
+				<?php do_action('woocommerce_single_product_summary');?>
 			</p>
 			<p></p>
 		</div>
