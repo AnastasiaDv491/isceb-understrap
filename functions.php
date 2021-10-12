@@ -111,7 +111,9 @@ add_theme_support('align-wide');
 
 
 
-
+/**
+ * @deprecated function is not being used anymore
+ */
 function woocommerce_custom_fields_display()
 {
 	global $product;

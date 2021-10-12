@@ -34,7 +34,7 @@ $container = get_theme_mod('understrap_container_type');
 
 				$args = array(
 					'numberposts' => 4,
-					'category' => get_cat_ID( 'Front Page news')
+					'category' => get_cat_ID('Front Page news')
 				);
 
 				$isceb_latest_news = get_posts($args);
@@ -43,24 +43,17 @@ $container = get_theme_mod('understrap_container_type');
 
 				?>
 					<div class="item">
-						<div class="bannerCardImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(<?php echo get_the_post_thumbnail_url($news_item); ?>);">
-
-
-
-
+						<div class="bannerCardImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(<?php echo esc_url(get_the_post_thumbnail_url($news_item)); ?>);">
 						</div>
-						<?php
-						if (get_the_tags($news_item)) :
-
-						?>
+						<?php if (get_the_tags($news_item)) : ?>
 							<div class="bannerCardTag">
-								<p class="banerTagText"><?php echo get_the_tags($news_item)[0]->name ?></p>
+								<p class="banerTagText"><?php echo esc_html(get_the_tags($news_item)[0]->name); ?></p>
 							</div>
 						<?php endif; ?>
 						<div class="bannerCardContent">
-							<h3 class="bannerCardTitle"><?php echo $news_item->post_title ?></h3>
-							<p class="bannerCardDescription"><?php echo $news_item->post_excerpt ?></p>
-							<a href="<?php echo get_permalink($news_item) ?>">
+							<h3 class="bannerCardTitle"><?php echo esc_html($news_item->post_title); ?></h3>
+							<p class="bannerCardDescription"><?php echo esc_html($news_item->post_excerpt); ?></p>
+							<a href="<?php echo esc_url(get_permalink($news_item)) ?>">
 								<button class="bannerCardButton">More Info</button>
 
 							</a>
@@ -83,52 +76,6 @@ $container = get_theme_mod('understrap_container_type');
 				</div>
 			</div>
 		</section>
-
-
-		<!-- <section class="homepage-about">
-			<div class="container-about">
-				<h2>
-					International Student Council of Economics and Business
-				</h2>
-				<p class="paragraph-about">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique tincidunt lorem non feugiat. Curabitur lobortis suscipit ligula, rutrum sollicitudin diam porta ut. Sed egestas vitae neque et volutpat. Cras in elit sed mi placerat rutrum a ut ex
-				</p>
-			</div>
-			<div class="flex-container">
-				<div class="item-about">
-					<i class="fa fa-comment-o" aria-hidden="true" stye=""></i>
-					<h2>What?</h2>
-					<p class="paragraph-item-about">"Colour is a dance between your brain and the world. Every colour is a universe of its own, it unfolds differently and it evokes different feelings and emotions within us.”</p>
-				</div>
-				<div class="item-about">
-					<i class="fa fa-comment-o" aria-hidden="true"></i>
-					<h2>Why?</h2>
-
-					<p class="paragraph-item-about">"Colour is a dance between your brain and the world. Every colour is a universe of its own, it unfolds differently and it evokes different feelings and emotions within us.”</p>
-				</div>
-				<div class="item-about">
-					<i class="fa fa-comment-o" aria-hidden="true"></i>
-					<h2>How?</h2>
-
-					<p class="paragraph-item-about">"Colour is a dance between your brain and the world. Every colour is a universe of its own, it unfolds differently and it evokes different feelings and emotions within us.”</p>
-				</div>
-			</div>
-		</section> -->
-
-		<!-- <section class="homepage-meet-reps">
-			<div class="container-meet-reps">
-				<div class="container-image-meet-reps">
-					<img class="image-meet-reps" src="http://localhost:8080/wpISCEB2/wp-content/uploads/2021/02/67676-scaled.jpg">
-					<div class="list-meet-reps">
-						<div class="list-meet-reps-item">Meet</div>
-						<div class="list-meet-reps-item">Your</div>
-						<div class="list-meet-reps-item">Student representatives</div>
-					</div>
-				</div>
-
-			</div>
-		</section>  -->
-
 
 		<div class="row">
 
