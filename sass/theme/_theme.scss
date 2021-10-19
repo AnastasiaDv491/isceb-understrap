@@ -68,7 +68,7 @@ h2 {
 	display: flex;
 }
 
-#single-wrapper>div {
+#single-wrapper > div {
 	flex: 1;
 }
 
@@ -99,7 +99,7 @@ h2 {
 	background-color: $primary;
 }
 
-.mainMessage>* {
+.mainMessage > * {
 	margin: 0;
 	color: white;
 	text-align: center;
@@ -264,7 +264,7 @@ a.shoppingCartHeaderLink:hover {
 	color: $primary;
 }
 
-.flex-container>div {
+.flex-container > div {
 	margin: 20px;
 	text-align: center;
 	box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
@@ -410,14 +410,11 @@ a.shoppingCartHeaderLink:hover {
 	background: linear-gradient(180deg, $primary 50%, $secondary 50%);
 	padding: 5px;
 
-
 	width: 100%;
 	height: 100%;
-
-
 }
 
-.wrapperregistration>.container {
+.wrapperregistration > .container {
 	margin-bottom: 2em;
 }
 
@@ -456,21 +453,21 @@ input[type="file"] {
 	display: inline-block;
 	padding: 6px 12px;
 	cursor: pointer;
-	border-radius: .25rem;
+	border-radius: 0.25rem;
 	font-weight: 700;
 	font-size: 10pt;
 	color: $primary;
 }
 
 .li:before {
-	content: ”\00A3″;
+	content: ”\00a3″;
 	font-family: “FontAwesome”;
 	font-weight: normal;
 }
 
 .isceb-wiki-upload-submit {
 	border: 1px solid #ced4da;
-	border-radius: .25rem;
+	border-radius: 0.25rem;
 }
 
 /*Wiki */
@@ -629,8 +626,6 @@ input[type="file"] {
 	margin-top: 5vh;
 }
 
-
-
 @media (min-width: 641px) {
 	.isceb-grid-container {
 		display: grid;
@@ -711,8 +706,6 @@ input[type="file"] {
 	border-radius: 5px;
 }
 
-
-
 @media (min-width: 641px) {
 	.isceb-phases-grid-container {
 		display: grid;
@@ -737,8 +730,6 @@ input[type="file"] {
 	.isceb-phase-grid-item:hover {
 		transform: scale(1.05);
 	}
-
-
 }
 
 .isceb-wiki-button-not-gb {
@@ -821,7 +812,7 @@ a.isceb-grid-item-url {
 	padding: 1.5rem;
 }
 
-.isceb-wiki-phase-nav-links>li>a {
+.isceb-wiki-phase-nav-links > li > a {
 	color: ivory;
 }
 
@@ -988,7 +979,7 @@ hr.isceb-wiki-nav-phase-line {
 	color: $primary;
 }
 
-.isceb-wiki-file-download>a {
+.isceb-wiki-file-download > a {
 	color: white;
 }
 
@@ -1051,9 +1042,7 @@ hr.isceb-wiki-nav-phase-line {
 @media (min-width: 641px) {
 	.isceb-homepage-about-heading {
 		margin: 40px 50px 0px 50px;
-
 	}
-
 
 	.isceb-homepage-blue-separator {
 		background-color: $secondary;
@@ -1097,7 +1086,7 @@ hr.isceb-wiki-nav-phase-line {
 	}
 }
 
-.wp-block-group__inner-container>h4 {
+.wp-block-group__inner-container > h4 {
 	font-size: large;
 }
 
@@ -1144,6 +1133,18 @@ hr.isceb-wiki-nav-phase-line {
 	margin: 15px 15px 0 15px;
 }
 
+@media (min-width: 641px) {
+	div > .uagb-faq-child__wrapper {
+		width: 100%;
+	}
+
+	.isceb-homepage-faq-item {
+		margin: 0 auto;
+		width: 500px;
+		display: flex;
+		justify-content: center;
+	}
+}
 
 /* Standard Signle page Template*/
 
@@ -1153,7 +1154,6 @@ hr.isceb-wiki-nav-phase-line {
 	display: flex;
 	justify-content: start;
 	flex-direction: column;
-
 }
 
 @media (min-width: 641px) {
@@ -1168,7 +1168,6 @@ hr.isceb-wiki-nav-phase-line {
 }
 
 .isceb-standard-page-title-container {
-
 	margin-bottom: 20px;
 }
 
@@ -1197,7 +1196,6 @@ hr.isceb-wiki-nav-phase-line {
 		width: 15%;
 		grid-row-gap: 0px;
 		margin-top: 20px;
-
 	}
 }
 
@@ -1221,7 +1219,6 @@ hr.isceb-wiki-nav-phase-line {
 	justify-content: flex-end;
 	display: flex;
 }
-
 
 /* Event Card on Event Page*/
 
@@ -1256,6 +1253,7 @@ hr.isceb-wiki-nav-phase-line {
 }
 
 .card-media {
+	margin: 5px;
 	border-radius: 2px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 	margin-bottom: 25px;
@@ -1269,6 +1267,11 @@ hr.isceb-wiki-nav-phase-line {
 	grid-row-gap: 0px;
 }
 
+@media (min-width: 641px) {
+	.card-media {
+		margin-bottom: 15px;
+	}
+}
 .card-media:hover {
 	box-shadow: 0 5px 14px rgba(0, 0, 0, 0.2);
 }
@@ -1306,49 +1309,11 @@ hr.isceb-wiki-nav-phase-line {
 	white-space: nowrap;
 }
 
-
 .card-media-object {
 	background-position: center center;
 	background-size: cover;
 	height: 100%;
-
 }
-
-/* .card-media-object:after {
-	content: " ";
-	display: block;
-	height: 100%;
-	left: 0;
-	opacity: 0;
-	position: absolute;
-	right: 0;
-	top: 0;
-	transition: all 300ms ease-out;
-	z-index: 10;
-  } */
-
-/* .card-media:hover .card-media-object:after {
-	background: -moz-linear-gradient(
-	  top,
-	  rgba(0, 0, 0, 0) 0%,
-	  rgba(0, 0, 0, 0) 52%,
-	  rgba(0, 0, 0, 0.4) 100%
-	);
-	background: -webkit-linear-gradient(
-	  top,
-	  rgba(0, 0, 0, 0) 0%,
-	  rgba(0, 0, 0, 0) 52%,
-	  rgba(0, 0, 0, 0.4) 100%
-	);
-	background: linear-gradient(
-	  to bottom,
-	  rgba(0, 0, 0, 0) 0%,
-	  rgba(0, 0, 0, 0) 52%,
-	  rgba(0, 0, 0, 0.4) 100%
-	);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
-	opacity: 1;
-  } */
 
 .card-media-object-tag {
 	background-color: $primary;
@@ -1366,8 +1331,6 @@ hr.isceb-wiki-nav-phase-line {
 	font-weight: bold;
 }
 
-
-
 .card-media-object-social-list {
 	bottom: 4px;
 	left: 10px;
@@ -1377,43 +1340,6 @@ hr.isceb-wiki-nav-phase-line {
 	position: absolute;
 	z-index: 20;
 }
-
-
-/* 
-  .card-media-object-social-list li {
-	border-radius: 50%;
-	display: inline-block;
-	height: 30px;
-	margin-right: 6px;
-	opacity: 0;
-	overflow: hidden;
-	transform: translateY(5px);
-	transition: all 300ms ease-out;
-	width: 30px;
-  }
-  
-  .card-media:hover .card-media-object-social-list li {
-	opacity: 1;
-	transform: translateY(0);
-  }
-  
-  .card-media-object-social-list li:nth-child(1) {
-	transition-delay: 0;
-  }
-  .card-media-object-social-list li:nth-child(2) {
-	transition-delay: 75ms;
-  }
-  .card-media-object-social-list li:nth-child(3) {
-	transition-delay: 150ms;
-  } */
-
-/* .card-media-object-social-list-item-additional {
-	border: 1px solid #fff;
-	color: #fff;
-	font-size: 12px;
-	padding-top: 7px;
-	text-align: center;
-  } */
 
 .card-media-body {
 	background-color: #fff;
@@ -1430,15 +1356,12 @@ hr.isceb-wiki-nav-phase-line {
 	padding: 0.75rem;
 }
 
-
-
 .card-media-body-heading {
 	display: block;
 	margin-top: 10px;
 }
 
 .card-media-body-middle {
-
 	left: 0;
 	opacity: 1;
 	padding: 1rem;
@@ -1448,7 +1371,6 @@ hr.isceb-wiki-nav-phase-line {
 }
 
 .card-media-body-bottom {
-
 	left: 0;
 	opacity: 1;
 	padding: 1rem 15px;
@@ -1466,9 +1388,14 @@ hr.isceb-wiki-nav-phase-line {
   } */
 
 .card-media-body-supporting-bottom-text {
-	display: inline-block;
+	display: none;
 }
 
+@media (min-width: 641px) {
+	.card-media-body-supporting-bottom-text {
+		display: inline-block;
+	}
+}
 /* 
   .card-media-body-supporting-bottom-reveal {
 	opacity: 0;
@@ -1486,7 +1413,6 @@ hr.isceb-wiki-nav-phase-line {
 	text-decoration: none;
 }
 
-
 .card-media-body-bottom-text {
 	text-decoration: underline;
 }
@@ -1496,11 +1422,10 @@ hr.isceb-wiki-nav-phase-line {
 	border-radius: 20px;
 	border: 1px;
 	padding: 5px;
-	background: #DB504A;
+	background: #db504a;
 	color: white;
 	padding-left: 30px;
 	padding-right: 30px;
-
 }
 
 .isceb-card-media-title {
@@ -1538,7 +1463,6 @@ hr.isceb-wiki-nav-phase-line {
 	margin-right: 10px;
 }
 
-
 /*Event product page*/
 
 .isceb-event-hero-banner-wrapper {
@@ -1552,7 +1476,6 @@ hr.isceb-wiki-nav-phase-line {
 	background-size: cover;
 	background-position: center;
 	position: relative;
-
 }
 
 .isceb-event-hero-banner-text {
@@ -1568,7 +1491,6 @@ hr.isceb-wiki-nav-phase-line {
 	font-size: 48px;
 	line-height: 56px;
 	text-align: center;
-
 }
 
 .isceb-event-detail-box-container {
@@ -1587,7 +1509,6 @@ hr.isceb-wiki-nav-phase-line {
 		margin-right: 200px;
 	}
 }
-
 
 .isceb-event-detail-box {
 	background-color: $primary;
@@ -1628,7 +1549,6 @@ hr.isceb-wiki-nav-phase-line {
 }
 
 .isceb-event-page-tickets-wrap {
-
 	background-color: $secondary;
 	color: white;
 	border-radius: 10px;
@@ -1661,20 +1581,22 @@ hr.isceb-wiki-nav-phase-line {
 	font-weight: bold;
 	text-decoration: underline;
 }
-.isceb-event-page-tickets-wrap button.button.alt{
+.isceb-event-page-tickets-wrap button.button.alt {
 	background-color: $primary;
 	margin-left: 5px;
 }
 
-.isceb-event-page-tickets-wrap button.button.alt:hover{
+.isceb-event-page-tickets-wrap button.button.alt:hover {
 	background-color: #1f476bb0;
-	
 }
 
-.isceb-event-page-tickets-wrap .quantity{
+.isceb-event-page-tickets-wrap .quantity {
 	float: left;
 }
 
 .isceb-event-ticket-content .stock {
 	color: #a9a9a9;
+}
+
+.isceb-test-button {
 }

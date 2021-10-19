@@ -28,7 +28,7 @@ if (!empty($event_template_data['start_event'][0])) {
 $price_event = isceb_get_price_html_zero_free($isceb_wc_event);
 
 $event_descriptions_without_tags = strip_tags($isceb_wc_event->get_description());
-$isceb_event_description_trimmed = strlen($event_descriptions_without_tags) > 100 ?  substr($event_descriptions_without_tags, 0, 100) . "..." : $event_descriptions_without_tags;
+$isceb_event_description_trimmed = strlen($event_descriptions_without_tags) > 50 ?  substr($event_descriptions_without_tags, 0, 50) . "..." : $event_descriptions_without_tags;
 
 
 ?>
