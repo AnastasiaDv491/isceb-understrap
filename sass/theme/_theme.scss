@@ -813,7 +813,7 @@ a.isceb-grid-item-url {
 
 #isceb-wiki-nav-header-text:hover {
 	color: $secondary;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 .isceb-nav-program-name {
@@ -863,6 +863,26 @@ hr.isceb-wiki-nav-phase-line {
 	margin-left: 0;
 	color: white;
 	padding: 1rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#isceb-wiki-nav-button-toggle{
+	border-color: white;
+}
+
+@media (min-width: 768px) {
+	.collapse.dont-collapse-sm {
+		display: block;
+		height: auto !important;
+		visibility: visible;
+	}
+
+	#isceb-wiki-nav-button-toggle{
+		display: none;
+	}
 }
 
 .isceb-nav-container-sticky {
@@ -1661,17 +1681,18 @@ hr.isceb-wiki-nav-phase-line {
 	font-weight: bold;
 	text-decoration: underline;
 }
-.isceb-event-page-tickets-wrap button.button.alt{
+
+.isceb-event-page-tickets-wrap button.button.alt {
 	background-color: $primary;
 	margin-left: 5px;
 }
 
-.isceb-event-page-tickets-wrap button.button.alt:hover{
+.isceb-event-page-tickets-wrap button.button.alt:hover {
 	background-color: #1f476bb0;
-	
+
 }
 
-.isceb-event-page-tickets-wrap .quantity{
+.isceb-event-page-tickets-wrap .quantity {
 	float: left;
 }
 
