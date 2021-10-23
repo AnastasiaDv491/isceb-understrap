@@ -1239,15 +1239,25 @@ hr.isceb-wiki-nav-phase-line {
 }
 
 /* Event Card on Event Page*/
+.isceb-event-post{
+	background-color: $primary;
+	color: white;
+}
+
+
+.isceb-event-post  .entry-title {
+	color: white;
+}
 
 .isceb-events-container {
 	box-sizing: border-box;
-	margin: 50px 20px 0px 20px;
+	margin: 50px 20px 50px 20px;
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-column-gap: 100px;
 	grid-row-gap: 50px;
 
+	
 
 }
 
@@ -1259,6 +1269,7 @@ hr.isceb-wiki-nav-phase-line {
 	height: auto;
 	position: relative;
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	min-height: 340px;
 }
 
 .isceb-event-img-container {
@@ -1309,6 +1320,10 @@ hr.isceb-wiki-nav-phase-line {
 	justify-content: center;
 	align-items: center;
 	justify-content: center;
+
+	position: absolute;
+    width: 100%;
+    bottom: 0;
 }
 
 .isceb-event-card-order-button>p {
@@ -1322,17 +1337,17 @@ hr.isceb-wiki-nav-phase-line {
 	.isceb-events-container {
 		width: 80%;
 		grid-template-columns: repeat(3, 1fr);
-		margin: 70px;
+		margin: 50px auto 50px auto;
 
 	}
 
-	.isceb-standard-page-title-container {
-		margin: 50px 0 50px 170px;
+	.isceb-event-post .page {
+		padding: 30px 0 30px 170px;
 	}
 
 	.isceb-standard-page-container {
 		margin:0;
-		box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+		
 
 	}
 }
