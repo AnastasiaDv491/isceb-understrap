@@ -68,7 +68,7 @@ h2 {
 	display: flex;
 }
 
-#single-wrapper > div {
+#single-wrapper>div {
 	flex: 1;
 }
 
@@ -99,7 +99,7 @@ h2 {
 	background-color: $primary;
 }
 
-.mainMessage > * {
+.mainMessage>* {
 	margin: 0;
 	color: white;
 	text-align: center;
@@ -264,7 +264,7 @@ a.shoppingCartHeaderLink:hover {
 	color: $primary;
 }
 
-.flex-container > div {
+.flex-container>div {
 	margin: 20px;
 	text-align: center;
 	box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
@@ -414,7 +414,7 @@ a.shoppingCartHeaderLink:hover {
 	height: 100%;
 }
 
-.wrapperregistration > .container {
+.wrapperregistration>.container {
 	margin-bottom: 2em;
 }
 
@@ -812,7 +812,7 @@ a.isceb-grid-item-url {
 	padding: 1.5rem;
 }
 
-.isceb-wiki-phase-nav-links > li > a {
+.isceb-wiki-phase-nav-links>li>a {
 	color: ivory;
 }
 
@@ -860,7 +860,7 @@ hr.isceb-wiki-nav-phase-line {
 	justify-content: space-between;
 }
 
-#isceb-wiki-nav-button-toggle{
+#isceb-wiki-nav-button-toggle {
 	border-color: white;
 }
 
@@ -871,7 +871,7 @@ hr.isceb-wiki-nav-phase-line {
 		visibility: visible;
 	}
 
-	#isceb-wiki-nav-button-toggle{
+	#isceb-wiki-nav-button-toggle {
 		display: none;
 	}
 }
@@ -999,7 +999,7 @@ hr.isceb-wiki-nav-phase-line {
 	color: $primary;
 }
 
-.isceb-wiki-file-download > a {
+.isceb-wiki-file-download>a {
 	color: white;
 }
 
@@ -1106,7 +1106,7 @@ hr.isceb-wiki-nav-phase-line {
 	}
 }
 
-.wp-block-group__inner-container > h4 {
+.wp-block-group__inner-container>h4 {
 	font-size: large;
 }
 
@@ -1154,7 +1154,7 @@ hr.isceb-wiki-nav-phase-line {
 }
 
 @media (min-width: 641px) {
-	div > .uagb-faq-child__wrapper {
+	div>.uagb-faq-child__wrapper {
 		width: 100%;
 	}
 
@@ -1244,18 +1244,48 @@ hr.isceb-wiki-nav-phase-line {
 
 .isceb-events-container {
 	box-sizing: border-box;
-	margin: 50px auto 0;
+	margin: 50px 10px 0px 10px;
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: 1fr;
 	grid-column-gap: 100px;
-	grid-row-gap: 0px;
+	grid-row-gap: 50px;
+
+
 }
 
 @media (min-width: 641px) {
 	.isceb-events-container {
 		width: 80%;
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
+
+/* Event redesign */
+.isceb-event-card {
+	background-color: violet;
+	height: 300px;
+	
+}
+
+.isceb-event-img-container {
+	height: 150px;
+	border-bottom-left-radius: 25%;
+	border-bottom-right-radius: 25%;
+	overflow: hidden;
+
+	position: relative;
+}
+
+.isceb-event-card-image {
+	position: absolute;
+	bottom: 0;
+	object-fit: cover;
+
+	min-height: 150px;
+}
+
+/* End event redesign */
+
 
 /* 
   
@@ -1292,6 +1322,7 @@ hr.isceb-wiki-nav-phase-line {
 		margin-bottom: 15px;
 	}
 }
+
 .card-media:hover {
 	box-shadow: 0 5px 14px rgba(0, 0, 0, 0.2);
 }
@@ -1416,6 +1447,7 @@ hr.isceb-wiki-nav-phase-line {
 		display: inline-block;
 	}
 }
+
 /* 
   .card-media-body-supporting-bottom-reveal {
 	opacity: 0;
@@ -1470,6 +1502,8 @@ hr.isceb-wiki-nav-phase-line {
 	flex-direction: row;
 	justify-content: space-evenly;
 }
+
+
 
 .fa-calendar-alt,
 .fa-clock,
@@ -1601,6 +1635,7 @@ hr.isceb-wiki-nav-phase-line {
 	font-weight: bold;
 	text-decoration: underline;
 }
+
 .isceb-event-page-tickets-wrap button.button.alt {
 	background-color: $primary;
 	margin-left: 5px;
@@ -1618,5 +1653,4 @@ hr.isceb-wiki-nav-phase-line {
 	color: #a9a9a9;
 }
 
-.isceb-test-button {
-}
+.isceb-test-button {}

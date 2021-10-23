@@ -33,8 +33,13 @@ $isceb_event_description_trimmed = strlen($event_descriptions_without_tags) > 50
 
 ?>
 
-<a href="<?php esc_html_e ($isceb_wc_event->get_permalink()); ?>">
-	<div class="card-media">
+<a href="<?php esc_html_e($isceb_wc_event->get_permalink()); ?>">
+	<div class="isceb-event-card">
+		<div class="isceb-event-img-container">
+			<img class="isceb-event-card-image" src="<?php esc_attr_e(get_the_post_thumbnail_url($event_template_data['event_post_id'])) ?>">
+		</div>
+	</div>
+	<!-- <div class="card-media">
 		<div class="card-media-body">
 			<div class="card-media-body-top">
 				<h3 class="isceb-event-body-top"><?php esc_html_e($isceb_wc_event->get_name()); ?></h3>
@@ -57,7 +62,7 @@ $isceb_event_description_trimmed = strlen($event_descriptions_without_tags) > 50
 					<?php endif; ?>
 
 					<?php if ($price_event != '') : ?>
-						<span class="card-media-body-supporting-bottom-text subtle"><i class="fas fa-ticket-alt"></i><?php echo(isceb_get_price_html_zero_free($isceb_wc_event)) ?></span>
+						<span class="card-media-body-supporting-bottom-text subtle"><i class="fas fa-ticket-alt"></i><?php echo (isceb_get_price_html_zero_free($isceb_wc_event)) ?></span>
 					<?php endif; ?>
 				</div>
 			<?php endif; ?>
@@ -71,14 +76,15 @@ $isceb_event_description_trimmed = strlen($event_descriptions_without_tags) > 50
 			<div class="card-media-object" style="
 				background-image: url(<?php esc_attr_e(get_the_post_thumbnail_url($event_template_data['event_post_id'], 'medium')); ?> );
 				opacity: 0.2;
-				"></div>
-			<!-- <span class="card-media-object-tag subtle">Selling Fast</span> -->
-			<div class="card-media-countdown-container">
+				">
+				</div> -->
+	<!-- <span class="card-media-object-tag subtle">Selling Fast</span> -->
+	<!-- <div class="card-media-countdown-container">
 				<span class="card-media-object-tag-countdown-number subtle">3</span>
 				<span class="card-media-object-tag-countdown-text subtle">days left to register</span>
 
 
 			</div>
 		</div>
-	</div>
+	</div> -->
 </a>
