@@ -35,8 +35,7 @@ $isceb_event_description_trimmed = strlen($event_descriptions_without_tags) > 50
 
 <a href="<?php esc_html_e($isceb_wc_event->get_permalink()); ?>">
 	<div class="isceb-event-card">
-		<div class="isceb-event-img-container">
-			<img class="isceb-event-card-image" src="<?php esc_attr_e(get_the_post_thumbnail_url($event_template_data['event_post_id'])) ?>">
+		<div class="isceb-event-img-container" style="background-image: url(<?php esc_attr_e(get_the_post_thumbnail_url($event_template_data['event_post_id'])) ?>);">
 		</div>
 	</div>
 	<!-- <div class="card-media">

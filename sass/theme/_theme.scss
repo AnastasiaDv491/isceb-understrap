@@ -1274,15 +1274,12 @@ hr.isceb-wiki-nav-phase-line {
 	overflow: hidden;
 
 	position: relative;
+
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
-.isceb-event-card-image {
-	position: absolute;
-	bottom: 0;
-	object-fit: cover;
-
-	min-height: 150px;
-}
 
 /* End event redesign */
 
