@@ -1176,11 +1176,7 @@ hr.isceb-wiki-nav-phase-line {
 	flex-direction: column;
 }
 
-@media (min-width: 641px) {
-	.isceb-standard-page-container {
-		margin: 0 auto;
-	}
-}
+
 
 /* Custom guteberg avatar for standard page*/
 .isceb-standard-page-author-img {
@@ -1190,6 +1186,8 @@ hr.isceb-wiki-nav-phase-line {
 .isceb-standard-page-title-container {
 	margin-bottom: 20px;
 }
+
+
 
 .isceb-standard-page-header {
 	font-size: xx-large;
@@ -1244,7 +1242,7 @@ hr.isceb-wiki-nav-phase-line {
 
 .isceb-events-container {
 	box-sizing: border-box;
-	margin: 50px 10px 0px 10px;
+	margin: 50px 20px 0px 20px;
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-column-gap: 100px;
@@ -1253,18 +1251,14 @@ hr.isceb-wiki-nav-phase-line {
 
 }
 
-@media (min-width: 641px) {
-	.isceb-events-container {
-		width: 80%;
-		grid-template-columns: repeat(2, 1fr);
-	}
-}
+
 
 /* Event redesign */
 .isceb-event-card {
-	background-color: violet;
-	height: 300px;
-	
+	// background-color: violet;
+	height: auto;
+	position: relative;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .isceb-event-img-container {
@@ -1276,10 +1270,72 @@ hr.isceb-wiki-nav-phase-line {
 	position: relative;
 
 	background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 
+.isceb-event-message-box {
+	background-color: $primary;
+	color: white;
+	width: 50%;
+	position: absolute;
+	right: 25%;
+	top: 135px;
+}
+.isceb-event-message-box > h6 {
+	text-align: center;
+	margin: 4px 0 4px 0;
+}
+.isceb-event-title {
+	display: flex;
+	margin-top: 15px;
+	margin-top: 10px;
+	padding: 20px 20px 5px 20px;
+	flex-direction: column;
+}
+
+.isceb-event-title>p {
+	font-size: smaller;
+}
+
+.isceb-event-card-metadata {
+	padding-left: 20px;
+}
+
+.isceb-event-card-order-button {
+	background-color: $primary;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	justify-content: center;
+}
+
+.isceb-event-card-order-button>p {
+	margin: 0;
+	padding: 6px;
+
+}
+
+/*Event redesign desktop */
+@media (min-width: 641px) {
+	.isceb-events-container {
+		width: 80%;
+		grid-template-columns: repeat(3, 1fr);
+		margin: 70px;
+
+	}
+
+	.isceb-standard-page-title-container {
+		margin: 50px 0 50px 170px;
+	}
+
+	.isceb-standard-page-container {
+		margin:0;
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+
+	}
+}
 
 /* End event redesign */
 

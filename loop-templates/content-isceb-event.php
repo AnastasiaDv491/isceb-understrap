@@ -35,7 +35,50 @@ $isceb_event_description_trimmed = strlen($event_descriptions_without_tags) > 50
 
 <a href="<?php esc_html_e($isceb_wc_event->get_permalink()); ?>">
 	<div class="isceb-event-card">
-		<div class="isceb-event-img-container" style="background-image: url(<?php esc_attr_e(get_the_post_thumbnail_url($event_template_data['event_post_id'])) ?>);">
+		<div class="isceb-event-img-container" style="
+			opacity:0.4;
+			<?php if (has_post_thumbnail($event_template_data['event_post_id'])) : ?>
+			background-image: url(<?php esc_attr_e(get_the_post_thumbnail_url($event_template_data['event_post_id'])) ?>);
+			<?php else : ?>
+			background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+			<?php endif; ?>
+			">
+		</div>
+		<div class="isceb-event-message-box">
+			<h6>3 Days left</h6>
+		</div>
+		<div class="isceb-event-title">
+			<h4><?php esc_html_e($isceb_wc_event->get_name()); ?></h4>
+			<!-- <p><?php esc_html_e($isceb_event_description_trimmed) ?></p> -->
+		</div>
+		<?php if ($event_time_obj || $price_event != '') : ?>
+			<div class="isceb-event-card-metadata">
+
+
+				<?php if ($event_time_obj) : ?>
+					<div>
+					<i class="far fa-calendar-alt"></i><?php esc_html_e($event_start_day_text) ?>
+					</div>
+					<div>
+					<i class="far fa-clock"></i><?php esc_html_e($event_start_time_text) ?>
+					</div>
+					
+				<?php endif; ?>
+
+				<?php if ($price_event != '') : ?>
+					<div>
+					<i class="fas fa-ticket-alt"></i><?php echo (isceb_get_price_html_zero_free($isceb_wc_event)) ?>
+					</div>
+					
+				<?php endif; ?>
+			</div>
+		<?php endif; ?>
+
+		<div class="isceb-event-card-order-button">
+			<p>Order</p>
+			<i class="fa far fa-chevron-right"></i>
+
 		</div>
 	</div>
 	<!-- <div class="card-media">
