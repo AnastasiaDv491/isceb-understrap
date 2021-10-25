@@ -1239,13 +1239,13 @@ hr.isceb-wiki-nav-phase-line {
 }
 
 /* Event Card on Event Page*/
-.isceb-event-post{
+.isceb-event-post {
 	background-color: $primary;
 	color: white;
 }
 
 
-.isceb-event-post  .entry-title {
+.isceb-event-post .entry-title {
 	color: white;
 }
 
@@ -1257,7 +1257,7 @@ hr.isceb-wiki-nav-phase-line {
 	grid-column-gap: 100px;
 	grid-row-gap: 50px;
 
-	
+
 
 }
 
@@ -1270,6 +1270,28 @@ hr.isceb-wiki-nav-phase-line {
 	position: relative;
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	min-height: 340px;
+
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: box-shadow, transform;
+	transition-property: box-shadow, transform;
+}
+
+.isceb-event-card:hover {
+	// display: inline-block;
+
+
+	box-shadow: rgba(31, 71, 107, 1) 0px 3px 8px;
+}
+
+.isceb-event-card:hover > .isceb-event-img-container {
+	// display: inline-block;
+	background-color: hotpink;
+
+	opacity: 1;
 }
 
 .isceb-event-img-container {
@@ -1278,11 +1300,18 @@ hr.isceb-wiki-nav-phase-line {
 	border-bottom-right-radius: 25%;
 	overflow: hidden;
 
+	opacity: 0.4;
+
 	position: relative;
 
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
+
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: opacity, transform;
+	transition-property: opacity, transform;
 }
 
 .isceb-event-message-box {
@@ -1293,10 +1322,12 @@ hr.isceb-wiki-nav-phase-line {
 	right: 25%;
 	top: 135px;
 }
-.isceb-event-message-box > h6 {
+
+.isceb-event-message-box>h6 {
 	text-align: center;
 	margin: 4px 0 4px 0;
 }
+
 .isceb-event-title {
 	display: flex;
 	margin-top: 15px;
@@ -1313,6 +1344,14 @@ hr.isceb-wiki-nav-phase-line {
 	padding-left: 20px;
 }
 
+.isceb-event-card-date-time {
+	display: flex;
+}
+
+.isceb-event-card-date {
+	margin-right: 10px;
+}
+
 .isceb-event-card-order-button {
 	background-color: $primary;
 	color: white;
@@ -1322,8 +1361,8 @@ hr.isceb-wiki-nav-phase-line {
 	justify-content: center;
 
 	position: absolute;
-    width: 100%;
-    bottom: 0;
+	width: 100%;
+	bottom: 0;
 }
 
 .isceb-event-card-order-button>p {
@@ -1346,11 +1385,18 @@ hr.isceb-wiki-nav-phase-line {
 	}
 
 	.isceb-standard-page-container {
-		margin:0;
-		
+		margin: 0;
+
 
 	}
 }
+
+.isceb-event-card-link:hover {
+	text-decoration: none;
+	color: $primary;
+}
+
+
 
 /* End event redesign */
 
