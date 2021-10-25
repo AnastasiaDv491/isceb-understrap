@@ -1281,17 +1281,26 @@ hr.isceb-wiki-nav-phase-line {
 }
 
 .isceb-event-card:hover {
-	// display: inline-block;
-
-
 	box-shadow: rgba(31, 71, 107, 1) 0px 3px 8px;
 }
 
 .isceb-event-card:hover > .isceb-event-img-container {
-	// display: inline-block;
-	background-color: hotpink;
-
 	opacity: 1;
+}
+
+.isceb-event-card:hover .isceb-event-card-arrow{
+	transform: translateX(4px);
+}
+
+.isceb-event-card-arrow{
+	-webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
 }
 
 .isceb-event-img-container {

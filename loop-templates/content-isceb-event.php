@@ -83,7 +83,7 @@ $isceb_event_location_trimmed = strlen($isceb_event_location_without_tags) > 35 
 
 		<div class="isceb-event-card-order-button">
 			<p>Order</p>
-			<i class="fa far fa-chevron-right"></i>
+			<i class="fa far fa-chevron-right isceb-event-card-arrow"></i>
 		</div>
 	</div>
 
