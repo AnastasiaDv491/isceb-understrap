@@ -32,7 +32,15 @@ $isceb_event_description_trimmed = strlen($event_descriptions_without_tags) > 50
 
 $isceb_event_location_without_tags = strip_tags($event_template_data['location_event'][0]);
 $isceb_event_location_trimmed = strlen($isceb_event_location_without_tags) > 35 ?  substr($isceb_event_location_without_tags, 0, 35) . "..." : $isceb_event_location_without_tags;
+// var_dump($event_template_data['end_event']);
 
+$isceb_event_current_date = new DateTime('now');
+$isceb_event_start_date = new DateTime($event_template_data['start_event'][0]);
+
+$isceb_event_countdown = date_diff($isceb_event_current_date, $isceb_event_start_date);
+
+// var_dump($isceb_event_countdown->d);
+var_dump($isceb_event_countdown);
 ?>
 
 <a class="isceb-event-card-link" href="<?php esc_html_e($isceb_wc_event->get_permalink()); ?>">
@@ -47,7 +55,13 @@ $isceb_event_location_trimmed = strlen($isceb_event_location_without_tags) > 35 
 			">
 		</div>
 		<div class="isceb-event-message-box">
-			<h6>3 Days left</h6>
+			<?php if ($isceb_event_countdown->invert == 0) : ?> 
+				<?php if($isceb_event_countdown->d < 5) : ?>
+					<h6 style="color: pink"><?php esc_html_e($isceb_event_countdown->d) ?> Days left</h6>
+				<?php endif;?>
+			<?php else : ?>
+				<h6>Event has passed</h6>
+			<?php endif; ?>
 		</div>
 		<div class="isceb-event-title">
 			<h4><?php esc_html_e($isceb_wc_event->get_name()); ?></h4>
