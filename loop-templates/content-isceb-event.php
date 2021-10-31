@@ -39,11 +39,20 @@ $isceb_event_start_date = new DateTime($event_template_data['start_event'][0]);
 
 $isceb_event_countdown = date_diff($isceb_event_current_date, $isceb_event_start_date);
 
-// var_dump($isceb_event_countdown->d);
-var_dump($isceb_event_countdown);
 ?>
 
-<a class="isceb-event-card-link" href="<?php esc_html_e($isceb_wc_event->get_permalink()); ?>">
+<!-- Check if eventcount is equal to 0 
+If yes, return
+-->
+
+<a href="
+<?php if ($isceb_event_countdown->invert == 0) : ?> 
+	<?php esc_html_e($isceb_wc_event->get_permalink()); ?>" class="isceb-event-card-link" >
+<?php else : ?>
+	#" class="isceb-event-card-link disabled" >
+<?php endif; ?>
+
+
 	<div class="isceb-event-card">
 		<div class="isceb-event-img-container" style="
 			<?php if (has_post_thumbnail($event_template_data['event_post_id'])) : ?>
@@ -55,10 +64,12 @@ var_dump($isceb_event_countdown);
 			">
 		</div>
 		<div class="isceb-event-message-box">
-			<?php if ($isceb_event_countdown->invert == 0) : ?> 
-				<?php if($isceb_event_countdown->d < 5) : ?>
-					<h6 style="color: pink"><?php esc_html_e($isceb_event_countdown->d) ?> Days left</h6>
-				<?php endif;?>
+			<?php if ($isceb_event_countdown->invert == 0) : ?>
+				<?php if ($isceb_event_countdown->d < 5) : ?>
+					<h6><?php esc_html_e($isceb_event_countdown->d) ?> Days left</h6>
+				<?php elseif ($isceb_event_countdown->d > 5) : ?>
+					<h6> Get your tickets NOW! </h6>
+				<?php endif; ?>
 			<?php else : ?>
 				<h6>Event has passed</h6>
 			<?php endif; ?>

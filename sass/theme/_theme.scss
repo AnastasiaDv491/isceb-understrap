@@ -1380,6 +1380,10 @@ hr.isceb-wiki-nav-phase-line {
 
 }
 
+a.disabled:hover {
+	cursor: not-allowed;
+  }
+
 /*Event redesign desktop */
 @media (min-width: 641px) {
 	.isceb-events-container {
@@ -1398,8 +1402,17 @@ hr.isceb-wiki-nav-phase-line {
 
 
 	}
-}
+	.isceb-event-has-passed {
+		margin: 30px 0 0 100px;
+	}
 
+	.isceb-event-has-passed > p{
+		font-size: xxx-large;
+	}
+}
+.isceb-event-has-passed {
+	margin: 30px 0 0 70px;
+}
 .isceb-event-card-link:hover {
 	text-decoration: none;
 	color: $primary;
@@ -1777,3 +1790,4 @@ hr.isceb-wiki-nav-phase-line {
 }
 
 .isceb-test-button {}
+
