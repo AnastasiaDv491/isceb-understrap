@@ -1284,23 +1284,23 @@ hr.isceb-wiki-nav-phase-line {
 	box-shadow: rgba(31, 71, 107, 1) 0px 3px 8px;
 }
 
-.isceb-event-card:hover > .isceb-event-img-container {
+.isceb-event-card:hover>.isceb-event-img-container {
 	opacity: 1;
 }
 
-.isceb-event-card:hover .isceb-event-card-arrow{
+.isceb-event-card:hover .isceb-event-card-arrow {
 	transform: translateX(4px);
 }
 
-.isceb-event-card-arrow{
+.isceb-event-card-arrow {
 	-webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-transition-duration: 0.1s;
-    transition-duration: 0.1s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
-    -webkit-transition-timing-function: ease-out;
-    transition-timing-function: ease-out;
+	transform: translateZ(0);
+	-webkit-transition-duration: 0.1s;
+	transition-duration: 0.1s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
 }
 
 .isceb-event-img-container {
@@ -1382,7 +1382,7 @@ hr.isceb-wiki-nav-phase-line {
 
 a.disabled:hover {
 	cursor: not-allowed;
-  }
+}
 
 /*Event redesign desktop */
 @media (min-width: 641px) {
@@ -1402,17 +1402,20 @@ a.disabled:hover {
 
 
 	}
+
 	.isceb-event-has-passed {
 		margin: 30px 0 0 100px;
 	}
 
-	.isceb-event-has-passed > p{
+	.isceb-event-has-passed>p {
 		font-size: xxx-large;
 	}
 }
+
 .isceb-event-has-passed {
 	margin: 30px 0 0 70px;
 }
+
 .isceb-event-card-link:hover {
 	text-decoration: none;
 	color: $primary;
@@ -1712,12 +1715,22 @@ a.disabled:hover {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	overflow: hidden;
 }
 
 @media (min-width: 641px) {
 	.isceb-event-detail-box {
 		padding-left: 10px;
 	}
+}
+
+.isceb-event-detail-location-text {
+	align-self: baseline;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
 
 .isceb-event-page-content-wrap {
@@ -1790,4 +1803,3 @@ a.disabled:hover {
 }
 
 .isceb-test-button {}
-

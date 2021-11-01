@@ -134,7 +134,7 @@ if (isset($post_meta['_isceb_event']) && $post_meta['_isceb_event'][0] === 'yes'
 
 
 <?php if (isset($post_meta['_isceb_event']) && $post_meta['_isceb_event'][0] === 'yes') : ?>
-	<?php if (isceb_is_event_still_purchasable($is_purchasable, $product) == true) : ?>
+	<?php if ($product->is_purchasable() == true) : ?>
 		<div id="product-<?php the_ID(); ?>" <?php wc_product_class('isceb-event-hero-banner-wrapper', $product); ?>>
 			<div class="isceb-event-hero-banner" style="
 					opacity:0.4;
@@ -158,7 +158,7 @@ if (isset($post_meta['_isceb_event']) && $post_meta['_isceb_event'][0] === 'yes'
 			<?php endif; ?>
 
 			<?php if ($event_location !== '') : ?>
-				<div class="isceb-event-detail-box"><i class="fas fa-map-marker-alt fa-lg"></i><?php echo $event_location; ?></div>
+				<div class="isceb-event-detail-box"><i class="fas fa-map-marker-alt fa-lg"></i><div class="isceb-event-detail-location-text"><?php echo $event_location; ?></div></div>
 			<?php endif; ?>
 
 			<?php if (get_stock_variations_from_product() !== null) : ?>
