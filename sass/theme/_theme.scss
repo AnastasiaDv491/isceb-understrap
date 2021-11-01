@@ -1726,9 +1726,9 @@ a.disabled:hover {
 }
 
 .isceb-event-detail-location-text {
-	align-self: baseline;
+	align-self: center;
 	display: -webkit-box;
-	-webkit-line-clamp: 2;
+	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 }
