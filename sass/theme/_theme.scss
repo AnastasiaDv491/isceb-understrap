@@ -732,7 +732,7 @@ input[type="file"] {
 	}
 }
 
-.isceb-wiki-button-not-gb {
+.isceb-wiki-button-not-gb, .isceb-wiki-login-button-not-gb {
 	background-color: $primary;
 	color: white;
 	border: none;
@@ -744,10 +744,11 @@ input[type="file"] {
 	text-align: center;
 	text-decoration: none;
 	overflow-wrap: break-word;
-
+	margin-bottom: 10px;
 	font-weight: bold;
 	font-size: smaller;
 }
+
 
 @media (min-width: 641px) {
 	.isceb-wiki-button-not-gb {
@@ -762,12 +763,28 @@ input[type="file"] {
 		text-align: center;
 		text-decoration: none;
 		overflow-wrap: break-word;
+		margin-bottom:0px;
+		font-weight: bold;
+	}
 
+	.isceb-wiki-login-button-not-gb{
+		background-color: $primary;
+		color: white;
+		border: none;
+		border-radius: 28px;
+		box-shadow: none;
+		cursor: pointer;
+		font-size: 18px;
+		padding: 12px 24px;
+		text-align: center;
+		text-decoration: none;
+		overflow-wrap: break-word;
+	
 		font-weight: bold;
 	}
 }
 
-.isceb-wiki-button-not-gb:hover {
+.isceb-wiki-button-not-gb:hover, .isceb-wiki-login-button-not-gb:hover {
 	background-color: $secondary;
 	color: $primary;
 	border: 2px solid $primary;
