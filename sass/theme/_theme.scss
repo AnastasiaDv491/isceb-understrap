@@ -68,7 +68,7 @@ h2 {
 	display: flex;
 }
 
-#single-wrapper>div {
+#single-wrapper > div {
 	flex: 1;
 }
 
@@ -99,7 +99,7 @@ h2 {
 	background-color: $primary;
 }
 
-.mainMessage>* {
+.mainMessage > * {
 	margin: 0;
 	color: white;
 	text-align: center;
@@ -264,7 +264,7 @@ a.shoppingCartHeaderLink:hover {
 	color: $primary;
 }
 
-.flex-container>div {
+.flex-container > div {
 	margin: 20px;
 	text-align: center;
 	box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
@@ -414,7 +414,7 @@ a.shoppingCartHeaderLink:hover {
 	height: 100%;
 }
 
-.wrapperregistration>.container {
+.wrapperregistration > .container {
 	margin-bottom: 2em;
 }
 
@@ -732,7 +732,8 @@ input[type="file"] {
 	}
 }
 
-.isceb-wiki-button-not-gb, .isceb-wiki-login-button-not-gb {
+.isceb-wiki-button-not-gb,
+.isceb-wiki-login-button-not-gb {
 	background-color: $primary;
 	color: white;
 	border: none;
@@ -749,7 +750,6 @@ input[type="file"] {
 	font-size: smaller;
 }
 
-
 @media (min-width: 641px) {
 	.isceb-wiki-button-not-gb {
 		background-color: $primary;
@@ -763,11 +763,11 @@ input[type="file"] {
 		text-align: center;
 		text-decoration: none;
 		overflow-wrap: break-word;
-		margin-bottom:0px;
+		margin-bottom: 0px;
 		font-weight: bold;
 	}
 
-	.isceb-wiki-login-button-not-gb{
+	.isceb-wiki-login-button-not-gb {
 		background-color: $primary;
 		color: white;
 		border: none;
@@ -779,12 +779,13 @@ input[type="file"] {
 		text-align: center;
 		text-decoration: none;
 		overflow-wrap: break-word;
-	
+
 		font-weight: bold;
 	}
 }
 
-.isceb-wiki-button-not-gb:hover, .isceb-wiki-login-button-not-gb:hover {
+.isceb-wiki-button-not-gb:hover,
+.isceb-wiki-login-button-not-gb:hover {
 	background-color: $secondary;
 	color: $primary;
 	border: 2px solid $primary;
@@ -829,7 +830,7 @@ a.isceb-grid-item-url {
 	padding: 1.5rem;
 }
 
-.isceb-wiki-phase-nav-links>li>a {
+.isceb-wiki-phase-nav-links > li > a {
 	color: ivory;
 }
 
@@ -1016,7 +1017,7 @@ hr.isceb-wiki-nav-phase-line {
 	color: $primary;
 }
 
-.isceb-wiki-file-download>a {
+.isceb-wiki-file-download > a {
 	color: white;
 }
 
@@ -1123,7 +1124,7 @@ hr.isceb-wiki-nav-phase-line {
 	}
 }
 
-.wp-block-group__inner-container>h4 {
+.wp-block-group__inner-container > h4 {
 	font-size: large;
 }
 
@@ -1171,7 +1172,7 @@ hr.isceb-wiki-nav-phase-line {
 }
 
 @media (min-width: 641px) {
-	div>.uagb-faq-child__wrapper {
+	div > .uagb-faq-child__wrapper {
 		width: 100%;
 	}
 
@@ -1193,8 +1194,6 @@ hr.isceb-wiki-nav-phase-line {
 	flex-direction: column;
 }
 
-
-
 /* Custom guteberg avatar for standard page*/
 .isceb-standard-page-author-img {
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -1203,8 +1202,6 @@ hr.isceb-wiki-nav-phase-line {
 .isceb-standard-page-title-container {
 	margin-bottom: 20px;
 }
-
-
 
 .isceb-standard-page-header {
 	font-size: xx-large;
@@ -1261,7 +1258,6 @@ hr.isceb-wiki-nav-phase-line {
 	color: white;
 }
 
-
 .isceb-event-post .entry-title {
 	color: white;
 }
@@ -1273,12 +1269,7 @@ hr.isceb-wiki-nav-phase-line {
 	grid-template-columns: 1fr;
 	grid-column-gap: 100px;
 	grid-row-gap: 50px;
-
-
-
 }
-
-
 
 /* Event redesign */
 .isceb-event-card {
@@ -1301,7 +1292,7 @@ hr.isceb-wiki-nav-phase-line {
 	box-shadow: rgba(31, 71, 107, 1) 0px 3px 8px;
 }
 
-.isceb-event-card:hover>.isceb-event-img-container {
+.isceb-event-card:hover > .isceb-event-img-container {
 	opacity: 1;
 }
 
@@ -1349,7 +1340,7 @@ hr.isceb-wiki-nav-phase-line {
 	top: 135px;
 }
 
-.isceb-event-message-box>h6 {
+.isceb-event-message-box > h6 {
 	text-align: center;
 	margin: 4px 0 4px 0;
 }
@@ -1362,7 +1353,7 @@ hr.isceb-wiki-nav-phase-line {
 	flex-direction: column;
 }
 
-.isceb-event-title>p {
+.isceb-event-title > p {
 	font-size: smaller;
 }
 
@@ -1391,10 +1382,9 @@ hr.isceb-wiki-nav-phase-line {
 	bottom: 0;
 }
 
-.isceb-event-card-order-button>p {
+.isceb-event-card-order-button > p {
 	margin: 0;
 	padding: 6px;
-
 }
 
 a.disabled:hover {
@@ -1407,7 +1397,6 @@ a.disabled:hover {
 		width: 80%;
 		grid-template-columns: repeat(3, 1fr);
 		margin: 50px auto 50px auto;
-
 	}
 
 	.isceb-event-post .page {
@@ -1416,15 +1405,13 @@ a.disabled:hover {
 
 	.isceb-standard-page-container {
 		margin: 0;
-
-
 	}
 
 	.isceb-event-has-passed {
 		margin: 30px 0 0 100px;
 	}
 
-	.isceb-event-has-passed>p {
+	.isceb-event-has-passed > p {
 		font-size: xxx-large;
 	}
 }
@@ -1438,10 +1425,7 @@ a.disabled:hover {
 	color: $primary;
 }
 
-
-
 /* End event redesign */
-
 
 /* 
   
@@ -1659,8 +1643,6 @@ a.disabled:hover {
 	justify-content: space-evenly;
 }
 
-
-
 .fa-calendar-alt,
 .fa-clock,
 .fa-ticket-alt,
@@ -1819,4 +1801,21 @@ a.disabled:hover {
 	color: #a9a9a9;
 }
 
-.isceb-test-button {}
+/* Styling of the search page*/
+.isceb-search-article {
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+		rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+	background: rgb(255, 255, 255);
+	background: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 1) 74%,
+		rgba(211, 235, 248, 1) 100%
+	);
+
+	padding: 5px 20px 5px 20px;
+	margin: 10px;
+}
+
+.isceb-search-results-main-title {
+	margin: 80px 0 40px 0;
+}
