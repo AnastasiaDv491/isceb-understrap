@@ -30,55 +30,86 @@ $price_event = isceb_get_price_html_zero_free($isceb_wc_event);
 $event_descriptions_without_tags = strip_tags($isceb_wc_event->get_description());
 $isceb_event_description_trimmed = strlen($event_descriptions_without_tags) > 50 ?  substr($event_descriptions_without_tags, 0, 50) . "..." : $event_descriptions_without_tags;
 
+$isceb_event_location_without_tags = strip_tags($event_template_data['location_event'][0]);
+$isceb_event_location_trimmed = strlen($isceb_event_location_without_tags) > 35 ?  substr($isceb_event_location_without_tags, 0, 35) . "..." : $isceb_event_location_without_tags;
+// var_dump($event_template_data['end_event']);
+
+$isceb_event_current_date = new DateTime('now');
+$isceb_event_start_date = new DateTime($event_template_data['start_event'][0]);
+
+$isceb_event_countdown = date_diff($isceb_event_current_date, $isceb_event_start_date);
 
 ?>
 
-<a href="<?php esc_html_e ($isceb_wc_event->get_permalink()); ?>">
-	<div class="card-media">
-		<div class="card-media-body">
-			<div class="card-media-body-top">
-				<h3 class="isceb-event-body-top"><?php esc_html_e($isceb_wc_event->get_name()); ?></h3>
-			</div>
+<!-- Check if eventcount is equal to 0 
+If yes, return
+-->
 
-			<div class="card-media-body-middle">
-				<div>
-					<div class="card-media-body-supporting-bottom-text subtle description">
-						<p><?php esc_html_e($isceb_event_description_trimmed) ?></p>
+<a href="
+<?php if ($isceb_event_countdown->invert == 0) : ?> 
+	<?php esc_html_e($isceb_wc_event->get_permalink()); ?>" class="isceb-event-card-link" >
+<?php else : ?>
+	#" class="isceb-event-card-link disabled" >
+<?php endif; ?>
+
+
+	<div class="isceb-event-card">
+		<div class="isceb-event-img-container" style="
+			<?php if (has_post_thumbnail($event_template_data['event_post_id'])) : ?>
+			background-image: url(<?php esc_attr_e(get_the_post_thumbnail_url($event_template_data['event_post_id'])) ?>);
+			<?php else : ?>
+			background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+			<?php endif; ?>
+			">
+		</div>
+		<div class="isceb-event-message-box">
+			<?php if ($isceb_event_countdown->invert == 0) : ?>
+				<?php if ($isceb_event_countdown->d < 5) : ?>
+					<h6><?php esc_html_e($isceb_event_countdown->d) ?> Days left</h6>
+				<?php elseif ($isceb_event_countdown->d > 5) : ?>
+					<h6> Get your tickets NOW! </h6>
+				<?php endif; ?>
+			<?php else : ?>
+				<h6>Event has passed</h6>
+			<?php endif; ?>
+		</div>
+		<div class="isceb-event-title">
+			<h4><?php esc_html_e($isceb_wc_event->get_name()); ?></h4>
+			<!-- <p><?php esc_html_e($isceb_event_description_trimmed) ?></p> -->
+		</div>
+
+		<div class="isceb-event-card-metadata">
+
+
+			<?php if ($event_time_obj) : ?>
+				<div class="isceb-event-card-date-time">
+					<div class="isceb-event-card-date">
+						<i class="far fa-calendar-alt"></i><?php esc_html_e($event_start_day_text) ?>
+					</div>
+					<div>
+						<i class="far fa-clock"></i><?php esc_html_e($event_start_time_text) ?>
 					</div>
 				</div>
-
-			</div>
-
-			<?php if ($event_time_obj || $price_event != '') : ?>
-				<div class="card-event-meta">
-					<?php if ($event_time_obj) : ?>
-						<span class="subtle"><i class="far fa-calendar-alt"></i><?php esc_html_e($event_start_day_text) ?></span>
-						<span class="subtle"><i class="far fa-clock"></i><?php esc_html_e($event_start_time_text) ?></span>
-					<?php endif; ?>
-
-					<?php if ($price_event != '') : ?>
-						<span class="card-media-body-supporting-bottom-text subtle"><i class="fas fa-ticket-alt"></i><?php echo(isceb_get_price_html_zero_free($isceb_wc_event)) ?></span>
-					<?php endif; ?>
-				</div>
 			<?php endif; ?>
-			<div class="card-media-body-bottom">
-				<span class="card-media-body-bottom-text">Read more</span>
-				<button class="card-media-body-bottom-button">Sold out</button>
-			</div>
+
+			<?php if ($event_template_data['location_event'] && $event_template_data['location_event'][0] !== '') : ?>
+				<i class="fas fa-map-marker-alt"></i><?php esc_html_e($isceb_event_location_trimmed) ?>
+			<?php endif; ?>
+
+
+			<?php if ($price_event != '') : ?>
+				<div>
+					<i class="fas fa-ticket-alt"></i><?php echo (isceb_get_price_html_zero_free($isceb_wc_event)) ?>
+				</div>
+
+			<?php endif; ?>
 		</div>
 
-		<div class="card-media-object-container">
-			<div class="card-media-object" style="
-				background-image: url(<?php esc_attr_e(get_the_post_thumbnail_url($event_template_data['event_post_id'], 'medium')); ?> );
-				opacity: 0.2;
-				"></div>
-			<!-- <span class="card-media-object-tag subtle">Selling Fast</span> -->
-			<div class="card-media-countdown-container">
-				<span class="card-media-object-tag-countdown-number subtle">3</span>
-				<span class="card-media-object-tag-countdown-text subtle">days left to register</span>
-
-
-			</div>
+		<div class="isceb-event-card-order-button">
+			<p>Order</p>
+			<i class="fa far fa-chevron-right isceb-event-card-arrow"></i>
 		</div>
 	</div>
+
 </a>

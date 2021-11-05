@@ -134,53 +134,61 @@ if (isset($post_meta['_isceb_event']) && $post_meta['_isceb_event'][0] === 'yes'
 
 
 <?php if (isset($post_meta['_isceb_event']) && $post_meta['_isceb_event'][0] === 'yes') : ?>
-	<div id="product-<?php the_ID(); ?>" <?php wc_product_class('isceb-event-hero-banner-wrapper', $product); ?>>
-		<div class="isceb-event-hero-banner" style="
-		         opacity:0.4;
-				<?php if ($post_thumbnail_id != 0) : ?>
-				background-image: url(<?php echo wp_get_attachment_image_src($post_thumbnail_id, "largest ")[0]; ?> );
-				<?php else : ?>
-				background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+	<?php if ($product->is_purchasable() == true) : ?>
+		<div id="product-<?php the_ID(); ?>" <?php wc_product_class('isceb-event-hero-banner-wrapper', $product); ?>>
+			<div class="isceb-event-hero-banner" style="
+					opacity:0.4;
+					<?php if ($post_thumbnail_id != 0) : ?>
+					background-image: url(<?php echo wp_get_attachment_image_src($post_thumbnail_id, "largest ")[0]; ?> );
+					<?php else : ?>
+					background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
 
-				<?php endif; ?>
-				
-				">
+					<?php endif; ?>
+					
+					">
 
+			</div>
+			<h1 class="isceb-event-hero-banner-text"><?php echo $product->get_name(); ?></h1>
 		</div>
-		<h1 class="isceb-event-hero-banner-text"><?php echo $product->get_name(); ?></h1>
-	</div>
 
-	<div class="isceb-event-detail-box-container">
-		<?php if ($event_time_obj_start) : ?>
-			<div class="isceb-event-detail-box"><i class="far fa-calendar-alt fa-lg"></i><?php echo $event_date_text ?></div>
-			<div class="isceb-event-detail-box"><i class="far fa-clock fa-lg"></i><?php echo $event_time_text ?></div>
-		<?php endif; ?>
+		<div class="isceb-event-detail-box-container">
+			<?php if ($event_time_obj_start) : ?>
+				<div class="isceb-event-detail-box"><i class="far fa-calendar-alt fa-lg"></i><?php echo $event_date_text ?></div>
+				<div class="isceb-event-detail-box"><i class="far fa-clock fa-lg"></i><?php echo $event_time_text ?></div>
+			<?php endif; ?>
 
-		<?php if ($event_location !== '') : ?>
-			<div class="isceb-event-detail-box"><i class="fas fa-map-marker-alt fa-lg"></i><?php echo $event_location; ?></div>
-		<?php endif; ?>
+			<?php if ($event_location !== '') : ?>
+				<div class="isceb-event-detail-box"><i class="fas fa-map-marker-alt fa-lg"></i><div class="isceb-event-detail-location-text"><?php echo $event_location; ?></div></div>
+			<?php endif; ?>
 
-		<?php if (get_stock_variations_from_product() !== null) : ?>
-			<div class="isceb-event-detail-box"><i class="fas fa-user-alt fa-lg"></i><?php echo get_stock_variations_from_product() ?> seats available</div>
-		<?php endif; ?>
-	</div>
-	<div class="isceb-event-page-content-wrap">
-		<div class="isceb-event-page-description">
-			<?php echo $product->get_description(); ?>
+			<?php if (get_stock_variations_from_product() !== null) : ?>
+				<div class="isceb-event-detail-box"><i class="fas fa-user-alt fa-lg"></i><?php echo get_stock_variations_from_product() ?> seats available</div>
+			<?php endif; ?>
 		</div>
-		<div class="isceb-event-page-tickets-wrap">
-			<div class="isceb-event-ticket-header">Tickets</div>
-			<div class="isceb-event-ticket-content">
-				<?php if ($product->get_price_html() !== '') : ?>
-					<p class="isceb-event-ticket-price">Price: <?php echo $product->get_price_html(); ?></p>
-				<?php else : ?>
-					<p>No registration needed</p>
-				<?php endif; ?>
-				<?php woocommerce_template_single_add_to_cart(); ?>
+		<div class="isceb-event-page-content-wrap">
+			<div class="isceb-event-page-description">
+				<?php echo $product->get_description(); ?>
+			</div>
+			<div class="isceb-event-page-tickets-wrap">
+				<div class="isceb-event-ticket-header">Tickets</div>
+				<div class="isceb-event-ticket-content">
+					<?php if ($product->get_price_html() !== '') : ?>
+						<p class="isceb-event-ticket-price">Price: <?php echo $product->get_price_html(); ?></p>
+					<?php else : ?>
+						<p>No registration needed</p>
+					<?php endif; ?>
+					<?php woocommerce_template_single_add_to_cart(); ?>
+				</div>
 			</div>
 		</div>
-	</div>
-
+	<?php else :?>
+		<div class="isceb-event-has-passed">
+			<p>
+				Event has passed... 😔 <br>Stay tuned for our upcoming events at 
+				<a href="https://isceb.be/events"><b>ISCEB Events </b></a>
+	</p>	
+ 		</div>
+	<?php endif ;?>	
 <?php else : ?>
 
 	<div id="product-<?php the_ID(); ?>" <?php wc_product_class('', $product); ?>>

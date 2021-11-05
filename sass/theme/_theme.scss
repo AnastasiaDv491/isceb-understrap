@@ -732,7 +732,8 @@ input[type="file"] {
 	}
 }
 
-.isceb-wiki-button-not-gb {
+.isceb-wiki-button-not-gb,
+.isceb-wiki-login-button-not-gb {
 	background-color: $primary;
 	color: white;
 	border: none;
@@ -744,7 +745,7 @@ input[type="file"] {
 	text-align: center;
 	text-decoration: none;
 	overflow-wrap: break-word;
-
+	margin-bottom: 10px;
 	font-weight: bold;
 	font-size: smaller;
 }
@@ -762,12 +763,29 @@ input[type="file"] {
 		text-align: center;
 		text-decoration: none;
 		overflow-wrap: break-word;
+		margin-bottom: 0px;
+		font-weight: bold;
+	}
+
+	.isceb-wiki-login-button-not-gb {
+		background-color: $primary;
+		color: white;
+		border: none;
+		border-radius: 28px;
+		box-shadow: none;
+		cursor: pointer;
+		font-size: 18px;
+		padding: 12px 24px;
+		text-align: center;
+		text-decoration: none;
+		overflow-wrap: break-word;
 
 		font-weight: bold;
 	}
 }
 
-.isceb-wiki-button-not-gb:hover {
+.isceb-wiki-button-not-gb:hover,
+.isceb-wiki-login-button-not-gb:hover {
 	background-color: $secondary;
 	color: $primary;
 	border: 2px solid $primary;
@@ -860,7 +878,7 @@ hr.isceb-wiki-nav-phase-line {
 	justify-content: space-between;
 }
 
-#isceb-wiki-nav-button-toggle{
+#isceb-wiki-nav-button-toggle {
 	border-color: white;
 }
 
@@ -871,7 +889,7 @@ hr.isceb-wiki-nav-phase-line {
 		visibility: visible;
 	}
 
-	#isceb-wiki-nav-button-toggle{
+	#isceb-wiki-nav-button-toggle {
 		display: none;
 	}
 }
@@ -1176,12 +1194,6 @@ hr.isceb-wiki-nav-phase-line {
 	flex-direction: column;
 }
 
-@media (min-width: 641px) {
-	.isceb-standard-page-container {
-		margin: 0 auto;
-	}
-}
-
 /* Custom guteberg avatar for standard page*/
 .isceb-standard-page-author-img {
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -1241,21 +1253,179 @@ hr.isceb-wiki-nav-phase-line {
 }
 
 /* Event Card on Event Page*/
+.isceb-event-post {
+	background-color: $primary;
+	color: white;
+}
+
+.isceb-event-post .entry-title {
+	color: white;
+}
 
 .isceb-events-container {
 	box-sizing: border-box;
-	margin: 50px auto 0;
+	margin: 50px 20px 50px 20px;
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: 1fr;
 	grid-column-gap: 100px;
-	grid-row-gap: 0px;
+	grid-row-gap: 50px;
 }
 
+/* Event redesign */
+.isceb-event-card {
+	// background-color: violet;
+	height: auto;
+	position: relative;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	min-height: 340px;
+
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: box-shadow, transform;
+	transition-property: box-shadow, transform;
+}
+
+.isceb-event-card:hover {
+	box-shadow: rgba(31, 71, 107, 1) 0px 3px 8px;
+}
+
+.isceb-event-card:hover > .isceb-event-img-container {
+	opacity: 1;
+}
+
+.isceb-event-card:hover .isceb-event-card-arrow {
+	transform: translateX(4px);
+}
+
+.isceb-event-card-arrow {
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-transition-duration: 0.1s;
+	transition-duration: 0.1s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+}
+
+.isceb-event-img-container {
+	height: 150px;
+	border-bottom-left-radius: 25%;
+	border-bottom-right-radius: 25%;
+	overflow: hidden;
+
+	opacity: 0.4;
+
+	position: relative;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: opacity, transform;
+	transition-property: opacity, transform;
+}
+
+.isceb-event-message-box {
+	background-color: $primary;
+	color: white;
+	width: 50%;
+	position: absolute;
+	right: 25%;
+	top: 135px;
+}
+
+.isceb-event-message-box > h6 {
+	text-align: center;
+	margin: 4px 0 4px 0;
+}
+
+.isceb-event-title {
+	display: flex;
+	margin-top: 15px;
+	margin-top: 10px;
+	padding: 20px 20px 5px 20px;
+	flex-direction: column;
+}
+
+.isceb-event-title > p {
+	font-size: smaller;
+}
+
+.isceb-event-card-metadata {
+	padding-left: 20px;
+}
+
+.isceb-event-card-date-time {
+	display: flex;
+}
+
+.isceb-event-card-date {
+	margin-right: 10px;
+}
+
+.isceb-event-card-order-button {
+	background-color: $primary;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	justify-content: center;
+
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
+
+.isceb-event-card-order-button > p {
+	margin: 0;
+	padding: 6px;
+}
+
+a.disabled:hover {
+	cursor: not-allowed;
+}
+
+/*Event redesign desktop */
 @media (min-width: 641px) {
 	.isceb-events-container {
 		width: 80%;
+		grid-template-columns: repeat(3, 1fr);
+		margin: 50px auto 50px auto;
+	}
+
+	.isceb-event-post .page {
+		padding: 30px 0 30px 170px;
+	}
+
+	.isceb-standard-page-container {
+		margin: 0;
+	}
+
+	.isceb-event-has-passed {
+		margin: 30px 0 0 100px;
+	}
+
+	.isceb-event-has-passed > p {
+		font-size: xxx-large;
 	}
 }
+
+.isceb-event-has-passed {
+	margin: 30px 0 0 70px;
+}
+
+.isceb-event-card-link:hover {
+	text-decoration: none;
+	color: $primary;
+}
+
+/* End event redesign */
 
 /* 
   
@@ -1292,6 +1462,7 @@ hr.isceb-wiki-nav-phase-line {
 		margin-bottom: 15px;
 	}
 }
+
 .card-media:hover {
 	box-shadow: 0 5px 14px rgba(0, 0, 0, 0.2);
 }
@@ -1416,6 +1587,7 @@ hr.isceb-wiki-nav-phase-line {
 		display: inline-block;
 	}
 }
+
 /* 
   .card-media-body-supporting-bottom-reveal {
 	opacity: 0;
@@ -1542,12 +1714,22 @@ hr.isceb-wiki-nav-phase-line {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	overflow: hidden;
 }
 
 @media (min-width: 641px) {
 	.isceb-event-detail-box {
 		padding-left: 10px;
 	}
+}
+
+.isceb-event-detail-location-text {
+	align-self: center;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
 
 .isceb-event-page-content-wrap {
@@ -1601,6 +1783,7 @@ hr.isceb-wiki-nav-phase-line {
 	font-weight: bold;
 	text-decoration: underline;
 }
+
 .isceb-event-page-tickets-wrap button.button.alt {
 	background-color: $primary;
 	margin-left: 5px;
@@ -1618,5 +1801,21 @@ hr.isceb-wiki-nav-phase-line {
 	color: #a9a9a9;
 }
 
-.isceb-test-button {
+/* Styling of the search page*/
+.isceb-search-article {
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+		rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+	background: rgb(255, 255, 255);
+	background: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 1) 74%,
+		rgba(211, 235, 248, 1) 100%
+	);
+
+	padding: 5px 20px 5px 20px;
+	margin: 10px;
+}
+
+.isceb-search-results-main-title {
+	margin: 80px 0 40px 0;
 }

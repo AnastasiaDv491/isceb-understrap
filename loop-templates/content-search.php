@@ -9,10 +9,10 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class('isceb-search-article');?> id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
-
+	
 		<?php
 		the_title(
 			sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
@@ -23,8 +23,9 @@ defined( 'ABSPATH' ) || exit;
 		<?php if ( 'post' === get_post_type() ) : ?>
 
 			<div class="entry-meta">
-
+				
 				<?php understrap_posted_on(); ?>
+			
 
 			</div><!-- .entry-meta -->
 
@@ -35,6 +36,7 @@ defined( 'ABSPATH' ) || exit;
 	<div class="entry-summary">
 
 		<?php the_excerpt(); ?>
+		
 
 	</div><!-- .entry-summary -->
 

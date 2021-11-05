@@ -41,42 +41,42 @@ $product_posts = get_posts($args);
             <div class="col-md-12 content-area" id="primary">
 
                 <main class="site-main" id="main" role="main">
-               
-                    <?php
+                    <div class="isceb-event-post">
+                        <?php
 
-                    while (have_posts()) {
-                        the_post();
-                        get_template_part('loop-templates/content', 'page');
-
-                    }
-                    ?>
+                        while (have_posts()) {
+                            the_post();
+                            get_template_part('loop-templates/content', 'page');
+                        }
+                        ?>
+                    </div>
                     <div class="isceb-events-container">
 
-                    <?php
+                        <?php
 
-                    foreach ($product_posts as $product_post) {
-                        # code...
-                        // var_dump($product_post);
-                        $post_meta = get_post_meta($product_post->ID);
-                        // print_r(get_post_meta($product_post->ID));
-
-                        
-
-                        $event_template_data = array(
-                            'event_post_id' => $product_post->ID,
-                            'start_event' =>  $post_meta['isceb-start-of-event'],
-                            'end_event' =>  $post_meta['isceb-end-of-event'],
-                            'location_event' =>  $post_meta['isceb-location-of-event'],
-                        );
-
-                        get_template_part('loop-templates/content', 'isceb-event', $event_template_data);
-                    }
+                        foreach ($product_posts as $product_post) {
+                            # code...
+                            // var_dump($product_post);
+                            $post_meta = get_post_meta($product_post->ID);
+                            // print_r(get_post_meta($product_post->ID));
 
 
-                    ?>
+
+                            $event_template_data = array(
+                                'event_post_id' => $product_post->ID,
+                                'start_event' =>  $post_meta['isceb-start-of-event'],
+                                'end_event' =>  $post_meta['isceb-end-of-event'],
+                                'location_event' =>  $post_meta['isceb-location-of-event'],
+                            );
+
+                            get_template_part('loop-templates/content', 'isceb-event', $event_template_data);
+                        }
 
 
-                </div>
+                        ?>
+
+
+                    </div>
                 </main><!-- #main -->
 
             </div><!-- #primary -->
