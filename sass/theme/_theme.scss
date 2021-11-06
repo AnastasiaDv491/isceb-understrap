@@ -68,7 +68,7 @@ h2 {
 	display: flex;
 }
 
-#single-wrapper > div {
+#single-wrapper>div {
 	flex: 1;
 }
 
@@ -99,7 +99,7 @@ h2 {
 	background-color: $primary;
 }
 
-.mainMessage > * {
+.mainMessage>* {
 	margin: 0;
 	color: white;
 	text-align: center;
@@ -264,7 +264,7 @@ a.shoppingCartHeaderLink:hover {
 	color: $primary;
 }
 
-.flex-container > div {
+.flex-container>div {
 	margin: 20px;
 	text-align: center;
 	box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
@@ -414,7 +414,7 @@ a.shoppingCartHeaderLink:hover {
 	height: 100%;
 }
 
-.wrapperregistration > .container {
+.wrapperregistration>.container {
 	margin-bottom: 2em;
 }
 
@@ -736,7 +736,7 @@ input[type="file"] {
 .isceb-wiki-login-button-not-gb {
 	background-color: $primary;
 	color: white;
-	border: none;
+	border: 2px solid $primary;
 	border-radius: 28px;
 	box-shadow: none;
 	cursor: pointer;
@@ -748,39 +748,13 @@ input[type="file"] {
 	margin-bottom: 10px;
 	font-weight: bold;
 	font-size: smaller;
+
+	
 }
 
 @media (min-width: 641px) {
 	.isceb-wiki-button-not-gb {
-		background-color: $primary;
-		color: white;
-		border: none;
-		border-radius: 28px;
-		box-shadow: none;
-		cursor: pointer;
-		font-size: 18px;
-		padding: 12px 24px;
-		text-align: center;
-		text-decoration: none;
-		overflow-wrap: break-word;
 		margin-bottom: 0px;
-		font-weight: bold;
-	}
-
-	.isceb-wiki-login-button-not-gb {
-		background-color: $primary;
-		color: white;
-		border: none;
-		border-radius: 28px;
-		box-shadow: none;
-		cursor: pointer;
-		font-size: 18px;
-		padding: 12px 24px;
-		text-align: center;
-		text-decoration: none;
-		overflow-wrap: break-word;
-
-		font-weight: bold;
 	}
 }
 
@@ -830,7 +804,7 @@ a.isceb-grid-item-url {
 	padding: 1.5rem;
 }
 
-.isceb-wiki-phase-nav-links > li > a {
+.isceb-wiki-phase-nav-links>li>a {
 	color: ivory;
 }
 
@@ -1017,7 +991,7 @@ hr.isceb-wiki-nav-phase-line {
 	color: $primary;
 }
 
-.isceb-wiki-file-download > a {
+.isceb-wiki-file-download>a {
 	color: white;
 }
 
@@ -1124,7 +1098,7 @@ hr.isceb-wiki-nav-phase-line {
 	}
 }
 
-.wp-block-group__inner-container > h4 {
+.wp-block-group__inner-container>h4 {
 	font-size: large;
 }
 
@@ -1172,7 +1146,7 @@ hr.isceb-wiki-nav-phase-line {
 }
 
 @media (min-width: 641px) {
-	div > .uagb-faq-child__wrapper {
+	div>.uagb-faq-child__wrapper {
 		width: 100%;
 	}
 
@@ -1292,7 +1266,7 @@ hr.isceb-wiki-nav-phase-line {
 	box-shadow: rgba(31, 71, 107, 1) 0px 3px 8px;
 }
 
-.isceb-event-card:hover > .isceb-event-img-container {
+.isceb-event-card:hover>.isceb-event-img-container {
 	opacity: 1;
 }
 
@@ -1340,7 +1314,7 @@ hr.isceb-wiki-nav-phase-line {
 	top: 135px;
 }
 
-.isceb-event-message-box > h6 {
+.isceb-event-message-box>h6 {
 	text-align: center;
 	margin: 4px 0 4px 0;
 }
@@ -1353,7 +1327,7 @@ hr.isceb-wiki-nav-phase-line {
 	flex-direction: column;
 }
 
-.isceb-event-title > p {
+.isceb-event-title>p {
 	font-size: smaller;
 }
 
@@ -1382,7 +1356,7 @@ hr.isceb-wiki-nav-phase-line {
 	bottom: 0;
 }
 
-.isceb-event-card-order-button > p {
+.isceb-event-card-order-button>p {
 	margin: 0;
 	padding: 6px;
 }
@@ -1411,7 +1385,7 @@ a.disabled:hover {
 		margin: 30px 0 0 100px;
 	}
 
-	.isceb-event-has-passed > p {
+	.isceb-event-has-passed>p {
 		font-size: xxx-large;
 	}
 }
@@ -1803,19 +1777,49 @@ a.disabled:hover {
 
 /* Styling of the search page*/
 .isceb-search-article {
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-		rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-	background: rgb(255, 255, 255);
-	background: linear-gradient(
-		90deg,
-		rgba(255, 255, 255, 1) 74%,
-		rgba(211, 235, 248, 1) 100%
-	);
+	// box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+	// 	rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
 
 	padding: 5px 20px 5px 20px;
-	margin: 10px;
+	margin: 15px;
+
+	border-top: 3px solid $primary;
+	border-radius: 5px;
+
+	box-shadow: rgba(0, 0, 0, 0.15) 0 5px 15px 0;
+	transition: transform .2s;
+}
+
+.isceb-search-article:hover {
+	transform: scale(1.03);
 }
 
 .isceb-search-results-main-title {
 	margin: 80px 0 40px 0;
+}
+
+.isceb-entry-header {
+	position: relative;
+}
+
+.isceb-search-result-topic {
+	position: absolute;
+	right: 0;
+	top: 0;
+
+	margin: 0;
+	padding: 8px;
+	font-weight: 700;
+	color: $primary;
+	background-color: $secondary;
+	border-radius: 5px;
+}
+
+.isceb-search-article-href{
+	text-decoration: none!important;
+}
+
+.isceb-search-entry-title{
+	margin-bottom: 16px;
 }
