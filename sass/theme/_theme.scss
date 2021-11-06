@@ -1813,13 +1813,19 @@ a.disabled:hover {
 	position: absolute;
 	right: 0;
 	top: 0;
-
+	display: none;
 	margin: 0;
 	padding: 8px;
 	font-weight: 700;
 	color: $primary;
 	background-color: $secondary;
 	border-radius: 5px;
+}
+
+@media (min-width: 641px) {
+	.isceb-search-result-topic{
+		display: block;
+	}
 }
 
 .isceb-search-article-href{
