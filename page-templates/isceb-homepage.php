@@ -42,23 +42,25 @@ $container = get_theme_mod('understrap_container_type');
 				foreach ($isceb_latest_news as $news_item) :
 
 				?>
-					<div class="item">
-						<div class="bannerCardImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(<?php echo esc_url(get_the_post_thumbnail_url($news_item)); ?>);">
-						</div>
-						<?php if (get_the_tags($news_item)) : ?>
-							<div class="bannerCardTag">
-								<p class="banerTagText"><?php echo esc_html(get_the_tags($news_item)[0]->name); ?></p>
+					<a href="<?php echo esc_url(get_permalink($news_item)) ?>">
+						<div class="item">
+							<div class="bannerCardImage" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(<?php echo esc_url(get_the_post_thumbnail_url($news_item)); ?>);">
 							</div>
-						<?php endif; ?>
-						<div class="bannerCardContent">
-							<h3 class="bannerCardTitle"><?php echo esc_html($news_item->post_title); ?></h3>
-							<p class="bannerCardDescription"><?php echo esc_html($news_item->post_excerpt); ?></p>
-							<a href="<?php echo esc_url(get_permalink($news_item)) ?>">
+							<?php if (get_the_tags($news_item)) : ?>
+								<div class="bannerCardTag">
+									<p class="banerTagText"><?php echo esc_html(get_the_tags($news_item)[0]->name); ?></p>
+								</div>
+							<?php endif; ?>
+							<div class="bannerCardContent">
+								<h3 class="bannerCardTitle"><?php echo esc_html($news_item->post_title); ?></h3>
+								<p class="bannerCardDescription"><?php echo esc_html($news_item->post_excerpt); ?></p>
+
 								<button class="bannerCardButton">More Info</button>
 
-							</a>
+
+							</div>
 						</div>
-					</div>
+					</a>
 				<?php endforeach; ?>
 
 			</div>
