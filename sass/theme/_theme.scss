@@ -173,7 +173,7 @@ h2 {
 	border: none;
 	padding: 10px;
 	font-weight: bold;
-
+	background-color: white;
 	border-radius: 5px;
 }
 
@@ -235,7 +235,7 @@ a.shoppingCartHeaderLink:hover {
 	text-decoration: none;
 }
 
-// Homepage About
+// Homepage About by Stijn
 // TODO: add to mobile :container-about -->taxt-align: left and margin-left: 30px
 
 .homepage-about {
@@ -1044,11 +1044,10 @@ hr.isceb-wiki-nav-phase-line {
 	margin-top: 2rem;
 }
 
-// Gutenberg styling
+// Gutenberg styling by Ana
 
 .isceb-homepage-about-block {
 	margin: 0px 25px 25px 25px;
-	background-color: aqua;
 	padding: 20px;
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 	border-top: solid $primary;
@@ -1057,7 +1056,7 @@ hr.isceb-wiki-nav-phase-line {
 
 @media (min-width: 641px) {
 	.isceb-homepage-about-block {
-		margin: 0px 25px 0px 50px;
+		margin: 0 151px 100px 168px;
 		padding: 20px;
 		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 		border-top: solid $primary;
@@ -1073,6 +1072,7 @@ hr.isceb-wiki-nav-phase-line {
 	}
 }
 
+//ana
 .isceb-homepage-about-heading {
 	margin: 40px 50px 0px 50px;
 }
@@ -1086,7 +1086,7 @@ hr.isceb-wiki-nav-phase-line {
 		background-color: $secondary;
 		height: 100px;
 	}
-
+	//ana
 	.isceb-homepage-meet-img {
 		margin-left: 100px;
 		width: 40%;
@@ -1106,7 +1106,7 @@ hr.isceb-wiki-nav-phase-line {
 		top: 100px;
 		width: 400px;
 	}
-
+	//ana
 	.isceb-homepage-get-to-know-block {
 		position: absolute;
 		left: 120%;
@@ -1117,7 +1117,7 @@ hr.isceb-wiki-nav-phase-line {
 		text-align: right;
 		color: $primary;
 	}
-
+	//ana
 	.isceb-homepage-more-button {
 		position: absolute;
 		right: 0;
@@ -1147,18 +1147,23 @@ hr.isceb-wiki-nav-phase-line {
 		width: 247px;
 	}
 }
-
+//ana
 .isceb-homepage-student-resources-item {
 	width: 247px;
 	margin-top: 1rem;
 }
 
+//ana
 .isceb-homepage-student-resources-heading {
 	padding-bottom: 20px;
 }
-
+//ana
 .isceb-homepage-faq-container {
 	padding-top: 20px;
+}
+
+.isceb-homepage-faq-container > .wp-block-columns {
+	margin-bottom: 0;
 }
 
 @media (min-width: 641px) {
@@ -1166,12 +1171,13 @@ hr.isceb-wiki-nav-phase-line {
 		width: 247px;
 	}
 }
-
+//Ana
 .isceb-homepage-faq-item {
 	margin: 15px 15px 0 15px;
 }
 
 @media (min-width: 641px) {
+	//ana
 	div > .uagb-faq-child__wrapper {
 		width: 100%;
 	}
@@ -1818,4 +1824,15 @@ a.disabled:hover {
 
 .isceb-search-results-main-title {
 	margin: 80px 0 40px 0;
+}
+
+/* Footer */
+
+@media (min-width: 768px) {
+	.footer-widget {
+		flex: 0 0 100%;
+	}
+	.row > .col-md-4 {
+		max-width: 100%;
+	}
 }
