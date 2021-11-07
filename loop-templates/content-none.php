@@ -38,6 +38,7 @@ defined( 'ABSPATH' ) || exit;
 				esc_html__( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'understrap' )
 			);
 			get_search_form();
+			echo '<br>';
 
 		else :
 

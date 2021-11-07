@@ -3,7 +3,7 @@
  * Template Name: Full Width Page
  *
  * Template for displaying a page without sidebar even if a sidebar widget is published.
- *
+ *	Doesn't automatically take the title into account
  * @package UnderStrap
  */
 
@@ -11,7 +11,6 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header();
-$container = get_theme_mod( 'understrap_container_type' );
 
 if ( is_front_page() ) {
 	get_template_part( 'global-templates/hero' );
@@ -20,7 +19,7 @@ if ( is_front_page() ) {
 
 <div class="wrapper" id="full-width-page-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content">
+	<div class="container-fluid" id="content">
 
 		<div class="row">
 
@@ -31,7 +30,7 @@ if ( is_front_page() ) {
 					<?php
 					while ( have_posts() ) {
 						the_post();
-						get_template_part( 'loop-templates/content', 'page' );
+						get_template_part( 'loop-templates/content', 'empty' );
 
 						// If comments are open or we have at least one comment, load up the comment template.
 						if ( comments_open() || get_comments_number() ) {
