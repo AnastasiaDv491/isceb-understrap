@@ -55,7 +55,7 @@ switch (get_post_type()) {
 			for ($courses_i = 0; $courses_i < min(count($wiki_file_courses), 3); $courses_i++) {
 				$wiki_url = get_permalink($wiki_file_courses[$courses_i]->ID);
 
-				$title_wiki_courses[] =  $wiki_file_courses[$courses_i]->post_title;
+				$title_wiki_courses[] = $wiki_file_courses[$courses_i]->post_title;
 
 				$wiki_phases = get_field('phases', $wiki_file_courses[$courses_i]->ID);
 				for ($i = 0; $i < count($wiki_phases); $i++) {
@@ -71,7 +71,7 @@ switch (get_post_type()) {
 ?>
 
 <article <?php post_class('isceb-search-article'); ?> id="post-<?php the_ID(); ?>">
-	<a class="isceb-search-article-href" href="<?php echo ($wiki_url !== '')?$wiki_url:esc_url(get_permalink()); ?>">
+	<a class="isceb-search-article-href" href="<?php echo ($wiki_url !== '') ? $wiki_url : esc_url(get_permalink()); ?>">
 		<header class="entry-header isceb-entry-header">
 
 			<?php
