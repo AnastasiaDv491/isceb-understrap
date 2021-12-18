@@ -122,6 +122,23 @@ The front-page slider is widget driven. Simply add more than one widget to widge
 - Add two, or more, widgets of any kind to widget area “Hero”.
 - That’s it.
 
+### ISCEB Wiki Plugin
+
+  - ISCEB Wiki Settings
+
+### ISCEB Events Manager
+
+  - Required settings 
+
+    Make sure to set the price of the event, date, and Location.
+    To display ISCEB Events Page select Page template "ISCEB Events Page" 
+
+### Additional Plugins required
+
+  - Woocommerce
+  - Users WP
+  - Event Manager and Tickets Selling Plugin for WooCommerce
+
 ## RTL styles?
 Add a new file to the themes root folder called rtl.css. Add all alignments to this file according to this description:
 https://codex.wordpress.org/Right_to_Left_Language_Support
@@ -140,6 +157,23 @@ The `empty.php` template displays a header and a footer only. A good starting po
 ### Full Width Template
 
 The `fullwidthpage.php` template has full width layout without a sidebar.
+
+### ISCEB Events page template
+
+The `isceb-eventspage.php` template displays all events scheduled. 
+
+### ISCEB Homepage 
+
+The `isceb-homepage.php` template displayes the landing page of ISCEB website. 
+
+### Wordpress Settings
+
+For each page select: Customize -> Theme layout settings -> No Sidebar if you want the pages to not have Comments, Search, and Recent post sections 
+
+For container width set: Fixed Width container. 
+
+
+
 
 ## Footnotes
 
