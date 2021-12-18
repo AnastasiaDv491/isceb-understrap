@@ -42,7 +42,7 @@ if (class_exists('Jetpack')) {
 
 // Include files.
 foreach ($understrap_includes as $file) {
-	require_once $understrap_inc_dir . $file;
+	require_once get_theme_file_path($understrap_inc_dir . $file);
 }
 
 
