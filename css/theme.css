@@ -18984,4 +18984,11 @@ a.disabled:hover {
   margin-bottom: 16px;
 }
 
+.uwp-account-form .sr-only, .uwp-change-form .sr-only {
+  display: block !important;
+  width: auto;
+  height: auto;
+  position: static;
+}
+
 /*# sourceMappingURL=theme.css.map */
