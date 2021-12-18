@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package UnderStrap
+ * @package Understrap
  */
 
 // Exit if accessed directly.
@@ -38,7 +38,6 @@ defined( 'ABSPATH' ) || exit;
 				esc_html__( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'understrap' )
 			);
 			get_search_form();
-			echo '<br>';
 
 		else :
 

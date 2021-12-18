@@ -2,7 +2,7 @@
 /**
  * Add WooCommerce support
  *
- * @package UnderStrap
+ * @package Understrap
  */
 
 // Exit if accessed directly.
@@ -82,9 +82,9 @@ if ( ! function_exists( 'understrap_wc_form_field_args' ) ) {
 				 * Add a class to the field's html element wrapper - woocommerce
 				 * input types (fields) are often wrapped within a <p></p> tag.
 				 */
-				$args['class'][] = 'form-group';
+				$args['class'][] = 'form-group mb-3';
 				// Add a class to the form input itself.
-				$args['input_class'] = array( 'form-control' );
+				$args['input_class'][] = 'form-control';
 				// Add custom data attributes to the form input itself.
 				$args['custom_attributes'] = array(
 					'data-plugin'      => 'select2',
@@ -98,7 +98,7 @@ if ( ! function_exists( 'understrap_wc_form_field_args' ) ) {
 			 * defined for this specific input type targets only the country select element.
 			 */
 			case 'country':
-				$args['class'][] = 'form-group single-country';
+				$args['class'][] = 'form-group mb-3 single-country';
 				break;
 
 			/*
@@ -106,39 +106,31 @@ if ( ! function_exists( 'understrap_wc_form_field_args' ) ) {
 			 * for this specific input type targets only the country select element.
 			 */
 			case 'state':
-				$args['class'][]           = 'form-group';
+				$args['class'][]           = 'form-group mb-3';
 				$args['custom_attributes'] = array(
 					'data-plugin'      => 'select2',
 					'data-allow-clear' => 'true',
 					'aria-hidden'      => 'true',
 				);
 				break;
-			case 'password':
-			case 'text':
-			case 'email':
-			case 'tel':
-			case 'number':
-				$args['class'][]     = 'form-group';
-				$args['input_class'] = array( 'form-control' );
-				break;
 			case 'textarea':
-				$args['input_class'] = array( 'form-control' );
+				$args['input_class'][] = 'form-control';
 				break;
 			case 'checkbox':
-					$args['class'][] = 'form-group';
+					$args['class'][] = 'form-group mb-3';
 					// Wrap the label in <span> tag.
 					$args['label'] = isset( $args['label'] ) ? '<span class="custom-control-label">' . $args['label'] . '<span>' : '';
 					// Add a class to the form input's <label> tag.
-					$args['label_class'] = array( 'custom-control custom-checkbox' );
-					$args['input_class'] = array( 'custom-control-input' );
+					$args['label_class'][] = 'custom-control custom-checkbox';
+					$args['input_class'][] = 'custom-control-input';
 				break;
 			case 'radio':
-				$args['label_class'] = array( 'custom-control custom-radio' );
-				$args['input_class'] = array( 'custom-control-input' );
+				$args['label_class'][] = 'custom-control custom-radio';
+				$args['input_class'][] = 'custom-control-input';
 				break;
 			default:
-				$args['class'][]     = 'form-group';
-				$args['input_class'] = array( 'form-control' );
+				$args['class'][]       = 'form-group mb-3';
+				$args['input_class'][] = 'form-control';
 				break;
 		} // End of switch ( $args ).
 		return $args;
