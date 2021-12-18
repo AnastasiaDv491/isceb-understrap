@@ -21,8 +21,6 @@ if (!function_exists('understrap_scripts')) {
 		$bootstrap_version = get_theme_mod('understrap_bootstrap_version', 'bootstrap4');
 		$suffix            = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 
-		error_log("heee");
-		error_log($suffix);
 		// Grab asset urls.
 		$theme_styles  = "/css/theme{$suffix}.css";
 		$theme_scripts = "/js/theme{$suffix}.js";
