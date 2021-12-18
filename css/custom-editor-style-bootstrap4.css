@@ -117,12 +117,12 @@ sup {
 }
 
 a {
-  color: #5533ff;
+  color: #1F476B;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-  color: #2600e6;
+  color: #0e2030;
   text-decoration: underline;
 }
 
@@ -318,7 +318,7 @@ template {
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
-  --purple: #5533ff;
+  --purple: #6f42c1;
   --pink: #e83e8c;
   --red: #dc3545;
   --orange: #fd7e14;
@@ -329,8 +329,8 @@ template {
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #5533ff;
-  --secondary: #6c757d;
+  --primary: #1F476B;
+  --secondary: #d3ebf8;
   --success: #28a745;
   --info: #17a2b8;
   --warning: #ffc107;
@@ -404,41 +404,41 @@ template {
 .table-primary,
 .table-primary > th,
 .table-primary > td {
-  background-color: #cfc6ff;
+  background-color: #c0cbd6;
 }
 .table-primary th,
 .table-primary td,
 .table-primary thead th,
 .table-primary tbody + tbody {
-  border-color: #a795ff;
+  border-color: #8b9fb2;
 }
 
 .table-hover .table-primary:hover {
-  background-color: #baadff;
+  background-color: #b1becc;
 }
 .table-hover .table-primary:hover > td,
 .table-hover .table-primary:hover > th {
-  background-color: #baadff;
+  background-color: #b1becc;
 }
 
 .table-secondary,
 .table-secondary > th,
 .table-secondary > td {
-  background-color: #d6d8db;
+  background-color: #f3f9fd;
 }
 .table-secondary th,
 .table-secondary td,
 .table-secondary thead th,
 .table-secondary tbody + tbody {
-  border-color: #b3b7bb;
+  border-color: #e8f5fb;
 }
 
 .table-hover .table-secondary:hover {
-  background-color: #c8cbcf;
+  background-color: #ddeef9;
 }
 .table-hover .table-secondary:hover > td,
 .table-hover .table-secondary:hover > th {
-  background-color: #c8cbcf;
+  background-color: #ddeef9;
 }
 
 .table-success,
@@ -825,12 +825,12 @@ mark,
 
 .has-purple-color,
 .has-purple-color:visited {
-  color: #5533ff;
+  color: #6f42c1;
 }
 
 .has-purple-background-color {
-  background-color: #5533ff;
-  border-color: #5533ff;
+  background-color: #6f42c1;
+  border-color: #6f42c1;
 }
 
 .has-pink-color,
@@ -935,22 +935,22 @@ mark,
 
 .has-primary-color,
 .has-primary-color:visited {
-  color: #5533ff;
+  color: #1F476B;
 }
 
 .has-primary-background-color {
-  background-color: #5533ff;
-  border-color: #5533ff;
+  background-color: #1F476B;
+  border-color: #1F476B;
 }
 
 .has-secondary-color,
 .has-secondary-color:visited {
-  color: #6c757d;
+  color: #d3ebf8;
 }
 
 .has-secondary-background-color {
-  background-color: #6c757d;
-  border-color: #6c757d;
+  background-color: #d3ebf8;
+  border-color: #d3ebf8;
 }
 
 .has-success-color,
