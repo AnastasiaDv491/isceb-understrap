@@ -20,32 +20,29 @@ defined('ABSPATH') || exit;
 
 	<div class="entry-content isceb-standard-page-container">
 		<div class="isceb-standard-page-title-container">
-			
+
 			<?php the_title('<h1 class="entry-title isceb-standard-page-header">', '</h1>'); ?>
-			
+
 		</div>
-			
+
 
 		<div>
-			<?php the_content(); ?>
+			<?php
+			the_content();
+			understrap_link_pages();
+			?>
+
 		</div>
 
-		<?php
-			wp_link_pages(
-				array(
-					'before' => '<div class="page-links">' . __('Pages:', 'understrap'),
-					'after'  => '</div>',
-				)
-			);
-			?>	
 
-<?php edit_post_link(__('Edit', 'understrap'), '<span class="edit-link">', '</span>'); ?>
+
+		<?php edit_post_link(__('Edit', 'understrap'), '<span class="edit-link">', '</span>'); ?>
 
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
 
-
+		<?php understrap_edit_post_link(); ?>
 
 	</footer><!-- .entry-footer -->
 
