@@ -55,10 +55,9 @@ $product_posts = get_posts($args);
                         <?php
 
                         foreach ($product_posts as $product_post) {
-                            # code...
-                            // var_dump($product_post);
+                 
                             $post_meta = get_post_meta($product_post->ID);
-                            // print_r(get_post_meta($product_post->ID));
+                
 
 
 
