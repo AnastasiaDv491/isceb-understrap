@@ -18,11 +18,7 @@
    #GRID
    ========================================================================== */
 .row {
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
@@ -31,8 +27,6 @@
 }
 
 .row-space {
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -56,14 +50,8 @@
 }
 
 .form-row {
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
   margin-bottom: 40px;
 }
@@ -102,32 +90,24 @@
 }
 
 .col-3 {
-  -webkit-flex: 0 0 25%;
-  -ms-flex: 0 0 25%;
   flex: 0 0 25%;
   max-width: 25%;
 }
 
 @media (max-width: 767px) {
   .col-3 {
-    -webkit-flex: 0 0 35%;
-    -ms-flex: 0 0 35%;
     flex: 0 0 35%;
     max-width: 35%;
   }
 }
 
 .col-9 {
-  -webkit-flex: 0 0 75%;
-  -ms-flex: 0 0 75%;
   flex: 0 0 75%;
   max-width: 75%;
 }
 
 @media (max-width: 767px) {
   .col-9 {
-    -webkit-flex: 0 0 65%;
-    -ms-flex: 0 0 65%;
     flex: 0 0 65%;
     max-width: 65%;
   }
@@ -498,7 +478,6 @@ input {
 .radio-container .checkmark:after {
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 12px;
   height: 12px;
@@ -509,7 +488,6 @@ input {
 .checkmark {
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   left: 0;
   height: 20px;
@@ -617,14 +595,8 @@ input {
 .rs-select2 .select2-container .select2-selection--single .select2-selection__arrow {
   height: 50px;
   right: 15px;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -641,7 +613,6 @@ input {
 }
 
 .rs-select2 .select2-container.select2-container--open .select2-selection--single .select2-selection__arrow::after {
-  -webkit-transform: rotate(-180deg);
   transform: rotate(-180deg);
 }
 
