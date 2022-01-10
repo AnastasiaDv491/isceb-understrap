@@ -16863,8 +16863,7 @@ hr.isceb-wiki-nav-phase-line {
   font-weight: bold;
 }
 
-.single-main,
-.page-main {
+.single-main {
   margin-top: 2rem;
 }
 
@@ -17154,6 +17153,10 @@ a.disabled:hover {
 }
 .isceb-event-has-passed {
   margin: 30px 0 0 70px;
+}
+
+.isceb-event-card-link {
+  text-decoration: none;
 }
 
 .isceb-event-card-link:hover {
