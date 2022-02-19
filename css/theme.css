@@ -18994,6 +18994,14 @@ a.disabled:hover {
   position: static;
 }
 
+.uwp-registration-form > .form-group, .wpcf7 .wpcf7-form .uwp-registration-form > p {
+  margin-bottom: 10px;
+}
+
+.input-group-text > .far {
+  line-height: unset;
+}
+
 .isceb-notitle-wrapper {
   margin-top: 0;
 }
