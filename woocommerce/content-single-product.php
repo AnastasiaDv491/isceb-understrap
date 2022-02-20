@@ -32,7 +32,6 @@ if (post_password_required()) {
 	return;
 }
 
-
 $post_meta = get_post_meta($product->get_id());
 $event_seats = $product->get_stock_quantity();
 
@@ -158,7 +157,9 @@ if (isset($post_meta['_isceb_event']) && $post_meta['_isceb_event'][0] === 'yes'
 			<?php endif; ?>
 
 			<?php if ($event_location !== '') : ?>
-				<div class="isceb-event-detail-box"><i class="fas fa-map-marker-alt fa-lg"></i><div class="isceb-event-detail-location-text"><?php echo $event_location; ?></div></div>
+				<div class="isceb-event-detail-box"><i class="fas fa-map-marker-alt fa-lg"></i>
+					<div class="isceb-event-detail-location-text"><?php echo $event_location; ?></div>
+				</div>
 			<?php endif; ?>
 
 			<?php if (get_stock_variations_from_product() !== null) : ?>
@@ -169,26 +170,37 @@ if (isset($post_meta['_isceb_event']) && $post_meta['_isceb_event'][0] === 'yes'
 			<div class="isceb-event-page-description">
 				<?php echo $product->get_description(); ?>
 			</div>
-			<div class="isceb-event-page-tickets-wrap">
-				<div class="isceb-event-ticket-header">Tickets</div>
-				<div class="isceb-event-ticket-content">
-					<?php if ($product->get_price_html() !== '') : ?>
-						<p class="isceb-event-ticket-price">Price: <?php echo $product->get_price_html(); ?></p>
-					<?php else : ?>
-						<p>No registration needed</p>
-					<?php endif; ?>
-					<?php woocommerce_template_single_add_to_cart(); ?>
+			<div class="isceb-event-sidebar">
+				<div class="isceb-event-page-tickets-wrap">
+					<div class="isceb-event-ticket-header">Tickets</div>
+					<div class="isceb-event-ticket-content">
+						<?php if ($product->get_price_html() !== '') : ?>
+							<p class="isceb-event-ticket-price">Price: <?php echo $product->get_price_html(); ?></p>
+						<?php else : ?>
+							<p>No registration needed</p>
+						<?php endif; ?>
+						<?php woocommerce_template_single_add_to_cart(); ?>
+					</div>
 				</div>
+				<?php if (get_field('facebook_link') !== '') : ?>
+					<a href="<?php echo get_field('facebook_link') ?>" class="isceb-event-facebook-link-wrap">
+					<i class="fa-brands fa-facebook fa-2x"></i>
+					<p>Check out Facebook event!</p>
+					</a>
+				<?php endif; ?>
 			</div>
+
+
+
 		</div>
-	<?php else :?>
+	<?php else : ?>
 		<div class="isceb-event-has-passed">
 			<p>
-				Event has passed... 😔 <br>Stay tuned for our upcoming events at 
+				Event has passed... 😔 <br>Stay tuned for our upcoming events at
 				<a href="https://isceb.be/events"><b>ISCEB Events </b></a>
-	</p>	
- 		</div>
-	<?php endif ;?>	
+			</p>
+		</div>
+	<?php endif; ?>
 <?php else : ?>
 
 	<div id="product-<?php the_ID(); ?>" <?php wc_product_class('', $product); ?>>

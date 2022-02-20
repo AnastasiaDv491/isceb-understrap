@@ -67,7 +67,7 @@ h2 {
 	display: flex;
 }
 
-#single-wrapper>div {
+#single-wrapper > div {
 	flex: 1;
 }
 
@@ -98,7 +98,7 @@ h2 {
 	background-color: $primary;
 }
 
-.mainMessage>* {
+.mainMessage > * {
 	margin: 0;
 	color: white;
 	text-align: center;
@@ -263,7 +263,7 @@ a.shoppingCartHeaderLink:hover {
 	color: $primary;
 }
 
-.flex-container>div {
+.flex-container > div {
 	margin: 20px;
 	text-align: center;
 	box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
@@ -413,7 +413,7 @@ a.shoppingCartHeaderLink:hover {
 	height: 100%;
 }
 
-.wrapperregistration>.container {
+.wrapperregistration > .container {
 	margin-bottom: 2em;
 }
 
@@ -443,6 +443,10 @@ a.shoppingCartHeaderLink:hover {
 
 // }
 
+.isceb-wiki-upload-list > span > span > span {
+	padding-right: 40px;
+}
+
 input[type="file"] {
 	display: none;
 }
@@ -456,6 +460,7 @@ input[type="file"] {
 	font-weight: 700;
 	font-size: 10pt;
 	color: $primary;
+	margin-bottom: 10px;
 }
 
 .li:before {
@@ -731,6 +736,10 @@ input[type="file"] {
 	}
 }
 
+.isceb_wiki_semester_title {
+	font-weight: bold;
+}
+
 .isceb-wiki-button-not-gb,
 .isceb-wiki-login-button-not-gb {
 	background-color: $primary;
@@ -747,8 +756,6 @@ input[type="file"] {
 	margin-bottom: 10px;
 	font-weight: bold;
 	font-size: smaller;
-
-	
 }
 
 @media (min-width: 641px) {
@@ -784,7 +791,7 @@ a.isceb-grid-item-url {
 }
 
 .isceb-wiki-courses-per-phase {
-	padding-left:30px;
+	padding-left: 30px;
 }
 
 #isceb-wiki-nav-header-text {
@@ -803,7 +810,7 @@ a.isceb-grid-item-url {
 	padding: 1.5rem;
 }
 
-.isceb-wiki-phase-nav-links>li>a {
+.isceb-wiki-phase-nav-links > li > a {
 	color: ivory;
 }
 
@@ -902,10 +909,9 @@ hr.isceb-wiki-nav-phase-line {
 	transform: rotate(270deg);
 }
 
-.fa-sort-desc{
+.fa-sort-desc {
 	font-size: 25px;
 	padding-bottom: 7px;
-	
 }
 
 // @media (min-width: 641px) {
@@ -963,6 +969,10 @@ hr.isceb-wiki-nav-phase-line {
 	min-width: 0;
 }
 
+.isceb-wiki-file-meta > p {
+	margin-bottom: 0;
+}
+
 .isceb-wiki-file-right-part {
 	margin-left: auto;
 	padding-right: 15px;
@@ -996,7 +1006,7 @@ hr.isceb-wiki-nav-phase-line {
 	color: $primary;
 }
 
-.isceb-wiki-file-download>a {
+.isceb-wiki-file-download > a {
 	color: white;
 }
 
@@ -1102,7 +1112,7 @@ hr.isceb-wiki-nav-phase-line {
 	}
 }
 
-.wp-block-group__inner-container>h4 {
+.wp-block-group__inner-container > h4 {
 	font-size: large;
 }
 
@@ -1168,7 +1178,6 @@ hr.isceb-wiki-nav-phase-line {
 	}
 }
 
-
 /* Event Card on Event Page*/
 .isceb-event-post {
 	background-color: $primary;
@@ -1209,7 +1218,7 @@ hr.isceb-wiki-nav-phase-line {
 	box-shadow: rgba(31, 71, 107, 1) 0px 3px 8px;
 }
 
-.isceb-event-card:hover>.isceb-event-img-container {
+.isceb-event-card:hover > .isceb-event-img-container {
 	opacity: 1;
 }
 
@@ -1257,7 +1266,7 @@ hr.isceb-wiki-nav-phase-line {
 	top: 135px;
 }
 
-.isceb-event-message-box>h6 {
+.isceb-event-message-box > h6 {
 	text-align: center;
 	margin: 4px 0 4px 0;
 }
@@ -1270,7 +1279,7 @@ hr.isceb-wiki-nav-phase-line {
 	flex-direction: column;
 }
 
-.isceb-event-title>p {
+.isceb-event-title > p {
 	font-size: smaller;
 }
 
@@ -1299,7 +1308,7 @@ hr.isceb-wiki-nav-phase-line {
 	bottom: 0;
 }
 
-.isceb-event-card-order-button>p {
+.isceb-event-card-order-button > p {
 	margin: 0;
 	padding: 6px;
 }
@@ -1328,7 +1337,7 @@ a.disabled:hover {
 		margin: 30px 0 0 100px;
 	}
 
-	.isceb-event-has-passed>p {
+	.isceb-event-has-passed > p {
 		font-size: xxx-large;
 	}
 }
@@ -1337,9 +1346,9 @@ a.disabled:hover {
 	margin: 30px 0 0 70px;
 }
 
-.isceb-event-card-link{
+.isceb-event-card-link {
 	text-decoration: none;
-} 
+}
 
 .isceb-event-card-link:hover {
 	text-decoration: none;
@@ -1727,7 +1736,6 @@ a.disabled:hover {
 	// box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
 	// 	rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 
-
 	padding: 5px 20px 5px 20px;
 	margin: 15px;
 
@@ -1735,7 +1743,7 @@ a.disabled:hover {
 	border-radius: 5px;
 
 	box-shadow: rgba(0, 0, 0, 0.15) 0 5px 15px 0;
-	transition: transform .2s;
+	transition: transform 0.2s;
 }
 
 .isceb-search-article:hover {
@@ -1774,30 +1782,57 @@ a.disabled:hover {
 }
 
 @media (min-width: 641px) {
-	.isceb-search-result-topic{
+	.isceb-search-result-topic {
 		display: block;
 	}
 }
 
-.isceb-search-article-href{
-	text-decoration: none!important;
+.isceb-search-article-href {
+	text-decoration: none !important;
 }
 
-.isceb-search-entry-title{
+.isceb-search-entry-title {
 	margin-bottom: 16px;
 }
 
-.uwp-account-form .sr-only, .uwp-change-form .sr-only{
-	display:block !important;
+.uwp-account-form .sr-only,
+.uwp-change-form .sr-only {
+	display: block !important;
 	width: auto;
 	height: auto;
 	position: static;
 }
 
-.isceb-notitle-wrapper{
-	margin-top:0;
+.isceb-notitle-wrapper {
+	margin-top: 0;
 }
 
-.somefancyclass{
-	color:red;
+.somefancyclass {
+	color: red;
+}
+
+.isceb-event-sidebar {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(2, 1fr);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	height: 200px;
+
+}
+// Event link to facebook page
+.isceb-event-facebook-link-wrap {
+	background-color: #4267B2;
+	border-radius: 10px;
+	text-decoration: none;
+	margin: 10px 30px 10px 30px;
+    min-width: 200px;
+	height: 80px;
+	padding: 10px;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+	color: white;
+}
+
+.isceb-event-facebook-link-wrap:hover{
+	color: $primary;
 }
