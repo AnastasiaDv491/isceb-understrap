@@ -1832,7 +1832,28 @@ a.disabled:hover {
 }
 .uwp-registration-form > .form-group {
 	margin-bottom: 10px;
+	display: grid;
 
+}
+.uwp-registration-form > .form-group>.sr-only {
+	position: relative;
+    width: auto;
+    height: auto;
+}
+
+#remember_me {
+	margin-top: 10px;
+	margin-right: 5px;
+	appearance: auto; 
+	width: auto;
+	display: inline;
+}
+
+.uwp-login-form > .form-group>.sr-only {
+	position: relative;
+    width: auto;
+    height: auto;
+	margin-top: 15px;
 }
 
 .input-group-text > .far {

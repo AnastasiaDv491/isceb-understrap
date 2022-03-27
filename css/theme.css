@@ -18038,6 +18038,9 @@ hr.isceb-wiki-nav-phase-line {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   border-radius: 5px;
   margin-bottom: 1rem;
   vertical-align: middle;
@@ -18054,13 +18057,30 @@ hr.isceb-wiki-nav-phase-line {
 }
 
 .isceb-wiki-file-left-part {
-  max-width: 250px;
+  width: auto;
   background-color: #1F476B;
   padding: 15px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
+@media (min-width: 641px) {
+  .isceb-wiki-file {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .isceb-wiki-pdf {
+    min-width: 40px;
+  }
+}
 .isceb-wiki-pdf {
-  min-width: 50px;
+  max-width: 40px;
 }
 
 .isceb-wiki-file-meta {
@@ -18933,10 +18953,46 @@ a.disabled:hover {
   width: auto;
   height: auto;
   position: static;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.pt-0 {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.uwp-account-form > .form-group, .wpcf7 .wpcf7-form .uwp-account-form > p {
+  display: grid;
+  margin-bottom: 10px;
 }
 
 .uwp-registration-form > .form-group, .wpcf7 .wpcf7-form .uwp-registration-form > p {
   margin-bottom: 10px;
+  display: grid;
+}
+
+.uwp-registration-form > .form-group > .sr-only, .wpcf7 .wpcf7-form .uwp-registration-form > p > .sr-only {
+  position: relative;
+  width: auto;
+  height: auto;
+}
+
+#remember_me {
+  margin-top: 10px;
+  margin-right: 5px;
+  -webkit-appearance: auto;
+  -moz-appearance: auto;
+  appearance: auto;
+  width: auto;
+  display: inline;
+}
+
+.uwp-login-form > .form-group > .sr-only, .wpcf7 .wpcf7-form .uwp-login-form > p > .sr-only {
+  position: relative;
+  width: auto;
+  height: auto;
+  margin-top: 15px;
 }
 
 .input-group-text > .far {
@@ -18961,7 +19017,7 @@ a.disabled:hover {
 }
 
 .isceb-event-facebook-link-wrap {
-  background-color: #4267B2;
+  background-color: #4267b2;
   border-radius: 10px;
   text-decoration: none;
   margin: 10px 30px 10px 30px;
