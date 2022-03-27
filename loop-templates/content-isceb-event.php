@@ -112,8 +112,9 @@ If yes, return
 
 	<div class="isceb-event-card-order-button">
 		<p>Order</p>
-		<i class="fa far fa-chevron-right isceb-event-card-arrow"></i>
+		<i class="fa fas fa-chevron-right isceb-event-card-arrow"></i>
 	</div>
+</div>
 </div>
 
 </a>
