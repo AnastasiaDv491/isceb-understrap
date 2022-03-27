@@ -926,6 +926,7 @@ hr.isceb-wiki-nav-phase-line {
 .isceb-wiki-file {
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 	display: flex;
+	flex-direction: column;
 	border-radius: 5px;
 	margin-bottom: 1rem;
 
@@ -938,17 +939,33 @@ hr.isceb-wiki-nav-phase-line {
 	transition-property: transform;
 }
 
+
+
+
 .isceb-wiki-file:hover {
 	-webkit-transform: scale(1.05);
 	transform: scale(1.05);
 }
 
 .isceb-wiki-file-left-part {
-	max-width: 250px;
+	// max-width: 60px; //250
+	width: auto;
 	// background-color: #eaebed;
 	background-color: $primary;
 	padding: 15px;
+	display: flex;
+
+	justify-content: center;
 }
+@media (min-width: 641px) {
+	.isceb-wiki-file{
+		flex-direction: row;
+	}
+	.isceb-wiki-pdf {
+		min-width: 40px;
+	}
+}
+
 
 .isceb-wiki-pdf {
 	// width: 5rem;
@@ -958,7 +975,7 @@ hr.isceb-wiki-nav-phase-line {
 
 	// width: 50px;
 	// margin-top: 10px;
-	min-width: 50px;
+	max-width: 40px;
 }
 
 .isceb-wiki-file-meta {
@@ -1801,18 +1818,29 @@ a.disabled:hover {
 	width: auto;
 	height: auto;
 	position: static;
+	margin-top: 5px;
+	font-weight: bold;
 }
 
-.uwp-registration-form > .form-group{
+.pt-0{
+	margin-top: 10px;
+	font-weight: bold;
+} 
+.uwp-account-form >.form-group {
+	display: grid;
 	margin-bottom: 10px;
 }
+.uwp-registration-form > .form-group {
+	margin-bottom: 10px;
 
-.input-group-text  > .far{
+}
+
+.input-group-text > .far {
 	line-height: unset;
 }
 
-.isceb-notitle-wrapper{
-	margin-top:0;
+.isceb-notitle-wrapper {
+	margin-top: 0;
 }
 
 .somefancyclass {
@@ -1826,21 +1854,20 @@ a.disabled:hover {
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
 	height: 200px;
-
 }
 // Event link to facebook page
 .isceb-event-facebook-link-wrap {
-	background-color: #4267B2;
+	background-color: #4267b2;
 	border-radius: 10px;
 	text-decoration: none;
 	margin: 10px 30px 10px 30px;
-    min-width: 200px;
+	min-width: 200px;
 	height: 80px;
 	padding: 10px;
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 	color: white;
 }
 
-.isceb-event-facebook-link-wrap:hover{
+.isceb-event-facebook-link-wrap:hover {
 	color: $primary;
 }
