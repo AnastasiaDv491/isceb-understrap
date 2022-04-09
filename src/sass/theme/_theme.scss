@@ -39,6 +39,7 @@ h2 {
 
 .navbar-brand.custom-logo-link {
 	padding: 0;
+	max-width:200px;
 }
 
 #main-nav {
@@ -819,6 +820,14 @@ a.isceb-wiki-nav-phase {
 	font-weight: bold;
 }
 
+.isceb-wiki-nav-course{
+	text-decoration: none;
+}
+
+.isceb-grid-phase-item-url{
+	text-decoration: none;
+}
+
 // @media (min-width: 641px) {
 // 	text-decoration: none;
 // 	font-size: x-large;
@@ -1061,7 +1070,6 @@ hr.isceb-wiki-nav-phase-line {
 
 @media (min-width: 641px) {
 	.isceb-homepage-about-block {
-		margin: 0 151px 100px 168px;
 		padding: 20px;
 		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 		border-top: solid $primary;
