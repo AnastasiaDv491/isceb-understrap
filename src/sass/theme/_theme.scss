@@ -939,9 +939,6 @@ hr.isceb-wiki-nav-phase-line {
 	transition-property: transform;
 }
 
-
-
-
 .isceb-wiki-file:hover {
 	-webkit-transform: scale(1.05);
 	transform: scale(1.05);
@@ -958,14 +955,13 @@ hr.isceb-wiki-nav-phase-line {
 	justify-content: center;
 }
 @media (min-width: 641px) {
-	.isceb-wiki-file{
+	.isceb-wiki-file {
 		flex-direction: row;
 	}
 	.isceb-wiki-pdf {
 		min-width: 40px;
 	}
 }
-
 
 .isceb-wiki-pdf {
 	// width: 5rem;
@@ -1822,37 +1818,36 @@ a.disabled:hover {
 	font-weight: bold;
 }
 
-.pt-0{
+.pt-0 {
 	margin-top: 10px;
 	font-weight: bold;
-} 
-.uwp-account-form >.form-group {
+}
+.uwp-account-form > .form-group {
 	display: grid;
 	margin-bottom: 10px;
 }
 .uwp-registration-form > .form-group {
 	margin-bottom: 10px;
 	display: grid;
-
 }
-.uwp-registration-form > .form-group>.sr-only {
+.uwp-registration-form > .form-group > .sr-only {
 	position: relative;
-    width: auto;
-    height: auto;
+	width: auto;
+	height: auto;
 }
 
 #remember_me {
 	margin-top: 10px;
 	margin-right: 5px;
-	appearance: auto; 
+	appearance: auto;
 	width: auto;
 	display: inline;
 }
 
-.uwp-login-form > .form-group>.sr-only {
+.uwp-login-form > .form-group > .sr-only {
 	position: relative;
-    width: auto;
-    height: auto;
+	width: auto;
+	height: auto;
 	margin-top: 15px;
 }
 
@@ -1891,4 +1886,28 @@ a.disabled:hover {
 
 .isceb-event-facebook-link-wrap:hover {
 	color: $primary;
+}
+
+@media (min-width: 641px) {
+	.isceb-image-bars-text > .wp-block-media-text > .wp-block-media-text__content {
+		padding: 25px 0px;
+		margin: -75px;
+	}
+	.isceb-image-bars-text .has-background {
+		padding: 5px;
+		max-width: fit-content;
+	}
+	
+}
+
+//ISCEB CSS for media-text block
+
+.isceb-image-bars-text > .wp-block-media-text > .wp-block-media-text__content {
+	padding: 25px 0px;
+	grid-row: 1;
+	font-size: 0.5em;
+}
+.isceb-image-bars-text .has-background {
+	padding: 5px;
+	max-width: fit-content;
 }

@@ -31,3 +31,15 @@
 	font-size: $h1-font-size;
 	font-weight: $headings-font-weight;
 }
+
+//Change style of media text block
+.isceb-image-bars-text > .wp-block > .wp-block-media-text > .wp-block-media-text__content{
+	padding: 25px 0px; 
+	margin: -75px;
+}
+
+.isceb-image-bars-text .has-background{
+	padding: 5px;
+	max-width: fit-content;
+}
+
